@@ -205,7 +205,7 @@ BEG and END (region to sort)."
         (let ((next-line (point)))
           (while
               (re-search-forward
-               (format "^%s" (car kill-ring)) nil t)
+               (format "^%s" (regexp-quote (car kill-ring))) nil t)
             (replace-match "" nil nil))
           (goto-char next-line))))))
 
