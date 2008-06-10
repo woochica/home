@@ -1,0 +1,9 @@
+hardstatus on
+hardstatus alwayslastline
+hardstatus string '%{= kG}[%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m %{W}%c %{g}]'
+activity "Activity on window #%."
+autodetach on
+defscrollback 30000
+escape "^Xx"
+bind b other
+bind o focus
