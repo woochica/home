@@ -1,0 +1,4 @@
+! capslock to ctrl_l
+keycode 66 = Control_L
+clear Lock
+add Control = Control_L
