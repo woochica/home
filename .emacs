@@ -1,4 +1,5 @@
 (require 'cl)
+(defalias 'docstyle 'checkdoc)
 
 (let* ((my-home-dir "/home/gabor/")
        (my-emacs-modes (concat my-home-dir "emacsx/")))
@@ -6,7 +7,7 @@
   (add-to-list 'load-path (concat my-emacs-modes "cc-mode/"))
   (add-to-list 'load-path (concat my-emacs-modes "emacs-w3m/"))
   (add-to-list 'load-path (concat my-emacs-modes "color-theme-6.6.0/"))
-  (add-to-list 'load-path (concat my-home-dir "mnt/i2/tools/elisp/"))
+  (add-to-list 'load-path (concat my-home-dir "dev/webma/elisp/"))
   (add-to-list 'load-path (concat my-home-dir "dev/slime/")))
 
 ;;;============================================================
@@ -128,6 +129,13 @@
                             (webma-html-mode t)))
 
 ;;;============================================================
+;;; CSS
+;;;============================================================
+
+(add-hook 'css-mode-hook (lambda ()
+                           (webma-css-mode t)))
+
+;;;============================================================
 ;;; Wordpress blogging
 ;;;============================================================
 
@@ -152,6 +160,11 @@
 
 (require 'ido)
 (ido-mode t)
+(add-to-list 'ido-ignore-buffers "*Messages")
+(add-to-list 'ido-ignore-buffers "*Completions")
+(add-to-list 'ido-ignore-buffers "*Customiz")
+(add-to-list 'ido-ignore-buffers "*Help")
+(add-to-list 'ido-ignore-buffers "*vc")
 
 ;;;============================================================
 ;;; Server
@@ -171,21 +184,23 @@
 (require 'erc-track)
 
 (add-hook 'erc-mode-hook (lambda ()
-                           (erc-notify-mode t)
-                           (erc-smiley-mode t)
-                           (erc-track-mode t)
-                           (erc-autojoin-mode t)
-                           (erc-completion-mode t)
-                           (erc-hide-timestamps)))
-
+                           (erc-scrolltobottom-mode t)
+;;                           (erc-track-mode t)
+;;                           (erc-smiley-mode t)
+;;                           (erc-timestamp-mode nil)
+;;                            (erc-notify-mode t)
+;;                            (erc-autojoin-mode t)
+;;                            (erc-completion-mode t)))
+))
+                           
 (setq erc-server "irc.freenode.org"
       erc-port 6667 
       erc-nick "nyuhuhuu"
       erc-prompt-for-password t
       erc-user-full-name "slink"
       erc-email-userid "slink"
-      erc-autojoin-channels-alist '(("freenode.net" "#emacs"))
-      erc-track-exclude-types '("JOIN" "NICK" "PART" "QUIT"))
+;;       erc-autojoin-channels-alist '(("freenode.net" "#emacs"))
+       erc-track-exclude-types '("JOIN" "NICK" "PART" "QUIT"))
       
 ;;;============================================================
 ;;; Programming
@@ -228,6 +243,8 @@
 (require 'js2-mode)
 (add-to-list 'auto-mode-alist '("\\.js\\(on\\)?$" . js2-mode))
 (add-hook 'js2-mode-hook (lambda ()
+                           (webma-js-mode t)
+                           (local-set-key (kbd "<backtab>") 'hippie-expand)
                            (setq js2-basic-offset 4
                                  js2-use-font-lock-faces t)))
 
@@ -235,7 +252,7 @@
 ;;; slink
 ;;;============================================================
 
-;;(require 'slink)
+(require 'slink)
 
 ;;;============================================================
 ;;; work
@@ -243,6 +260,8 @@
 
 (require 'webma)
 (require 'webma-html)
+(require 'webma-css)
+(require 'webma-js)
 
 ;;;============================================================
 ;;; Frames, colors, misc.
@@ -253,11 +272,6 @@
 (color-theme-arjen)
 ;(color-theme-bharadwaj)
 
-(set-face-attribute 'flymake-errline nil
-                    :underline "red4"
-                    :background "black"
-                    :weight 'bold)
-
 (setq default-frame-alist
       (append
        '((font . "Monaco-9")
@@ -267,8 +281,8 @@
          (tool-bar-lines . 0))
        default-frame-alist))
 
-(setq backup-directory-alist
-      (list (cons ".*" (expand-file-name "~/bkp/emacs/")))
+(setq backup-directory-alist (list
+                              (cons ".*" (expand-file-name "~/bkp/emacs/")))
       truncate-partial-width-windows nil ;; don't lose word wrapping if split
                                          ;; windows
       frame-title-format "Emacs - %b %*"

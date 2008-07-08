@@ -36,5 +36,7 @@
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
  '(bold ((t (:bold t :background "LemonChiffon"))))
+ '(flymake-errline ((t (:background "black" :underline "red4" :weight bold))))
+ '(font-lock-comment-face ((t (:foreground "IndianRed" :slant normal :weight normal :height 1.0 :family "Andale Mono"))))
  '(show-paren-match ((t (:bold t :background "#eeca00" :foreground "#763b17"))))
  '(w3m-bold ((t (:bold t :background "LemonChiffon" :foreground "#453e06")))))
