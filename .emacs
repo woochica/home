@@ -21,7 +21,6 @@
 (add-hook 'w3m-load-hook (lambda ()
                            (setq
                             w3m-use-cookies t
-                            w3m-cookie-accept-bad-cookies t
                             w3m-output-coding-system 'utf-8
                             w3m-coding-system 'utf-8
                             w3m-default-coding-system 'utf-8)
@@ -106,9 +105,7 @@
 ;;;============================================================
 
 (setq inferior-lisp-program "/usr/bin/sbcl")
-(add-hook 'inferior-lisp-mode-hook (lambda ()
-                                     (require 'slime)
-                                     (slime-setup)))
+(require 'slime)
 
 (add-hook 'emacs-lisp-mode-hook
           (lambda ()
@@ -254,8 +251,7 @@
 (add-hook 'js2-mode-hook (lambda ()
                            (webma-js-mode t)
                            (local-set-key (kbd "<backtab>") 'hippie-expand)
-                           (setq js2-basic-offset 4
-                                 js2-use-font-lock-faces t)))
+                           (setq js2-basic-offset 4)))
 
 ;;;============================================================
 ;;; slink
