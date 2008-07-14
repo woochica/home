@@ -14,6 +14,18 @@ mcd ()
 #Run a command on each file matches against file mask
 mapcar() { command=$1; shift 1; for file in $@; do eval $command $file; done }
 
+#Attach or start new screen session
+screen_start_or_open()
+{
+    if [ `screen -list | wc -l` -gt 2 ] ; then
+        if [ `echo $TERMCAP | grep screen | wc -l` -eq 0 ] ; then
+            screen -rx
+        fi
+    else
+        screen
+    fi;
+}
+
 setopt INC_APPEND_HISTORY
 setopt APPEND_HISTORY
 setopt HIST_IGNORE_ALL_DUPS
@@ -56,13 +68,4 @@ alias -s doc=oowriter
 alias -s xls=oocalc
 alias -s psd=gimp-remote
 
-#Attach or start new screen session
-screen_start_or_open() {
-    if [ `screen -list | wc -l` -gt 2 ] ; then
-        if [ `echo $TERMCAP | grep screen | wc -l` -eq 0 ] ; then
-            screen -rx
-        fi
-    else
-        screen
-    fi;
-}
+screen_start_or_open
