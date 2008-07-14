@@ -7,6 +7,7 @@
   (add-to-list 'load-path (concat my-emacs-modes "cc-mode/"))
   (add-to-list 'load-path (concat my-emacs-modes "emacs-w3m/"))
   (add-to-list 'load-path (concat my-emacs-modes "color-theme-6.6.0/"))
+  (add-to-list 'load-path (concat my-emacs-modes "weblogger/"))
   (add-to-list 'load-path (concat my-home-dir "dev/webma/elisp/"))
   (add-to-list 'load-path (concat my-home-dir "dev/slime/")))
 
@@ -118,6 +119,15 @@
 ;;;============================================================
 
 (require 'twit)
+(add-hook 'twit-new-tweet-hook
+          (lambda ()
+            (let* ((user (cadr twit-last-tweet))
+                   (msg (caddr twit-last-tweet))
+                   (cmd "/usr/bin/notify-send")
+                   (args (format "-i twitter.png \"%s:\" \"%s\"" user msg)))
+              (if (string= twit-user user)
+                  ()
+                (call-process-shell-command cmd nil t nil args)))))
 
 ;;;============================================================
 ;;; HTML
@@ -139,8 +149,7 @@
 ;;; Wordpress blogging
 ;;;============================================================
 
-;;(add-to-list 'load-path (concat my-emacs-modes "weblogger"))
-;;(require 'weblogger)
+(require 'weblogger)
 
 ;;;============================================================
 ;;; Spell checking
@@ -262,6 +271,12 @@
 (require 'webma-html)
 (require 'webma-css)
 (require 'webma-js)
+(require 'webma-instance)
+
+(global-set-key (kbd "C-c w s") 'webma-instance-session-start)
+(global-set-key (kbd "C-c w c") 'webma-instance-session-close)
+(global-set-key (kbd "C-c w r") 'webma-instance-session-render)
+(global-set-key (kbd "C-c w i") 'webma-instance-idb-update)
 
 ;;;============================================================
 ;;; Frames, colors, misc.
@@ -269,8 +284,8 @@
 
 (require 'color-theme)
 (color-theme-initialize)
-(color-theme-arjen)
-;(color-theme-bharadwaj)
+;(color-theme-arjen)
+(color-theme-bharadwaj)
 
 (setq default-frame-alist
       (append
