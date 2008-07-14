@@ -27,16 +27,17 @@
  '(tool-bar-mode nil)
  '(tooltip-mode nil)
  '(transient-mark-mode t)
+ '(twit-user "nyuhuhuu")
  '(weblogger-config-alist (quote (("20y" ("user" . "admin") ("server-url" . "http://20y.hu/xmlrpc.php") ("weblog" . "1")))))
- '(webma-instance-server "neotek.hu"))
+ '(webma-instance-idb-tool "~/mnt/i2/tools/webma_search/tools/makeidb.sh")
+ '(webma-instance-mount-base "~/mnt")
+ '(webma-instance-server-ip "neotek.hu"))
 
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
- '(bold ((t (:bold t :background "LemonChiffon"))))
  '(flymake-errline ((t (:background "black" :underline "red4" :weight bold))))
  '(font-lock-comment-face ((t (:foreground "IndianRed" :slant normal :weight normal :height 1.0 :family "Andale Mono"))))
- '(show-paren-match ((t (:bold t :background "#eeca00" :foreground "#763b17"))))
- '(w3m-bold ((t (:bold t :background "LemonChiffon" :foreground "#453e06")))))
+ '(show-paren-match ((t (:bold t :background "#eeca00" :foreground "#763b17")))))
