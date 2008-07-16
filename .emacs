@@ -9,7 +9,8 @@
   (add-to-list 'load-path (concat my-emacs-modes "color-theme-6.6.0/"))
   (add-to-list 'load-path (concat my-emacs-modes "weblogger/"))
   (add-to-list 'load-path (concat my-home-dir "dev/webma/elisp/"))
-  (add-to-list 'load-path (concat my-home-dir "dev/slime/")))
+  (add-to-list 'load-path (concat my-home-dir "dev/slime/"))
+  (add-to-list 'load-path "/usr/share/emacs/site-lisp/"))
 
 ;;;============================================================
 ;;; W3M
@@ -121,7 +122,7 @@
             (let* ((user (cadr twit-last-tweet))
                    (msg (caddr twit-last-tweet))
                    (cmd "/usr/bin/notify-send")
-                   (args (format "-i twitter.png \"%s:\" \"%s\"" user msg)))
+                   (args (format "-i twitter \"%s:\" \"%s\"" user msg)))
               (if (string= twit-user user)
                   ()
                 (call-process-shell-command cmd nil t nil args)))))
@@ -149,11 +150,19 @@
 (require 'weblogger)
 
 ;;;============================================================
+;;; VC, Git
+;;;============================================================
+
+(require 'git)
+(require 'git-blame)
+(require 'vc-git)
+(add-to-list 'vc-handled-backends 'GIT)
+
+;;;============================================================
 ;;; Spell checking
 ;;;============================================================
 
 (require 'ispell)
-
 (setq ispell-program-name "hunspell"
       ispell-local-dictionary "hu_HU.UTF-8"
       ispell-skip-html t
@@ -272,6 +281,7 @@
 (global-set-key (kbd "C-c w s") 'webma-instance-session-start)
 (global-set-key (kbd "C-c w c") 'webma-instance-session-close)
 (global-set-key (kbd "C-c w r") 'webma-instance-session-render)
+(global-set-key (kbd "C-c w u") 'webma-instance-session-upload)
 (global-set-key (kbd "C-c w i") 'webma-instance-idb-update)
 
 ;;;============================================================
