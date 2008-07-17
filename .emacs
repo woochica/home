@@ -123,7 +123,7 @@
                    (msg (caddr twit-last-tweet))
                    (cmd "/usr/bin/notify-send")
                    (args (format "-i twitter \"%s:\" \"%s\"" user msg)))
-              (if (string= twit-user user)
+              (if (or (string= twit-user user) (not user))
                   ()
                 (call-process-shell-command cmd nil t nil args)))))
 
