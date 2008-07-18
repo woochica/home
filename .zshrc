@@ -35,9 +35,6 @@ setopt CORRECT
 setopt IGNORE_EOF
 unsetopt HUP
 
-#bindkey -r "^D"
-#bindkey "^D" list-choices
-
 alias ls='/bin/ls -hal --color'
 alias ls1='/bin/ls -1'
 alias ec='emacsclient -c'
@@ -45,7 +42,8 @@ alias cp='cp -v'
 alias rm='rm -vi'
 alias top='top -U `id -u`'
 alias muti='identify'
-alias Terminal='Terminal --geometry=120x40'
+alias neotek='ssh -C slink@neotek.hu'
+
 HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.zshhistory
