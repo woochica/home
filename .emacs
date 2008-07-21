@@ -227,7 +227,8 @@
 (set-default 'c-hanging-comment-ender-p nil)
 (set-default 'indent-tabs-mode nil)
 (set-default 'tab-always-indent t)
-(global-linum-mode t)
+(if (featurep 'linum)
+    (global-linum-mode t))
 
 ;;;============================================================
 ;;; Python
