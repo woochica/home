@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# by slink
+
+if [ "$1" = "-h" -o "$1" = "--help" -o -z "$1" ]; then
+    echo "Usage: `basename $0` dir|filename"
+    echo "Strips illegal characters from the given filename and renames it."
+    exit;
+fi;
+
+filename=$1
+
+# If the given filename is a file/directory
+if [ -e "$filename" ]; then
+    # Strips illegal characters
+    safename=`asciiname "$filename"`
+    # Rename filename to safe version only if they differ
+    if [ ! "$filename" = "$safename" ]; then
+        echo Renaming "$filename" to "$safename"...
+        mv "$filename" "$safename"
+    fi;
+    # Removes optional execute mode from files
+    if [ -x "$safename" -a -f "$safename" ]; then
+       chmod -x "$safename"
+    fi;
+fi;
