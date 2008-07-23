@@ -29,6 +29,7 @@
  '(transient-mark-mode t)
  '(twit-user "nyuhuhuu")
  '(weblogger-config-alist (quote (("20y" ("user" . "admin") ("server-url" . "http://20y.hu/xmlrpc.php") ("weblog" . "1")))))
+ '(webma-css-rhino-path "/home/gabor/dev/yuicompressor-2.2.5/build/yuicompressor-2.2.5.jar")
  '(webma-instance-idb-tool "~/mnt/i2/tools/webma_search/tools/makeidb.sh")
  '(webma-instance-mount-base "~/mnt")
  '(webma-instance-server-ip "neotek.hu"))
