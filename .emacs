@@ -338,6 +338,9 @@
                               (insert "–")))
 (global-set-key (kbd "<C-right>") 'forward-sexp)
 (global-set-key (kbd "<C-left>") 'backward-sexp)
+(global-set-key [f1] (lambda ()
+                       (interactive)
+                       (find-file "~/slink.gpg")))
 
 (provide '.emacs)
 
