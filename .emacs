@@ -341,6 +341,9 @@
 (global-set-key [f1] (lambda ()
                        (interactive)
                        (find-file "~/slink.gpg")))
+(global-set-key [f2] (lambda ()
+                       (interactive)
+                       (twit-follow-recent-tweets)))
 
 (provide '.emacs)
 
