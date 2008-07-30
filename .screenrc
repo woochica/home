@@ -12,3 +12,5 @@ screen -t renderlog 1
 monitor
 screen -t uploadlog 2
 monitor
+screen -t megrend
+screen
