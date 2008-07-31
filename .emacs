@@ -19,12 +19,11 @@
 (require 'w3m-load)
 (require 'w3m-session)
 
-(add-hook 'w3m-load-hook (lambda ()
-                           (setq
-                            w3m-use-cookies t
-                            w3m-output-coding-system 'utf-8
-                            w3m-coding-system 'utf-8
-                            w3m-default-coding-system 'utf-8)
+(add-hook 'w3m-mode-hook (lambda ()
+                           (setq w3m-use-cookies t
+                                 w3m-output-coding-system 'utf-8
+                                 w3m-coding-system 'utf-8
+                                 w3m-default-coding-system 'utf-8)
                            (define-key w3m-mode-map (kbd "M-1")
                              (lambda ()
                                (interactive)
@@ -207,23 +206,23 @@
 
 (add-hook 'erc-mode-hook (lambda ()
                            (erc-scrolltobottom-mode t)
-;;                           (erc-track-mode t)
-;;                           (erc-smiley-mode t)
 ;;                           (erc-timestamp-mode nil)
+;;                           (erc-track-mode t)
 ;;                            (erc-notify-mode t)
 ;;                            (erc-autojoin-mode t)
 ;;                            (erc-completion-mode t)))
-))
-                           
+                           ))
+
 (setq erc-server "irc.freenode.org"
       erc-port 6667 
       erc-nick "nyuhuhuu"
       erc-prompt-for-password t
       erc-user-full-name "slink"
       erc-email-userid "slink"
-;;       erc-autojoin-channels-alist '(("freenode.net" "#emacs"))
-       erc-track-exclude-types '("JOIN" "NICK" "PART" "QUIT"))
-      
+      ;;  erc-autojoin-channels-alist '(("freenode.net" "#emacs"))
+      erc-track-exclude-types '("JOIN" "NICK" "PART" "QUIT"))
+
+
 ;;;============================================================
 ;;; Programming
 ;;;============================================================
@@ -340,7 +339,7 @@
 (global-set-key (kbd "<C-left>") 'backward-sexp)
 (global-set-key [f1] (lambda ()
                        (interactive)
-                       (find-file "~/slink.gpg")))
+                       (find-file "~/slink/slink.gpg")))
 (global-set-key [f2] (lambda ()
                        (interactive)
                        (twit-follow-recent-tweets)))
