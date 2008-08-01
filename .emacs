@@ -247,10 +247,10 @@
 ;;;============================================================
 
 (require 'php-mode)
-(require 'flymake-php)
+;(require 'flymake-php)
 (add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))
 (add-hook 'php-mode-hook 'flymake-php-load)
-                           
+
 ;;;============================================================
 ;;; Shell programming
 ;;;============================================================
@@ -263,6 +263,7 @@
 ;;;============================================================
 
 (require 'js2-mode)
+(require 'flymake-js)
 (add-to-list 'auto-mode-alist '("\\.js\\(on\\)?$" . js2-mode))
 (add-hook 'js2-mode-hook (lambda ()
                            (webma-js-mode t)
