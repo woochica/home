@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-GIT_REPOS=("/home/gabor/dev/webma/" "/home/gabor/" "/home/gabor/slink/")
+GIT_REPOS=("/home/gabor/dev/webma/" "/home/gabor/")
 
 for ((i = 1; i <= $#GIT_REPOS; i++ )) {
     cd $GIT_REPOS[$i]
