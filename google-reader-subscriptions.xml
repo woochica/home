@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+    <head>
+        <title>slink subscriptions in Google Reader</title>
+    </head>
+    <body>
+        <outline title="geek" text="geek">
+            <outline text="Blik.it - Home" title="Blik.it - Home"
+                type="rss" xmlUrl="http://www.blik.it/feed/atom.xml" htmlUrl="http://www.blik.it/"/>
+            <outline text="Carsten's Random Ramblings"
+                title="Carsten's Random Ramblings" type="rss"
+                xmlUrl="http://www.bitbybit.dk/carsten/blog/?feed=rss2" htmlUrl="http://www.bitbybit.dk/carsten/blog"/>
+            <outline text="Coding Horror" title="Coding Horror"
+                type="rss"
+                xmlUrl="http://feeds.feedburner.com/codinghorror/" htmlUrl="http://www.codinghorror.com/blog/"/>
+            <outline text="deadlime.project" title="deadlime.project"
+                type="rss" xmlUrl="http://deadlime.hu/feed/" htmlUrl="http://deadlime.hu"/>
+            <outline text="Derick Rethans" title="Derick Rethans"
+                type="rss" xmlUrl="http://derickrethans.nl/rss.xml" htmlUrl="http://www.derickrethans.nl/"/>
+            <outline text="drupal.hu" title="drupal.hu" type="rss"
+                xmlUrl="http://drupal.hu/node/feed" htmlUrl="http://drupal.hu"/>
+            <outline text="Dzonic" title="Dzonic" type="rss"
+                xmlUrl="http://feeds.feedburner.com/Dzonic?format=xml" htmlUrl="http://www.dzonic.com"/>
+            <outline text="emacspeak The Complete Audio Desktop"
+                title="emacspeak The Complete Audio Desktop" type="rss"
+                xmlUrl="http://emacspeak.blogspot.com/feeds/posts/default" htmlUrl="http://emacspeak.blogspot.com/"/>
+            <outline text="eric.themoritzfamily.com's Weblog"
+                title="eric.themoritzfamily.com's Weblog" type="rss"
+                xmlUrl="http://eric.themoritzfamily.com/feed/atom/" htmlUrl="http://eric.themoritzfamily.com/"/>
+            <outline text="Fedora Daily Package"
+                title="Fedora Daily Package" type="rss"
+                xmlUrl="http://dailypackage.fedorabook.com/index.php?/feeds/index.rss2" htmlUrl="http://dailypackage.fedorabook.com/"/>
+            <outline text="Fedora People" title="Fedora People"
+                type="rss"
+                xmlUrl="http://planet.fedoraproject.org/atom.xml" htmlUrl="http://fedoraproject.org/people/"/>
+            <outline text="Future Hi" title="Future Hi" type="rss"
+                xmlUrl="http://www.futurehi.net/index.rdf" htmlUrl="http://www.futurehi.net/"/>
+            <outline text="Gabor SUVEG's blog"
+                title="Gabor SUVEG's blog" type="rss"
+                xmlUrl="http://gabor.suveg.hu/feeds/posts/default" htmlUrl="http://gabor.suveg.hu/"/>
+            <outline text="GIMP UI brainstorm"
+                title="GIMP UI brainstorm" type="rss"
+                xmlUrl="http://gimp-brainstorm.blogspot.com/feeds/posts/default" htmlUrl="http://gimp-brainstorm.blogspot.com/"/>
+            <outline text="Google Open Source Blog"
+                title="Google Open Source Blog" type="rss"
+                xmlUrl="http://feeds.feedburner.com/GoogleOpenSourceBlog" htmlUrl="http://google-opensource.blogspot.com/"/>
+            <outline text="Google webmestereszközök Google Group"
+                title="Google webmestereszközök Google Group" type="rss"
+                xmlUrl="http://groups.google.com/group/Google_Webmaster_Help-Tools-hu/feed/atom_v1_0_msgs.xml" htmlUrl="http://www.google.com/reader/view/feed%2Fhttp%3A%2F%2Fgroups.google.com%2Fgroup%2FGoogle_Webmaster_Help-Tools-hu%2Ffeed%2Fatom_v1_0_msgs.xml"/>
+            <outline text="Gábor Hojtsy -" title="Gábor Hojtsy -"
+                type="rss" xmlUrl="http://hojtsy.hu/rss.xml" htmlUrl="http://hojtsy.hu"/>
+            <outline text="Higepon Mona OS develop blog from Japan"
+                title="Higepon Mona OS develop blog from Japan"
+                type="rss"
+                xmlUrl="http://higepon.blogspot.com/feeds/posts/default" htmlUrl="http://higepon.blogspot.com/"/>
+            <outline text="Hungarian Unix Portal"
+                title="Hungarian Unix Portal" type="rss"
+                xmlUrl="http://feeds.feedburner.com/HUP" htmlUrl="http://hup.hu"/>
+            <outline text="HuWiCo - Hungarian Wireless Community"
+                title="HuWiCo - Hungarian Wireless Community" type="rss"
+                xmlUrl="http://www.huwico.hu/node/feed" htmlUrl="http://www.huwico.hu"/>
+            <outline text="izotov" title="izotov" type="rss"
+                xmlUrl="http://izotov.blog.hu/rss2" htmlUrl="http://izotov.blog.hu"/>
+            <outline text="k:blog" title="k:blog" type="rss"
+                xmlUrl="http://feeds.feedburner.com/kemenczy/UNrV" htmlUrl="http://kemenczy.hu/myblog"/>
+            <outline text="Last.fm – the Blog"
+                title="Last.fm – the Blog" type="rss"
+                xmlUrl="http://blog.last.fm/atom/" htmlUrl="http://blog.last.fm/"/>
+            <outline text="LispCast" title="LispCast" type="rss"
+                xmlUrl="http://feeds.feedburner.com/Lispcast?format=xml" htmlUrl="http://www.lispcast.com/drupal"/>
+            <outline text="Macat blogja" title="Macat blogja" type="rss"
+                xmlUrl="http://macat.hu/feed/atom/" htmlUrl="http://macat.hu"/>
+            <outline text="Magyarországi Web Konferencia Hírek"
+                title="Magyarországi Web Konferencia Hírek" type="rss"
+                xmlUrl="http://web.conf.hu/rss" htmlUrl="http://web.conf.hu/"/>
+            <outline text="Miner.hu &quot;web&quot; melléklet"
+                title="Miner.hu &quot;web&quot; melléklet" type="rss"
+                xmlUrl="http://web.miner.hu/rss" htmlUrl="http://web.miner.hu"/>
+            <outline text="minor emacs wizardry"
+                title="minor emacs wizardry" type="rss"
+                xmlUrl="http://emacs.wordpress.com/feed/" htmlUrl="http://emacs.wordpress.com"/>
+            <outline text="Official Google Webmaster Central Blog"
+                title="Official Google Webmaster Central Blog"
+                type="rss"
+                xmlUrl="http://feeds.feedburner.com/blogspot/amDG" htmlUrl="http://googlewebmastercentral.blogspot.com/"/>
+            <outline text="Peter's Blog - Home"
+                title="Peter's Blog - Home" type="rss"
+                xmlUrl="http://peter.michaux.ca/feed/atom.xml" htmlUrl="http://peter.michaux.ca/"/>
+            <outline text="PHP Blog magyarul" title="PHP Blog magyarul"
+                type="rss" xmlUrl="http://www.php-blog.hu/feed/atom" htmlUrl="http://www.php-blog.hu"/>
+            <outline text="Planet Emacsen" title="Planet Emacsen"
+                type="rss" xmlUrl="http://planet.emacsen.org/atom.xml" htmlUrl="http://planet.emacsen.org/"/>
+            <outline text="Programming in the 21st Century"
+                title="Programming in the 21st Century" type="rss"
+                xmlUrl="http://prog21.dadgum.com/atom.xml" htmlUrl="http://prog21.dadgum.com/"/>
+            <outline text="Rails for PHP Developers"
+                title="Rails for PHP Developers" type="rss"
+                xmlUrl="http://railsforphp.com/feed/atom/" htmlUrl="http://railsforphp.com/"/>
+            <outline text="Space Station Lambda"
+                title="Space Station Lambda" type="rss"
+                xmlUrl="http://blog.viridian-project.de/feed/atom/" htmlUrl="http://blog.viridian-project.de/"/>
+            <outline text="Stevey's Blog Rants"
+                title="Stevey's Blog Rants" type="rss"
+                xmlUrl="http://steve-yegge.blogspot.com/feeds/posts/default?alt=rss" htmlUrl="http://steve-yegge.blogspot.com/"/>
+            <outline text="svenfoo" title="svenfoo" type="rss"
+                xmlUrl="http://svenfoo.geekheim.de/index.php/feed/atom/" htmlUrl="http://svenfoo.geekheim.de/"/>
+            <outline text="The B-List: Latest entries"
+                title="The B-List: Latest entries" type="rss"
+                xmlUrl="http://feeds.feedburner.com/b-list-entries" htmlUrl="http://www.b-list.org/feeds/entries/"/>
+            <outline text="The Django community aggregator"
+                title="The Django community aggregator" type="rss"
+                xmlUrl="http://www.djangoproject.com/rss/community/" htmlUrl="http://www.djangoproject.com/community/"/>
+            <outline text="The Future of the Web"
+                title="The Future of the Web" type="rss"
+                xmlUrl="http://feeds.feedburner.com/thefutureoftheweb" htmlUrl="http://www.thefutureoftheweb.com/"/>
+            <outline text="Ubuntu Magyarország"
+                title="Ubuntu Magyarország" type="rss"
+                xmlUrl="http://planet.ubuntu.hu/atom.xml" htmlUrl="http://planet.ubuntu.hu/"/>
+            <outline text="ubuntu.hu -" title="ubuntu.hu -" type="rss"
+                xmlUrl="http://ubuntu.hu/rss.xml" htmlUrl="http://ubuntu.hu"/>
+            <outline text="Webes szabványok" title="Webes szabványok"
+                type="rss" xmlUrl="http://webszabvany.blog.hu/atom" htmlUrl="http://webszabvany.blog.hu"/>
+            <outline text="Yahoo! Search Blog"
+                title="Yahoo! Search Blog" type="rss"
+                xmlUrl="http://feeds.feedburner.com/YahooSearchBlog" htmlUrl="http://www.ysearchblog.com/"/>
+        </outline>
+        <outline text="maat's shared items" title="maat's shared items"
+            type="rss"
+            xmlUrl="http://www.google.com/reader/public/atom/user/04088679461716788853/state/com.google/broadcast" htmlUrl="http://www.google.com/reader/view/user%2F04088679461716788853%2Fstate%2Fcom.google%2Fbroadcast"/>
+        <outline text="phanatic's shared items"
+            title="phanatic's shared items" type="rss"
+            xmlUrl="http://www.google.com/reader/public/atom/user/00902023859321251790/state/com.google/broadcast" htmlUrl="http://www.google.com/reader/view/user%2F00902023859321251790%2Fstate%2Fcom.google%2Fbroadcast"/>
+        <outline title="próbaidős" text="próbaidős">
+            <outline text="annakarenina" title="annakarenina" type="rss"
+                xmlUrl="http://annakarenina.freeblog.hu/feed/" htmlUrl="http://annakarenina.freeblog.hu/"/>
+            <outline text="Futóblog" title="Futóblog" type="rss"
+                xmlUrl="http://futo.blog.hu/rss2" htmlUrl="http://futo.blog.hu"/>
+            <outline text="Komédiás" title="Komédiás" type="rss"
+                xmlUrl="http://comedie84.freeblog.hu/feed/" htmlUrl="http://comedie84.freeblog.hu/"/>
+            <outline text="Vacskamati blog" title="Vacskamati blog"
+                type="rss" xmlUrl="http://vacskamati.blog.hu/rss2" htmlUrl="http://vacskamati.blog.hu"/>
+            <outline text="ühümja" title="ühümja" type="rss"
+                xmlUrl="http://friedhof.freeblog.hu/feed/" htmlUrl="http://friedhof.freeblog.hu/"/>
+        </outline>
+        <outline title="podcast" text="podcast">
+            <outline text="Dancing Tutu" title="Dancing Tutu" type="rss"
+                xmlUrl="http://feeds.feedburner.com/DancingTutu" htmlUrl="http://tutuka.podOmatic.com"/>
+        </outline>
+        <outline title="blogroll" text="blogroll">
+            <outline text="&quot;42 will do&quot;"
+                title="&quot;42 will do&quot;" type="rss"
+                xmlUrl="http://feeds.feedburner.com/42WillDo" htmlUrl="http://ahippi.blogspot.com/"/>
+            <outline text=".:the.one.and.only.miss.boni:."
+                title=".:the.one.and.only.miss.boni:." type="rss"
+                xmlUrl="http://theoneandonly.freeblog.hu/feed/" htmlUrl="http://theoneandonly.freeblog.hu/"/>
+            <outline text="645" title="645" type="rss"
+                xmlUrl="http://645.blog.hu/rss2" htmlUrl="http://645.blog.hu"/>
+            <outline text=": ) wonderful world ( :"
+                title=": ) wonderful world ( :" type="rss"
+                xmlUrl="http://grault.wordpress.com/feed/" htmlUrl="http://grault.wordpress.com"/>
+            <outline text="Adrián blogja" title="Adrián blogja"
+                type="rss"
+                xmlUrl="http://feeds.feedburner.com/adriankoooo" htmlUrl="http://blog.mihalko.eu"/>
+            <outline text="Amélie Csodálatos Élete"
+                title="Amélie Csodálatos Élete" type="rss"
+                xmlUrl="http://got417.freeblog.hu/feed/" htmlUrl="http://GOT417.freeblog.hu/"/>
+            <outline text="blog.nezz.be" title="blog.nezz.be" type="rss"
+                xmlUrl="http://blog.nezz.be/rss" htmlUrl="http://blog.nezz.be"/>
+            <outline text="catastrophe" title="catastrophe" type="rss"
+                xmlUrl="http://catastrophe.freeblog.hu/feed/" htmlUrl="http://catastrophe.freeblog.hu/"/>
+            <outline text="Cloneshit v8.9" title="Cloneshit v8.9"
+                type="rss" xmlUrl="http://www.cloneshit.hu/feed/atom" htmlUrl="http://www.cloneshit.hu/"/>
+            <outline text="csillagharcos" title="csillagharcos"
+                type="rss"
+                xmlUrl="http://csillagharcos.buzievagy.hu/feed/atom/" htmlUrl="http://csillagharcos.buzievagy.hu/"/>
+            <outline text="DA MAESTRO" title="DA MAESTRO" type="rss"
+                xmlUrl="http://damaestro.blogspot.com/atom.xml" htmlUrl="http://damaestro.blogspot.com/"/>
+            <outline text="darge naplója" title="darge naplója"
+                type="rss"
+                xmlUrl="http://darge.blogspot.com/feeds/posts/default" htmlUrl="http://darge.blogspot.com/"/>
+            <outline text="dtamas — Dohány Tamás"
+                title="dtamas — Dohány Tamás" type="rss"
+                xmlUrl="http://www.dtamas.dynamo.hu/feed/" htmlUrl="http://www.dtamas.dynamo.hu"/>
+            <outline text="eBgondolat" title="eBgondolat" type="rss"
+                xmlUrl="http://eblog.freeblog.hu/feed/" htmlUrl="http://eblog.freeblog.hu/"/>
+            <outline text="falling" title="falling" type="rss"
+                xmlUrl="http://sha.freeblog.hu/feed/" htmlUrl="http://sha.freeblog.hu/"/>
+            <outline text="fyoop" title="fyoop" type="rss"
+                xmlUrl="http://feeds.feedburner.com/Fyoop" htmlUrl="http://fyoop.hu/"/>
+            <outline text="Hernádi Zoltán" title="Hernádi Zoltán"
+                type="rss" xmlUrl="http://naplo.hernadizoltan.hu/feed/" htmlUrl="http://naplo.hernadizoltan.hu"/>
+            <outline text="I hate it here" title="I hate it here"
+                type="rss"
+                xmlUrl="http://ihateithere.trychydts.hu/index.php/feed" htmlUrl="http://ihateithere.trychydts.hu"/>
+            <outline text="kisdubos" title="kisdubos" type="rss"
+                xmlUrl="http://kisdubos.blogspot.com/feeds/posts/default" htmlUrl="http://kisdubos.blogspot.com/"/>
+            <outline text="Kispad" title="Kispad" type="rss"
+                xmlUrl="http://feeds.feedburner.com/kispad" htmlUrl="http://kispad.hu/"/>
+            <outline text="Korim" title="Korim" type="rss"
+                xmlUrl="http://korim.freeblog.hu/feed/" htmlUrl="http://korim.freeblog.hu/"/>
+            <outline text="late harvest" title="late harvest" type="rss"
+                xmlUrl="http://lateharvest.freeblog.hu/feed/" htmlUrl="http://lateharvest.freeblog.hu/"/>
+            <outline text="Le Fabuleux Destin d'Amélie Poulain"
+                title="Le Fabuleux Destin d'Amélie Poulain" type="rss"
+                xmlUrl="http://uk.blog.360.yahoo.com/rss-CoyZ6QszdKGczcbeLlfH" htmlUrl="http://uk.blog.360.yahoo.com/blog-CoyZ6QszdKGczcbeLlfH"/>
+            <outline text="mai pen rai" title="mai pen rai" type="rss"
+                xmlUrl="http://feeds.feedburner.com/MaiPenRai" htmlUrl="http://www.basilar.net/blog"/>
+            <outline text="marsbéli krónikák" title="marsbéli krónikák"
+                type="rss" xmlUrl="http://f451.freeblog.hu/feed/" htmlUrl="http://f451.freeblog.hu/"/>
+            <outline text="miles" title="miles" type="rss"
+                xmlUrl="http://miles.hu/atom.xml" htmlUrl="http://miles.hu/"/>
+            <outline text="Neszharisnya. Öltözz, fül!"
+                title="Neszharisnya. Öltözz, fül!" type="rss"
+                xmlUrl="http://combfiksz.freeblog.hu/feed/" htmlUrl="http://combfiksz.freeblog.hu/"/>
+            <outline text="passziv elme" title="passziv elme" type="rss"
+                xmlUrl="http://csiki.freeblog.hu/feed/" htmlUrl="http://csiki.freeblog.hu/"/>
+            <outline text="phanatic.hu" title="phanatic.hu" type="rss"
+                xmlUrl="http://phanatic.hu/feed/atom/" htmlUrl="http://phanatic.hu"/>
+            <outline text="pite" title="pite" type="rss"
+                xmlUrl="http://pite.freeblog.hu/feed/" htmlUrl="http://pite.freeblog.hu/"/>
+            <outline text="plastik media" title="plastik media"
+                type="rss"
+                xmlUrl="http://feeds.feedburner.com/PlastikMedia" htmlUrl="http://plastik.hu"/>
+            <outline text="rhapsodhy.hu" title="rhapsodhy.hu" type="rss"
+                xmlUrl="http://feeds.feedburner.com/rhapsodhy" htmlUrl="http://rhapsodhy.hu/"/>
+            <outline text="Shery és RePa" title="Shery és RePa"
+                type="rss" xmlUrl="http://blog.horak.hu/feed/" htmlUrl="http://blog.horak.hu"/>
+            <outline text="Spring, summer, fall, winter and spring"
+                title="Spring, summer, fall, winter and spring"
+                type="rss"
+                xmlUrl="http://tavasznyarosztelestavasz.blogspot.com/feeds/posts/default" htmlUrl="http://tavasznyarosztelestavasz.blogspot.com/"/>
+            <outline text="terra phixa idea" title="terra phixa idea"
+                type="rss" xmlUrl="http://phixaidea.freeblog.hu/feed/" htmlUrl="http://phixaidea.freeblog.hu/"/>
+            <outline text="Text" title="Text" type="rss"
+                xmlUrl="http://text.freeblog.hu/feed/" htmlUrl="http://text.freeblog.hu/"/>
+            <outline text="this is for another sleepless night"
+                title="this is for another sleepless night" type="rss"
+                xmlUrl="http://thisistheartofsleep.com/blog/feed/" htmlUrl="http://thisistheartofsleep.com/blog"/>
+            <outline text="(title unknown)" title="(title unknown)"
+                type="rss"
+                xmlUrl="http://lifeislikethis.freeblog.hu/feed/" htmlUrl="http://lifeislikethis.freeblog.hu/"/>
+            <outline text="Twitter / nyuhuhuu with friends"
+                title="Twitter / nyuhuhuu with friends" type="rss"
+                xmlUrl="http://twitter.com/statuses/friends_timeline/10028362.atom" htmlUrl="http://twitter.com/nyuhuhuu/with_friends"/>
+            <outline text="Vales Blogja" title="Vales Blogja" type="rss"
+                xmlUrl="http://valesblogja.wordpress.com/feed/" htmlUrl="http://valesblogja.wordpress.com"/>
+            <outline text="vaninna" title="vaninna" type="rss"
+                xmlUrl="http://vaninna.beats.hu/atom.xml" htmlUrl="http://vaninna.beats.hu/"/>
+        </outline>
+        <outline title="kite" text="kite">
+            <outline text="sala.pecsielet.hu" title="sala.pecsielet.hu"
+                type="rss" xmlUrl="http://sala.pecsielet.hu/?feed=atom" htmlUrl="http://sala.pecsielet.hu"/>
+        </outline>
+        <outline title="me" text="me">
+            <outline text="Comments on your photos and/or sets"
+                title="Comments on your photos and/or sets" type="rss"
+                xmlUrl="http://api.flickr.com/services/feeds/activity.gne?user_id=27851913@N00&amp;lang=en-us&amp;format=rss_200" htmlUrl="http://www.flickr.com/recent_activity.gne"/>
+            <outline text="Egy beteg srác naplója"
+                title="Egy beteg srác naplója" type="rss"
+                xmlUrl="http://20y.hu/feed/rss2" htmlUrl="http://20y.hu"/>
+            <outline text="Technorati Search for: 20y.hu"
+                title="Technorati Search for: 20y.hu" type="rss"
+                xmlUrl="http://feeds.technorati.com/search/20y.hu" htmlUrl="http://technorati.com/search/20y.hu"/>
+        </outline>
+        <outline title="fotó" text="fotó">
+            <outline text="3amagyar" title="3amagyar" type="rss"
+                xmlUrl="http://3amagyar.freeblog.hu/feed/" htmlUrl="http://3amagyar.freeblog.hu/"/>
+            <outline text="anderm" title="anderm" type="rss"
+                xmlUrl="http://mivanveled.freeblog.hu/feed/" htmlUrl="http://mivanveled.freeblog.hu/"/>
+            <outline text="BROKENDOLLZ" title="BROKENDOLLZ" type="rss"
+                xmlUrl="http://brokendollz.blogspot.com/feeds/posts/default" htmlUrl="http://brokendollz.blogspot.com/"/>
+            <outline text="BUDAPEST STYLE" title="BUDAPEST STYLE"
+                type="rss"
+                xmlUrl="http://bpstyle.blogspot.com/feeds/posts/default" htmlUrl="http://bpstyle.blogspot.com/"/>
+            <outline text="ex Ponto" title="ex Ponto" type="rss"
+                xmlUrl="http://exponto.spavia.com/feed/" htmlUrl="http://exponto.spavia.com"/>
+            <outline text="From nyuhuhuu's contacts"
+                title="From nyuhuhuu's contacts" type="rss"
+                xmlUrl="http://api.flickr.com/services/feeds/photos_friends.gne?user_id=27851913@N00&amp;friends=0&amp;display_all=1&amp;lang=en-us&amp;format=atom" htmlUrl="http://www.flickr.com/photos/nyuhuhuu/friends/"/>
+            <outline text="Gozner" title="Gozner" type="rss"
+                xmlUrl="http://gozner.egologo.transindex.ro/?feed=atom" htmlUrl="http://gozner.egologo.transindex.ro"/>
+        </outline>
+        <outline title="world" text="world">
+            <outline text="(title unknown)" title="(title unknown)"
+                type="rss"
+                xmlUrl="http://kerekparosklub.hu/og/feed/1747" htmlUrl="http://kerekparosklub.hu/teruleti-szervezetek/eszak-pest"/>
+            <outline text="A Bombagyár legújabb termékei"
+                title="A Bombagyár legújabb termékei" type="rss"
+                xmlUrl="http://bombagyar.hu/rss/rssfeed.xml" htmlUrl="http://www.bombagyar.hu"/>
+            <outline text="Bikemag" title="Bikemag" type="rss"
+                xmlUrl="http://feeds.feedburner.com/bikemag" htmlUrl="http://bikemag.hu"/>
+            <outline text="BMXmag.hu" title="BMXmag.hu" type="rss"
+                xmlUrl="http://bmxmag.hu/rss.php" htmlUrl="http://bmxmag.hu"/>
+            <outline text="Criticalmass.hu - Bringás felvonulás"
+                title="Criticalmass.hu - Bringás felvonulás" type="rss"
+                xmlUrl="http://criticalmass.hu/node/feed" htmlUrl="http://criticalmass.hu"/>
+            <outline text="Estonia News" title="Estonia News" type="rss"
+                xmlUrl="http://www.topix.com/rss/world/estonia" htmlUrl="http://www.topix.com/world/estonia"/>
+            <outline text="hardergeneration" title="hardergeneration"
+                type="rss" xmlUrl="http://hardergeneration.hu/feed/" htmlUrl="http://hardergeneration.hu"/>
+            <outline
+                text="Intergalaktikus Betyárok Csúcsmunkája - A CBI a squad!"
+                title="Intergalaktikus Betyárok Csúcsmunkája - A CBI a squad!"
+                type="rss" xmlUrl="http://alleycat.hu/rss.xml" htmlUrl="http://alleycat.hu"/>
+            <outline text="john and john" title="john and john"
+                type="rss" xmlUrl="http://johnandjohn.freeblog.hu/feed/" htmlUrl="http://johnandjohn.freeblog.hu/"/>
+            <outline text="Kitartas.hu" title="Kitartas.hu" type="rss"
+                xmlUrl="http://kitartas.mozgalom.org/rss.php?f=1" htmlUrl="http://kitartas.mozgalom.org/index.php"/>
+            <outline text="kultplay" title="kultplay" type="rss"
+                xmlUrl="http://kultplay.hu/rss2" htmlUrl="http://kultplay.hu"/>
+            <outline text="nordkapp trip" title="nordkapp trip"
+                type="rss"
+                xmlUrl="http://nordkapptrip.blogspot.com/feeds/posts/default" htmlUrl="http://nordkapptrip.blogspot.com/"/>
+            <outline text="Népszabadság Online: Szerda"
+                title="Népszabadság Online: Szerda" type="rss"
+                xmlUrl="http://nol.hu/rss/rss/szerda/" htmlUrl="http://www.nol.hu/szerda//"/>
+            <outline text="OG Company" title="OG Company" type="rss"
+                xmlUrl="http://www.original-gypsy.com/rss/hun" htmlUrl="http://www.original-gypsy.com/"/>
+            <outline text="PLANETDAMAGE" title="PLANETDAMAGE" type="rss"
+                xmlUrl="http://www.planetdamage.com/feed/atom/" htmlUrl="http://www.planetdamage.com/"/>
+            <outline text="www.hiphop.hu" title="www.hiphop.hu"
+                type="rss" xmlUrl="http://www.hiphop.hu/rss/news.xml" htmlUrl="http://www.hiphop.hu/"/>
+        </outline>
+    </body>
+</opml>
