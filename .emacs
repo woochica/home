@@ -4,7 +4,8 @@
 (let* ((my-home-dir "/home/gabor/")
        (my-emacs-modes (concat my-home-dir "emacsx/")))
   (add-to-list 'load-path my-emacs-modes)
-  (add-to-list 'load-path (concat my-emacs-modes "cc-mode/"))
+  (add-to-list 'load-path (concat my-emacs-modes "geben/"))
+  (add-to-list 'load-path (concat my-emacs-modes "geben/gud/"))
   (add-to-list 'load-path (concat my-emacs-modes "emacs-w3m/"))
   (add-to-list 'load-path (concat my-emacs-modes "color-theme-6.6.0/"))
   (add-to-list 'load-path (concat my-emacs-modes "weblogger/"))
@@ -247,9 +248,9 @@
 ;;;============================================================
 
 (require 'php-mode)
-;(require 'flymake-php)
 (add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))
-(add-hook 'php-mode-hook 'flymake-php-load)
+(load-file "~/emacsx/cedet-1.0pre4/common/cedet.el")
+(autoload 'geben "geben" "PHP Debugger on Emacs" t)
 
 ;;;============================================================
 ;;; Shell programming
