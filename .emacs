@@ -141,6 +141,7 @@
 ;;;============================================================
 
 (add-hook 'css-mode-hook (lambda ()
+                           (local-set-key (kbd "<backtab>") 'dabbrev-expand)
                            (webma-css-mode t)))
 
 ;;;============================================================
@@ -251,6 +252,11 @@
 (add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))
 (load-file "~/emacsx/cedet-1.0pre4/common/cedet.el")
 (autoload 'geben "geben" "PHP Debugger on Emacs" t)
+
+(add-hook 'php-mode-hook
+          (lambda ()
+            (local-set-key (kbd "<backtab>") 'dabbrev-expand)
+            (setq php-warned-bad-indent t)))
 
 ;;;============================================================
 ;;; Shell programming
