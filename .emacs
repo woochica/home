@@ -161,10 +161,9 @@
 ;;; VC, Git
 ;;;============================================================
 
-(require 'git)
-(require 'git-blame)
-(require 'vc-git)
-(add-to-list 'vc-handled-backends 'GIT)
+;(require 'git)
+;(require 'git-blame)
+(require 'vc-git "/home/gabor/src/emacs/lisp/vc-git.el")
 
 ;;;============================================================
 ;;; Spell checking
@@ -237,6 +236,8 @@
 (set-default 'tab-always-indent t)
 (if (featurep 'linum)
     (global-linum-mode t))
+
+(require 'yasnippet-bundle)
 
 ;;;============================================================
 ;;; Python
