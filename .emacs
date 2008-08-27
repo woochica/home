@@ -318,6 +318,14 @@
          (tool-bar-lines . 0))
        default-frame-alist))
 
+(require 'highlight-tail)
+(setq highlight-tail-colors '(("#c1e156" . 0)
+                              ("#b8ff07" . 25)
+                              ("#87cefa" . 100))
+      highlight-tail-steps 12
+      highlight-tail-timer 0.2)
+(highlight-tail-mode)
+
 (setq backup-directory-alist (list
                               (cons ".*" (expand-file-name "~/bkp/emacs/")))
       truncate-partial-width-windows nil ;; don't lose word wrapping if split
