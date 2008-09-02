@@ -1,6 +1,3 @@
-(defmacro != (&rest body)
-  (list 'not (cons '= body)))
-
 (defun slink-uniq-lines (beg end)
   "Unique lines in region.
 Called from a program, there are two arguments: BEG and END (region to sort)."
