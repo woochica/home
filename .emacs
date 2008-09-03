@@ -1,17 +1,23 @@
 (require 'cl)
 (defalias 'docstyle 'checkdoc)
 
-(let* ((my-home-dir "/home/gabor/")
-       (my-emacs-modes (concat my-home-dir "emacsx/")))
-  (add-to-list 'load-path my-emacs-modes)
-  (add-to-list 'load-path (concat my-emacs-modes "geben/"))
-  (add-to-list 'load-path (concat my-emacs-modes "geben/gud/"))
-  (add-to-list 'load-path (concat my-emacs-modes "emacs-w3m/"))
-  (add-to-list 'load-path (concat my-emacs-modes "color-theme-6.6.0/"))
-  (add-to-list 'load-path (concat my-emacs-modes "weblogger/"))
-  (add-to-list 'load-path (concat my-home-dir "dev/webma/elisp/"))
-  (add-to-list 'load-path (concat my-home-dir "dev/slime/"))
-  (add-to-list 'load-path "/usr/share/emacs/site-lisp/"))
+(defvar emacs-root "/home/gabor/")
+(defvar emacs-mode-directory (concat emacs-root "emacsx/"))
+
+(add-to-list 'load-path emacs-mode-directory)
+
+(labels ((add-path (p)
+                   (add-to-list 'load-path
+                                (concat emacs-mode-directory p))))
+;  (add-path "geben/")
+  (add-path "geben/gud/")
+  (add-path "emacs-w3m/")
+  (add-path "color-theme-6.6.0/")
+  (add-path "weblogger/"))
+
+(add-to-list 'load-path (concat emacs-root "dev/webma/elisp/"))
+(add-to-list 'load-path (concat emacs-root "dev/slime/"))
+(add-to-list 'load-path "/usr/share/emacs/site-lisp/")
 
 ;;;============================================================
 ;;; W3M
@@ -110,6 +116,7 @@
 
 (add-hook 'emacs-lisp-mode-hook
           (lambda ()
+            (eldoc-mode t)
             (local-set-key (kbd "<backtab>") 'lisp-complete-symbol)))
 
 ;;;============================================================
@@ -251,8 +258,8 @@
 
 (require 'php-mode)
 (add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))
-(load-file "~/emacsx/cedet-1.0pre4/common/cedet.el")
-(autoload 'geben "geben" "PHP Debugger on Emacs" t)
+;(load-file "~/emacsx/cedet-1.0pre4/common/cedet.el")
+;(autoload 'geben "geben" "PHP Debugger on Emacs" t)
 
 (add-hook 'php-mode-hook
           (lambda ()
@@ -292,6 +299,7 @@
 (require 'webma-html)
 (require 'webma-css)
 (require 'webma-js)
+(require 'webma-image)
 (require 'webma-instance)
 
 (global-set-key (kbd "C-c w s") 'webma-instance-session-start)
