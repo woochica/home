@@ -117,6 +117,7 @@
 (add-hook 'emacs-lisp-mode-hook
           (lambda ()
             (eldoc-mode t)
+            (global-linum-mode t)
             (local-set-key (kbd "<backtab>") 'lisp-complete-symbol)))
 
 ;;;============================================================
@@ -240,7 +241,6 @@
 (set-default 'c-hanging-comment-ender-p nil)
 (set-default 'indent-tabs-mode nil)
 (set-default 'tab-always-indent t)
-(global-linum-mode t)
 
 (require 'yasnippet-bundle)
 
@@ -262,6 +262,7 @@
 (add-hook 'php-mode-hook
           (lambda ()
             (local-set-key (kbd "<backtab>") 'dabbrev-expand)
+            (global-linum-mode t)
             (setq php-warned-bad-indent t)))
 
 ;;;============================================================
@@ -281,6 +282,7 @@
 (add-hook 'js2-mode-hook (lambda ()
                            (webma-js-mode t)
                            (local-set-key (kbd "<backtab>") 'hippie-expand)
+                           (global-linum-mode t)
                            (setq js2-basic-offset 4)))
 
 ;;;============================================================
