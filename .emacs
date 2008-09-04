@@ -315,7 +315,8 @@
 (require 'color-theme)
 (color-theme-initialize)
 ;(color-theme-arjen)
-(color-theme-bharadwaj)
+;(color-theme-bharadwaj)
+(color-theme-gnome2)
 
 (setq default-frame-alist
       (append
