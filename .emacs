@@ -148,7 +148,6 @@
 ;;;============================================================
 
 (add-hook 'css-mode-hook (lambda ()
-                           (local-set-key (kbd "<backtab>") 'dabbrev-expand)
                            (webma-css-mode t)))
 
 ;;;============================================================
@@ -241,8 +240,7 @@
 (set-default 'c-hanging-comment-ender-p nil)
 (set-default 'indent-tabs-mode nil)
 (set-default 'tab-always-indent t)
-(if (featurep 'linum)
-    (global-linum-mode t))
+(global-linum-mode t)
 
 (require 'yasnippet-bundle)
 
