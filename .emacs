@@ -13,6 +13,7 @@
   (add-path "geben/gud/")
   (add-path "emacs-w3m/")
   (add-path "color-theme-6.6.0/")
+  (add-path "emms-mwolson/")
   (add-path "weblogger/"))
 
 (add-to-list 'load-path (concat emacs-root "dev/webma/elisp/"))
@@ -50,11 +51,10 @@
 ;;; EMMS
 ;;;============================================================
 
-;; (add-to-list 'load-path (concat my-emacs-modes "emms-3.0/"))
-;; (require 'emms)
+(require 'emms)
 ;; (require 'emms-browser)
 ;; (require 'emms-cache)
-;; (require 'emms-info)
+(require 'emms-info)
 ;; (require 'emms-lastfm)
 ;; (require 'emms-player-mpd)
 ;; (require 'emms-playing-time)
@@ -62,22 +62,26 @@
 ;; (require 'emms-streams)
 ;; (require 'emms-tag-editor)
 ;; (require 'emms-volume)
-;; (require 'emms-setup)
-;; (require 'emms-info-libtag)
-;; (require 'emms-info-mp3info)
+(require 'emms-setup)
+(require 'emms-info-libtag)
+(require 'emms-info-mp3info)
 ;; (require 'emms-player-mpg321-remote)
 
 ;; (emms-devel)
-;; (emms-default-players)
+(emms-standard)
+(emms-default-players)
 
-;; (add-to-list 'emms-info-functions 'emms-info-mp3info)
-;; (add-to-list 'emms-info-functions 'emms-info-libtag)
+(add-to-list 'emms-info-functions 'emms-info-libtag)
+(add-to-list 'emms-info-functions 'emms-info-mp3info)
+(setq emms-info-mp3info-program-name "~/bin/mp3info")
 
 ;; ;; Last FM
 ;; (setq emms-lastfm-username "nyuhuhuu"
 ;;       emms-lastfm-password nil)
 
-;; (add-hook 'emms-player-started-hook 'emms-show)
+(add-hook 'emms-player-started-hook 'emms-show)
+
+(setq emms-player-mpg321-parameters '("-o" "alsa"))
 ;; (setq emms-player-mpg321-parameters '("-o" "alsa")
 ;;       emms-source-file-default-directory (concat my-home-dir "Desktop/MusicLibrary/")
 ;;       emms-info-asynchronously t
@@ -92,14 +96,14 @@
 ;;       'emms-browser-get-track-field-use-directory-name)
 
 ;; (global-set-key (kbd "<f1>") 'emms-lastfm-np)
-;; (global-set-key (kbd "<XF86AudioPrev>") 'emms-previous)
-;; (global-set-key (kbd "<XF86AudioNext>") 'emms-next)
-;; (global-set-key (kbd "<XF86AudioPlay>") (lambda ()
-;; 					   (interactive)
-;; 					   (if emms-player-playing-p
-;; 					       (emms-pause)
-;; 					     (emms-start))
-;; 					   (emms-show)))
+(global-set-key (kbd "<XF86AudioPrev>") 'emms-previous)
+(global-set-key (kbd "<XF86AudioNext>") 'emms-next)
+(global-set-key (kbd "<XF86AudioPlay>") (lambda ()
+					   (interactive)
+					   (if emms-player-playing-p
+					       (emms-pause)
+					     (emms-start))
+                                           (emms-show)))
 
 ;; (setq emms-browser-covers '("Folder.jpg" "front.jpg" "cover.jpg" "folder.jpg" "Front.jpg"))
 
@@ -256,6 +260,7 @@
 
 (require 'php-mode)
 (add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))
+(add-to-list 'auto-mode-alist '("\\.module\\'" . php-mode))
 ;(load-file "~/emacsx/cedet-1.0pre4/common/cedet.el")
 ;(autoload 'geben "geben" "PHP Debugger on Emacs" t)
 
