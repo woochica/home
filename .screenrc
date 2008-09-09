@@ -1,7 +1,7 @@
 hardstatus on
 hardstatus alwayslastline
 hardstatus string '%{= kG}[%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m %{W}%c %{g}]'
-activity "Activity on window #%."
+activity "Activity in %t."
 autodetach on
 defscrollback 30000
 escape "^Xx"
