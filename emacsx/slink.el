@@ -9,6 +9,16 @@
 
 (ad-activate 'w3m-url-transfer-encode-string)
 
+(defadvice gomoku (around disable-linum-mode (&optional n m))
+  (let ((linum-mode-p linum-mode))
+    (if linum-mode-p
+        (linum-mode nil))
+    ad-do-it
+    (if linum-mode-p
+        (linum-mode t))))
+
+(ad-activate 'gomoku)
+
 (defun slink-uniq-lines (beg end)
   "Unique lines in region.
 Called from a program, there are two arguments: BEG and END (region to sort)."
