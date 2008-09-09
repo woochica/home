@@ -1,3 +1,14 @@
+(defadvice w3m-url-transfer-encode-string (around encode-idna (url &optional coding))
+  (let* ((chunks (w3m-parse-http-url (w3m-canonicalize-url url)))
+         (url (format "%s://%s:%d%s" (if (w3m-http-url-secure chunks)
+                                         "https" "http")
+                      (idna-to-ascii (w3m-http-url-host chunks))
+                      (w3m-http-url-port chunks)
+                      (w3m-http-url-path chunks))))
+    ad-do-it))
+
+(ad-activate 'w3m-url-transfer-encode-string)
+
 (defun slink-uniq-lines (beg end)
   "Unique lines in region.
 Called from a program, there are two arguments: BEG and END (region to sort)."
@@ -19,7 +30,7 @@ Called from a program, there are two arguments: BEG and END (region to sort)."
 (defun html-strip-tags ()
   (interactive)
   (goto-char (point-min))
-  (while (re-search-forward "<[^>]+>" nil t)
+  (while (re-search-forward "<[^><a href="">]+>" nil</a> t)
     (replace-match "")))
 
 (defun html-sort-lines ()
