@@ -37,18 +37,6 @@ Called from a program, there are two arguments: BEG and END (region to sort)."
             (replace-match "" nil nil))
           (goto-char next-line))))))
 
-(defun html-strip-tags ()
-  (interactive)
-  (goto-char (point-min))
-  (while (re-search-forward "<[^><a href="">]+>" nil</a> t)
-    (replace-match "")))
-
-(defun html-sort-lines ()
-  (interactive)
-  (goto-char (point-min))
-  (sort-subr nil 'forward-line 'end-of-line nil nil (lambda (a b)
-                                                      (string< (car a) (car b)))))
-
 (defun slink-w3m-push-button (label)
   (save-excursion
     (goto-char (point-min))
