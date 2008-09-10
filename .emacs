@@ -259,8 +259,8 @@
 ;;;============================================================
 
 (require 'php-mode)
-(add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))
-(add-to-list 'auto-mode-alist '("\\.module\\'" . php-mode))
+(add-to-list 'auto-mode-alist
+             '("\\.\\(module\\|install\\|engine\\|theme\\)\\'" . php-mode))
 ;(load-file "~/emacsx/cedet-1.0pre4/common/cedet.el")
 ;(autoload 'geben "geben" "PHP Debugger on Emacs" t)
 
