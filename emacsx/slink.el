@@ -1,10 +1,9 @@
+(require 'w3m-cookie)
+
 (defadvice w3m-url-transfer-encode-string (around encode-idna (url &optional coding))
-  (let* ((chunks (w3m-parse-http-url (w3m-canonicalize-url url)))
-         (url (format "%s://%s:%d%s" (if (w3m-http-url-secure chunks)
-                                         "https" "http")
-                      (idna-to-ascii (w3m-http-url-host chunks))
-                      (w3m-http-url-port chunks)
-                      (w3m-http-url-path chunks))))
+  (let* ((host (w3m-http-url-host
+                (w3m-parse-http-url (w3m-canonicalize-url url))))
+         (url (replace-regexp-in-string host (idna-to-ascii host) url)))
     ad-do-it))
 
 (ad-activate 'w3m-url-transfer-encode-string)
