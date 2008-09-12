@@ -130,6 +130,11 @@
             (linum-mode t)
             (local-set-key (kbd "<backtab>") 'lisp-complete-symbol)))
 
+(add-hook 'lisp-mode-hook
+          (lambda ()
+            (linum-mode t)
+            (local-set-key (kbd "<backtab>") 'dabbrev-expand)))
+
 ;;;============================================================
 ;;; Twitter
 ;;;============================================================
