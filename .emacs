@@ -251,6 +251,7 @@
 (set-default 'c-hanging-comment-ender-p nil)
 (set-default 'indent-tabs-mode nil)
 (set-default 'tab-always-indent t)
+(global-set-key [s-tab] 'indent-region)
 
 (require 'yasnippet-bundle)
 
