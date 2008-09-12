@@ -45,6 +45,12 @@
                                (interactive)
                                (switch-to-buffer "*w3m*<3>")))))
 
+(add-hook 'w3m-display-hook
+          (lambda (url)
+            (rename-buffer
+             (format "*w3m: %s*" (or w3m-current-title
+                                     w3m-current-url)) t)))
+
 (global-set-key (kbd "<f5>") 'w3m-session-select)
 
 ;;;============================================================
