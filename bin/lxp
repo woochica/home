@@ -1,0 +1,17 @@
+#!/bin/bash
+
+stream=mms://www.fixtv.hu/fixdsl
+tmp=/tmp/lxp.avi
+video=/home/gabor/Videók/lxp/linuxportal_$TDAY.avi
+
+capture_stream()
+{
+    /usr/bin/mplayer -cache 5000 -dumpfile $tmp -dumpstream $stream
+}
+
+convert_stream()
+{
+    # Option -ofps needed to can be run by xine
+    /usr/bin/mencoder $tmp -ofps 23.976 -oac mp3lame -ovc copy -o $video
+}
+
