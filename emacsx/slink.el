@@ -7,6 +7,7 @@
     ad-do-it))
 
 (ad-activate 'w3m-url-transfer-encode-string)
+(ad-deactivate 'w3m-url-transfer-encode-string)
 
 (defadvice gomoku (around disable-linum-mode (&optional n m))
   (let ((linum-mode-p linum-mode))
