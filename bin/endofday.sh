@@ -3,7 +3,9 @@
 GIT_REPOS=("/home/gabor/dev/webma/" "/home/gabor/")
 
 # GNOME keyring daemon doesn't read SSH config for the proper key path
-killall gnome-keyring-daemon 
+if [ `/sbin/pidof gnome-keyring-daemon | wc -c` -gt 1 ] ; then
+    killall gnome-keyring-daemon
+fi
 
 for ((i = 1; i <= $#GIT_REPOS; i++ )) {
     cd $GIT_REPOS[$i]
