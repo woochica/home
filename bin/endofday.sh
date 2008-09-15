@@ -2,6 +2,9 @@
 
 GIT_REPOS=("/home/gabor/dev/webma/" "/home/gabor/")
 
+# GNOME keyring daemon doesn't read SSH config for the proper key path
+killall gnome-keyring-daemon 
+
 for ((i = 1; i <= $#GIT_REPOS; i++ )) {
     cd $GIT_REPOS[$i]
     nr=`git diff --raw | wc -l`
