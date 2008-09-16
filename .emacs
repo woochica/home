@@ -381,7 +381,7 @@
 (global-set-key (kbd "<C-left>") 'backward-sexp)
 (global-set-key [f1] (lambda ()
                        (interactive)
-                       (find-file "~/slink/slink.gpg")))
+                       (find-file "~/slink/slink.org")))
 (global-set-key [f2] (lambda ()
                        (interactive)
                        (twit-follow-recent-tweets)))
