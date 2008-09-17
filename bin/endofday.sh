@@ -15,6 +15,11 @@ for ((i = 1; i <= $#GIT_REPOS; i++ )) {
         git push
     else
         echo $nr uncommited changes in $GIT_REPOS[$i].
+        echo "Commit first? (y/n) "
+        read yes_or_no
+        if [ "${yes_or_no}" = "n" ] ; then
+            git push
+        fi
     fi
     cd -
 }
