@@ -2,7 +2,7 @@
 
 usage()
 {
-    echo "Usage: $0 -w width | -h height [-s suffix] [-e extension] file"
+    echo "Usage: $0 [-w width | -h height] [-s suffix] [-e extension] file"
     exit 1
 }
 
@@ -40,5 +40,9 @@ if [ -z "$extension" ] ; then
     extension=$ext
 fi
 output=$base$suffix.$extension
+options=""
+if [ ! -z "$dim" ]; then
+    options="-resize $dim"
+fi
 
-$convert -resize $dim $input $output
+$convert $options $dim $input $output
