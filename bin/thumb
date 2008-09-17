@@ -45,4 +45,4 @@ if [ ! -z "$dim" ]; then
     options="-resize $dim"
 fi
 
-$convert $options $dim $input $output
+$convert $options $input $output
