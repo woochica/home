@@ -2,7 +2,7 @@
 
 usage()
 {
-    echo "Usage: $0 -w width | -h height [-s suffix] file"
+    echo "Usage: $0 -w width | -h height [-s suffix] [-e extension] file"
     exit 1
 }
 
@@ -14,13 +14,15 @@ convert=/usr/bin/convert
 basename=/bin/basename
 dim=""
 suffix=""
+extension=""
 
-while getopts  "w:h:s:" opt
+while getopts "w:h:s:e:" opt
 do
     case $opt in
         w) dim=$OPTARG;;
         h) dim=x$OPTARG;;
         s) suffix=$OPTARG;;
+        e) extension=$OPTARG;;
         \?) usage;;
     esac
 done
@@ -32,7 +34,11 @@ if [ -z $1 ]; then
 fi
 
 input=$1
-base=`$basename $input .jpg` # hand-coded extension
-output=$base$suffix.jpg
+base=${input%.*}
+ext=${input##*.}
+if [ -z "$extension" ] ; then
+    extension=$ext
+fi
+output=$base$suffix.$extension
 
 $convert -resize $dim $input $output
