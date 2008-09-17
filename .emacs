@@ -209,6 +209,9 @@
 (add-to-list 'ido-ignore-buffers "*Customiz")
 (add-to-list 'ido-ignore-buffers "*Help")
 (add-to-list 'ido-ignore-buffers "*vc")
+(add-to-list 'ido-ignore-buffers "*git")
+(add-to-list 'ido-ignore-buffers "*tramp")
+(add-to-list 'ido-ignore-buffers "*Twit")
 
 ;;;============================================================
 ;;; Server
