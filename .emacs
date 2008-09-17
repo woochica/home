@@ -387,7 +387,9 @@
                        (find-file "~/slink/slink.org")))
 (global-set-key [f2] (lambda ()
                        (interactive)
-                       (twit-follow-recent-tweets)))
+                       (if (bufferp (get-buffer "*Twit-recent*"))
+                           (pop-to-buffer "*Twit-recent*")
+                         (twit-follow-recent-tweets))))
 
 (provide '.emacs)
 
