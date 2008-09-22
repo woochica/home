@@ -11,6 +11,7 @@
                                 (concat emacs-mode-directory p))))
 ;  (add-path "geben/")
   (add-path "geben/gud/")
+  (add-path "anything-config/")
   (add-path "emacs-w3m/")
   (add-path "color-theme-6.6.0/")
   (add-path "emms-mwolson/")
@@ -212,6 +213,9 @@
 (add-to-list 'ido-ignore-buffers "*git")
 (add-to-list 'ido-ignore-buffers "*tramp")
 (add-to-list 'ido-ignore-buffers "*Twit")
+(add-to-list 'ido-ignore-buffers "*mail")
+(add-to-list 'ido-ignore-buffers "*WoMan")
+(add-to-list 'ido-ignore-buffers "*anything")
 
 ;;;============================================================
 ;;; Server
@@ -304,6 +308,14 @@
                            (local-set-key (kbd "<backtab>") 'hippie-expand)
                            (linum-mode t)
                            (setq js2-basic-offset 4)))
+
+;;;============================================================
+;;; anything
+;;;============================================================
+
+(require 'anything)
+(require 'anything-config)
+(global-set-key (kbd "C-x C-a") 'anything)
 
 ;;;============================================================
 ;;; slink
