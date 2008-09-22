@@ -16,6 +16,7 @@
  '(display-time-format "%y.%m.%d. %H.%M")
  '(display-time-mode t)
  '(ecb-options-version "2.32")
+ '(echo-keystrokes 0.2)
  '(fill-column 79)
  '(global-font-lock-mode t nil (font-lock))
  '(global-hl-line-mode t)
