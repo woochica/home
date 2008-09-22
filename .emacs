@@ -390,6 +390,9 @@
                        (if (bufferp (get-buffer "*Twit-recent*"))
                            (pop-to-buffer "*Twit-recent*")
                          (twit-follow-recent-tweets))))
+(global-set-key [f5] (lambda ()
+                       (interactive)
+                       (eshell)))
 
 (provide '.emacs)
 
