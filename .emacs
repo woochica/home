@@ -10,7 +10,7 @@
                    (add-to-list 'load-path
                                 (concat emacs-mode-directory p))))
 ;  (add-path "geben/")
-  (add-path "geben/gud/")
+;  (add-path "geben/gud/")
   (add-path "anything-config/")
   (add-path "emacs-w3m/")
   (add-path "color-theme-6.6.0/")
