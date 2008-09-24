@@ -12,6 +12,12 @@
 ;; (ad-activate 'w3m-url-transfer-encode-string)
 ;; (ad-deactivate 'w3m-url-transfer-encode-string)
 
+;;@override
+(defun php-search-documentation ()
+  "Search PHP documentation for the word at the point."
+  (interactive)
+  (browse-url (concat php-search-url (current-word t) "#function." (current-word t))))
+
 (defadvice gomoku (around disable-linum-mode (&optional n m))
   (let ((linum-mode-p linum-mode))
     (if linum-mode-p
