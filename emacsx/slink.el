@@ -1,13 +1,16 @@
 (require 'w3m-cookie)
 
-(defadvice w3m-url-transfer-encode-string (around encode-idna (url &optional coding))
-  (let* ((host (w3m-http-url-host
-                (w3m-parse-http-url (w3m-canonicalize-url url))))
-         (url (replace-regexp-in-string host (idna-to-ascii host) url)))
-    ad-do-it))
+;; (defadvice w3m-url-transfer-encode-string (around encode-idna (url &optional coding))
+;;   (let* ((idna-to-ascii-parameters '("--quiet"
+;;                                      "--idna-to-ascii"))
+;;                                         ; Disable UseSTD3ASCIIRules flag
+;;          (host (w3m-get-server-hostname
+;;                 (replace-regexp-in-string "mailto:" "mailto://" url)))
+;;          (url (replace-regexp-in-string host (idna-to-ascii host) url)))
+;;     ad-do-it))
 
-(ad-activate 'w3m-url-transfer-encode-string)
-(ad-deactivate 'w3m-url-transfer-encode-string)
+;; (ad-activate 'w3m-url-transfer-encode-string)
+;; (ad-deactivate 'w3m-url-transfer-encode-string)
 
 (defadvice gomoku (around disable-linum-mode (&optional n m))
   (let ((linum-mode-p linum-mode))
