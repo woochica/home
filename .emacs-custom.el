@@ -5,7 +5,6 @@
   ;; If there is more than one, they won't work right.
  '(auto-compression-mode t nil (jka-compr))
  '(auto-fill-mode t)
- '(blink-cursor-mode nil)
  '(browse-url-browser-function (quote w3m-browse-url))
  '(calendar-week-start-day 1)
  '(case-fold-search t)
@@ -28,7 +27,6 @@
  '(show-paren-style (quote mixed))
  '(tool-bar-mode nil)
  '(tooltip-mode nil)
- '(transient-mark-mode t)
  '(twit-user "nyuhuhuu")
  '(weblogger-config-alist (quote (("20y" ("user" . "admin") ("server-url" . "http://20y.hu/xmlrpc.php") ("weblog" . "1")))))
  '(webma-css-rhino-path "/home/gabor/dev/yuicompressor-2.2.5/build/yuicompressor-2.2.5.jar")
