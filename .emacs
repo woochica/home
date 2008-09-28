@@ -406,6 +406,15 @@
                        (interactive)
                        (eshell)))
 
+
+(global-set-key [f11] (lambda ()
+			(interactive)
+			(set-frame-parameter
+			 nil 'fullscreen
+			 (if (frame-parameter nil 'fullscreen)
+			     nil
+			   'fullboth))))
+
 (provide '.emacs)
 
 ;;; .emacs ends here
