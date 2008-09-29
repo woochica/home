@@ -14,7 +14,7 @@
  '(display-time-default-load-average nil)
  '(display-time-format "%y.%m.%d. %H.%M")
  '(display-time-mode t)
- '(ecb-options-version "2.32")
+ '(ecb-options-version "2.33beta2")
  '(echo-keystrokes 0.2)
  '(fill-column 79)
  '(global-font-lock-mode t nil (font-lock))

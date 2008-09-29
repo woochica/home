@@ -14,6 +14,7 @@
   (add-path "anything-config/")
   (add-path "emacs-w3m/")
   (add-path "vm/lisp/")
+  (add-path "ecb/")
   (add-path "color-theme-6.6.0/")
   (add-path "emms-mwolson/")
   (add-path "weblogger/"))
@@ -281,8 +282,9 @@
 (require 'php-mode)
 (add-to-list 'auto-mode-alist
              '("\\.\\(module\\|install\\|engine\\|theme\\)\\'" . php-mode))
-;(load-file "~/emacsx/cedet-1.0pre4/common/cedet.el")
-;(autoload 'geben "geben" "PHP Debugger on Emacs" t)
+(load-file "~/emacsx/cedet-1.0pre4/common/cedet.el")
+;;(autoload 'geben "geben" "PHP Debugger on Emacs" t)
+(require 'ecb-autoloads)
 
 (add-hook 'php-mode-hook
           (lambda ()
