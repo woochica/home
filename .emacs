@@ -52,7 +52,7 @@
              (format "*w3m: %s*" (or w3m-current-title
                                      w3m-current-url)) t)))
 
-(global-set-key (kbd "<f5>") 'w3m-session-select)
+(global-set-key [f5] 'w3m-session-select)
 
 ;;;============================================================
 ;;; EMMS
@@ -402,14 +402,15 @@
                        (if (bufferp (get-buffer "*Twit-recent*"))
                            (pop-to-buffer "*Twit-recent*")
                          (twit-follow-recent-tweets))))
-(global-set-key [f5] (lambda ()
+(global-set-key [f6] (lambda ()
                        (interactive)
                        (eshell)))
-
 (global-set-key [f11] (lambda ()
                         (interactive)
                         (set-frame-parameter nil 'fullscreen
-                                             (if (frame-parameter nil 'fullscreen) nil 'fullboth))))
+                                             (if (frame-parameter nil 'fullscreen)
+                                                 nil
+                                               'fullboth))))
 
 (provide '.emacs)
 
