@@ -335,10 +335,10 @@
 (setq vm-primary-inbox "~/mail/inbox.mbox")
 (setq vm-crash-box "~/mail/inbox.crash.mbox")
 (setq vm-spool-files `((,vm-primary-inbox
-;;                        "imap-ssl:imap.gmail.com:993:inbox:login:nyuhuhuu@gmail.com:*"
                         "imap-ssl:imap.gmail.com:993:inbox:login:gabor@20y.hu:*"
                         ,vm-crash-box)))
 (setq vm-imap-expunge-after-retrieving nil)
+(setq vm-auto-displayed-mime-content-types '("text" "multipart" "text/plain"))
 
 ;;;============================================================
 ;;; work
