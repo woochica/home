@@ -279,7 +279,7 @@
 
 (require 'yasnippet)
 (yas/initialize)
-(yas/load-directory (concat emacs-mode-directory "yasnippets/snippets/"))
+(yas/load-directory (concat emacs-mode-directory "yasnippet/snippets/"))
                                         ; factory defaults
 (yas/load-directory (concat emacs-mode-directory "snippets/"))
                                         ; custom templates
