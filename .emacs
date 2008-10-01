@@ -15,6 +15,7 @@
   (add-path "emacs-w3m/")
   (add-path "vm/lisp/")
   (add-path "ecb/")
+  (add-path "yasnippet/")
   (add-path "color-theme-6.6.0/")
   (add-path "emms-mwolson/")
   (add-path "weblogger/"))
@@ -159,6 +160,7 @@
 
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . nxml-mode))
 (add-hook 'nxml-mode-hook (lambda ()
+                            (local-set-key (kbd "<backtab>") 'dabbrev-expand)
                             (rng-validate-mode nil)
                             (webma-html-mode t)))
 
@@ -267,7 +269,20 @@
 (set-default 'tab-always-indent t)
 (global-set-key [s-tab] 'indent-region)
 
-(require 'yasnippet-bundle)
+;; Super-TAB    indentation
+;; TAB          yas/expand
+;; Shift-TAB    other completion method
+
+;;;============================================================
+;;; Snippets
+;;;============================================================
+
+(require 'yasnippet)
+(yas/initialize)
+(yas/load-directory (concat emacs-mode-directory "yasnippets/snippets/"))
+                                        ; factory defaults
+(yas/load-directory (concat emacs-mode-directory "snippets/"))
+                                        ; custom templates
 
 ;;;============================================================
 ;;; Python
