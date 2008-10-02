@@ -12,7 +12,7 @@ capture_stream()
 convert_stream()
 {
     # Option -ofps needed to can be run by xine
-    /usr/bin/mencoder $tmp -ofps 23.976 -oac mp3lame -ovc copy -o $video
+    /usr/bin/mencoder $tmp -ofps 30 -oac mp3lame -ovc copy -o $video
 }
 
 eval $1
