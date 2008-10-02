@@ -353,7 +353,7 @@
       mail-default-reply-to-user-mail-address)
 
 ;; Reading
-(setf vm-primary-inbox "~/mail/inbox.mbox"
+(setq vm-primary-inbox "~/mail/inbox.mbox"
       vm-crash-box "~/mail/inbox.crash.mbox"
       vm-spool-files `((,vm-primary-inbox
                         ,(concat
@@ -375,6 +375,20 @@
       smtpmail-smtp-service 587
       smtpmail-debug-info t
       smtpmail-auth-credentials '(("smtp.gmail.com" 587 "gabor@20y.hu" nil)))
+
+;; UTF-8
+;; http://archaeology.artefact.org.nz/archives/000179.html
+(setq vm-send-using-mime t
+      vm-mime-default-face-charsets t
+      vm-mime-8bit-composition-charset "utf-8"
+      vm-mime-8bit-text-transfer-encoding 'base64
+      vm-mime-mule-charset-to-charset-alist
+      (cons '(mule-unicode-0100-24ff "utf-8")
+            vm-mime-mule-charset-to-charset-alist)
+      vm-mime-mule-charset-to-charset-alist
+      (cons '(ipa "utf-8")
+            vm-mime-mule-charset-to-charset-alist))
+
 (require 'starttls) 
 (require 'smtpmail)
 
