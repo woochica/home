@@ -1,4 +1,4 @@
-(require 'cl)
+(eval-when-compile (require 'cl))
 (defalias 'docstyle 'checkdoc)
 
 (defvar emacs-root "/home/gabor/")
@@ -346,14 +346,37 @@
 ;;;============================================================
 
 (require 'vm-autoloads)
-(setq vm-init-file nil)
-(setq vm-primary-inbox "~/mail/inbox.mbox")
-(setq vm-crash-box "~/mail/inbox.crash.mbox")
-(setq vm-spool-files `((,vm-primary-inbox
-                        "imap-ssl:imap.gmail.com:993:inbox:login:gabor@20y.hu:*"
-                        ,vm-crash-box)))
-(setq vm-imap-expunge-after-retrieving nil)
-(setq vm-auto-displayed-mime-content-types '("text" "multipart" "text/plain"))
+(setf vm-init-file nil ; don't look for init file ~/.vm
+      user-full-name "Török Gábor"
+      mail-from-style 'angles
+      user-mail-address "gabor@20y.hu"
+      mail-default-reply-to-user-mail-address)
+
+;; Reading
+(setf vm-primary-inbox "~/mail/inbox.mbox"
+      vm-crash-box "~/mail/inbox.crash.mbox"
+      vm-spool-files `((,vm-primary-inbox
+                        ,(concat
+                          "imap-ssl:imap.gmail.com:993:inbox:login:"
+                          user-mail-address ":*")
+                        ,vm-crash-box))
+      vm-imap-expunge-after-retrieving nil
+      vm-auto-displayed-mime-content-types '("text" "multipart" "text/plain")
+      mail-user-agent 'vm-user-agent)
+(add-to-list 'auto-mode-alist '("\\.mbox$" . vm-mode))
+
+;; Sending
+(setq
+      smtpmail-starttls-credentials '(("smtp.gmail.com" 587 nil nil))
+      smtpmail-smtp-server "smtp.gmail.com"
+      smtpmail-default-smtp-server "smtp.gmail.com"
+      send-mail-function 'smtpmail-send-it
+      message-send-mail-function 'smtpmail-send-it
+      smtpmail-smtp-service 587
+      smtpmail-debug-info t
+      smtpmail-auth-credentials '(("smtp.gmail.com" 587 "gabor@20y.hu" nil)))
+(require 'starttls) 
+(require 'smtpmail)
 
 ;;;============================================================
 ;;; work
