@@ -3,16 +3,16 @@
 usage()
 {
     echo "Set solid background color for transparent image."
-    echo "Usage: `basename $0` -c #rgbhex file"
+    echo "Usage: `basename $0` -c rgbhex file"
 }
 
-if [ $# -lt 1 ] ; then
+if [ $# -lt 2 ] ; then
     usage
     exit 1
 fi
 
 color=""
-
+ 
 while getopts "c:" opt
 do
     case $opt in
@@ -20,16 +20,16 @@ do
         \?) usage;;
     esac
 done
-
 shift $(($OPTIND - 1))
 
 if [ -z $1 ]; then
     usage
+    exit 1
 fi
 
+input=$1
 extension="jpg"
 suffix="_n"
-input=$1
 output=${input%.*}$suffix.$extension
 
-convert $input -fill $color -matte -channel RGBA -opaque none $output
+convert $input -fill "#$color" -matte -channel RGBA -opaque none $output
