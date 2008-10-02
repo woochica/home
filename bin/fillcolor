@@ -32,4 +32,4 @@ extension="jpg"
 suffix="_n"
 output=${input%.*}$suffix.$extension
 
-convert $input -fill "#$color" -matte -channel RGBA -opaque none $output
+convert $input -background "#$color" -flatten $output
