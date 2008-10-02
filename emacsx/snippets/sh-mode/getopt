@@ -1,0 +1,16 @@
+#name : usage()
+# --
+
+while getopts "${1:options}" opt
+do
+    case \$opt in
+        ${2:optchar1}) ${3:optarg1}=$OPTARG;;
+        \?) usage;;
+    esac
+done
+
+shift \$((\$OPTIND - 1))
+
+if [ -z \$1 ]; then
+    usage
+fi
