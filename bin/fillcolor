@@ -29,7 +29,6 @@ fi
 
 input=$1
 extension="jpg"
-suffix="_n"
-output=${input%.*}$suffix.$extension
+output=${input%.*}.$extension
 
 convert $input -background "#$color" -flatten $output
