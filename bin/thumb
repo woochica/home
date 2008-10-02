@@ -2,12 +2,13 @@
 
 usage()
 {
-    echo "Usage: $0 [-w width | -h height] [-s suffix] [-e extension] file"
-    exit 1
+    echo "Generate thumbnail of image file."
+    echo "Usage: `basename $0` [-w width | -h height] [-s suffix] [-e extension] file"
 }
 
 if [ $# -lt 1 ] ; then
     usage
+    exit 1
 fi
 
 convert=/usr/bin/convert
