@@ -1,0 +1,37 @@
+(setf user-full-name "Török Gábor"
+      mail-from-style 'angles
+      user-mail-address "gabor@20y.hu")
+
+;; Reading
+(setf vm-primary-inbox "~/mail/inbox.mbox"
+      vm-crash-box "~/mail/inbox.crash.mbox"
+      vm-spool-files `((,vm-primary-inbox
+                        ,(concat
+                          "imap-ssl:imap.gmail.com:993:inbox:login:" user-mail-address ":*")
+                        ,vm-crash-box))
+      vm-imap-expunge-after-retrieving nil
+      vm-auto-displayed-mime-content-types '("text" "multipart" "text/plain"))
+
+;; Sending
+(setf smtpmail-starttls-credentials '(("smtp.gmail.com" 587 nil nil))
+      smtpmail-smtp-server "smtp.gmail.com"
+      smtpmail-default-smtp-server "smtp.gmail.com"
+      send-mail-function 'smtpmail-send-it
+      message-send-mail-function 'smtpmail-send-it
+      smtpmail-smtp-service 587
+      smtpmail-debug-info nil
+      smtpmail-auth-credentials `(("smtp.gmail.com" 587 ,user-mail-address nil)))
+
+
+;; UTF-8
+;; http://archaeology.artefact.org.nz/archives/000179.html
+(setq vm-send-using-mime t)
+(setq vm-mime-default-face-charsets t)
+(setq vm-mime-8bit-composition-charset "utf-8")
+(setq vm-mime-8bit-text-transfer-encoding 'base64)
+(setq vm-mime-mule-charset-to-charset-alist
+      (cons '(mule-unicode-0100-24ff "utf-8")
+            vm-mime-mule-charset-to-charset-alist))
+(setq vm-mime-mule-charset-to-charset-alist
+      (cons '(ipa "utf-8")
+            vm-mime-mule-charset-to-charset-alist))

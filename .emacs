@@ -342,55 +342,14 @@
 (require 'slink)
 
 ;;;============================================================
-;;; VM
+;;; VM - reading and composing mails
 ;;;============================================================
 
 (require 'vm-autoloads)
-(setf vm-init-file nil ; don't look for init file ~/.vm
-      user-full-name "Török Gábor"
-      mail-from-style 'angles
-      user-mail-address "gabor@20y.hu"
-      mail-default-reply-to-user-mail-address)
-
-;; Reading
-(setq vm-primary-inbox "~/mail/inbox.mbox"
-      vm-crash-box "~/mail/inbox.crash.mbox"
-      vm-spool-files `((,vm-primary-inbox
-                        ,(concat
-                          "imap-ssl:imap.gmail.com:993:inbox:login:"
-                          user-mail-address ":*")
-                        ,vm-crash-box))
-      vm-imap-expunge-after-retrieving nil
-      vm-auto-displayed-mime-content-types '("text" "multipart" "text/plain")
-      mail-user-agent 'vm-user-agent)
-(add-to-list 'auto-mode-alist '("\\.mbox$" . vm-mode))
-
-;; Sending
-(setq
-      smtpmail-starttls-credentials '(("smtp.gmail.com" 587 nil nil))
-      smtpmail-smtp-server "smtp.gmail.com"
-      smtpmail-default-smtp-server "smtp.gmail.com"
-      send-mail-function 'smtpmail-send-it
-      message-send-mail-function 'smtpmail-send-it
-      smtpmail-smtp-service 587
-      smtpmail-debug-info t
-      smtpmail-auth-credentials '(("smtp.gmail.com" 587 "gabor@20y.hu" nil)))
-
-;; UTF-8
-;; http://archaeology.artefact.org.nz/archives/000179.html
-(setq vm-send-using-mime t
-      vm-mime-default-face-charsets t
-      vm-mime-8bit-composition-charset "utf-8"
-      vm-mime-8bit-text-transfer-encoding 'base64
-      vm-mime-mule-charset-to-charset-alist
-      (cons '(mule-unicode-0100-24ff "utf-8")
-            vm-mime-mule-charset-to-charset-alist)
-      vm-mime-mule-charset-to-charset-alist
-      (cons '(ipa "utf-8")
-            vm-mime-mule-charset-to-charset-alist))
-
-(require 'starttls) 
 (require 'smtpmail)
+(setf vm-init-file (concat emacs-mode-directory ".vm"))
+(setf mail-user-agent 'vm-user-agent)
+(add-to-list 'auto-mode-alist '("\\.mbox$" . vm-mode))
 
 ;;;============================================================
 ;;; work
