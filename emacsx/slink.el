@@ -166,4 +166,11 @@ querying the user."
 
 (add-hook 'find-file-hook 'th-find-file-sudo-maybe)
 
+(defun slink-number-of-days ()
+  "Number of days since the secret day."
+  (interactive)
+  (let ((start-day (time-to-number-of-days (date-to-time "2008-08-25T00:00:00+0200")))
+        (today (time-to-number-of-days (current-time))))
+    (floor (- today (- start-day 1)))))
+
 (provide 'slink)

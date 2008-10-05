@@ -14,7 +14,7 @@
  '(display-time-default-load-average nil)
  '(display-time-format "%y.%m.%d. %H.%M")
  '(display-time-mode t)
- '(ecb-options-version "2.32")
+ '(ecb-options-version "2.33beta2")
  '(echo-keystrokes 0.2)
  '(fill-column 79)
  '(global-font-lock-mode t nil (font-lock))
@@ -32,7 +32,8 @@
  '(webma-css-rhino-path "/home/gabor/dev/yuicompressor-2.2.5/build/yuicompressor-2.2.5.jar")
  '(webma-instance-idb-tool "~/mnt/i2/tools/webma_search/tools/makeidb.sh")
  '(webma-instance-mount-base "~/mnt")
- '(webma-instance-server-ip "neotek.hu"))
+ '(webma-instance-server-ip "neotek.hu")
+ '(webma-siteanalyze-path "/home/gabor/dev/webma/webmastertools/siteanalyze.py"))
 
 (custom-set-faces
   ;; custom-set-faces was added by Custom.

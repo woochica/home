@@ -1,4 +1,4 @@
-(require 'cl)
+(eval-when-compile (require 'cl))
 (defalias 'docstyle 'checkdoc)
 
 (defvar emacs-root "/home/gabor/")
@@ -13,6 +13,9 @@
 ;  (add-path "geben/gud/")
   (add-path "anything-config/")
   (add-path "emacs-w3m/")
+  (add-path "vm/lisp/")
+  (add-path "ecb/")
+  (add-path "yasnippet/")
   (add-path "color-theme-6.6.0/")
   (add-path "emms-mwolson/")
   (add-path "weblogger/"))
@@ -52,7 +55,6 @@
              (format "*w3m: %s*" (or w3m-current-title
                                      w3m-current-url)) t)))
 
-(global-set-key (kbd "<f5>") 'w3m-session-select)
 
 ;;;============================================================
 ;;; EMMS
@@ -102,16 +104,6 @@
 ;; (setq emms-browser-get-track-field-function
 ;;       'emms-browser-get-track-field-use-directory-name)
 
-;; (global-set-key (kbd "<f1>") 'emms-lastfm-np)
-(global-set-key (kbd "<XF86AudioPrev>") 'emms-previous)
-(global-set-key (kbd "<XF86AudioNext>") 'emms-next)
-(global-set-key (kbd "<XF86AudioPlay>") (lambda ()
-					   (interactive)
-					   (if emms-player-playing-p
-					       (emms-pause)
-					     (emms-start))
-                                           (emms-show)))
-
 ;; (setq emms-browser-covers '("Folder.jpg" "front.jpg" "cover.jpg" "folder.jpg" "Front.jpg"))
 
 ;; (setq emms-browser-info-title-format "%i%cS%n")
@@ -134,7 +126,7 @@
 (add-hook 'lisp-mode-hook
           (lambda ()
             (linum-mode t)
-            (local-set-key (kbd "<backtab>") 'dabbrev-expand)))
+            (local-set-key (kbd "<backtab>") 'lisp-complete-symbol)))
 
 ;;;============================================================
 ;;; Twitter
@@ -263,9 +255,17 @@
 (set-default 'c-hanging-comment-ender-p nil)
 (set-default 'indent-tabs-mode nil)
 (set-default 'tab-always-indent t)
-(global-set-key [s-tab] 'indent-region)
 
-(require 'yasnippet-bundle)
+;;;============================================================
+;;; Snippets
+;;;============================================================
+
+(require 'yasnippet)
+(yas/initialize)
+(yas/load-directory (concat emacs-mode-directory "yasnippet/snippets/"))
+                                        ; factory defaults
+(yas/load-directory (concat emacs-mode-directory "snippets/"))
+                                        ; custom templates
 
 ;;;============================================================
 ;;; Python
@@ -280,12 +280,12 @@
 (require 'php-mode)
 (add-to-list 'auto-mode-alist
              '("\\.\\(module\\|install\\|engine\\|theme\\)\\'" . php-mode))
-;(load-file "~/emacsx/cedet-1.0pre4/common/cedet.el")
-;(autoload 'geben "geben" "PHP Debugger on Emacs" t)
+(load-file "~/emacsx/cedet-1.0pre4/common/cedet.el")
+;;(autoload 'geben "geben" "PHP Debugger on Emacs" t)
+(require 'ecb-autoloads)
 
 (add-hook 'php-mode-hook
           (lambda ()
-            (local-set-key (kbd "<backtab>") 'dabbrev-expand)
             (linum-mode t)
             (setq php-warned-bad-indent t)))
 
@@ -315,13 +315,22 @@
 
 (require 'anything)
 (require 'anything-config)
-(global-set-key (kbd "C-x C-a") 'anything)
 
 ;;;============================================================
 ;;; slink
 ;;;============================================================
 
 (require 'slink)
+
+;;;============================================================
+;;; VM - reading and composing mails
+;;;============================================================
+
+(require 'vm-autoloads)
+(require 'smtpmail)
+(setf vm-init-file (concat emacs-mode-directory ".vm"))
+(setf mail-user-agent 'vm-user-agent)
+(add-to-list 'auto-mode-alist '("\\.mbox$" . vm-mode))
 
 ;;;============================================================
 ;;; work
@@ -334,19 +343,13 @@
 (require 'webma-image)
 (require 'webma-instance)
 
-(global-set-key (kbd "C-c w s") 'webma-instance-session-start)
-(global-set-key (kbd "C-c w c") 'webma-instance-session-close)
-(global-set-key (kbd "C-c w r") 'webma-instance-session-render)
-(global-set-key (kbd "C-c w u") 'webma-instance-session-upload)
-(global-set-key (kbd "C-c w i") 'webma-instance-idb-update)
-
 ;;;============================================================
 ;;; Frames, colors, misc.
 ;;;============================================================
 
 (require 'color-theme)
 (color-theme-initialize)
-;(color-theme-arjen)
+                                        ;(color-theme-arjen)
 (color-theme-bharadwaj)
 
 (setq default-frame-alist
@@ -364,12 +367,12 @@
                               ("#87cefa" . 100))
       highlight-tail-steps 12
       highlight-tail-timer 0.2)
-;(highlight-tail-mode)
+                                        ;(highlight-tail-mode)
 
 (setq backup-directory-alist (list
                               (cons ".*" (expand-file-name "~/bkp/emacs/")))
       truncate-partial-width-windows nil ;; don't lose word wrapping if split
-                                         ;; windows
+      ;; windows
       frame-title-format "Emacs - %b %*"
       delete-auto-save-files t
       inhibit-splash-screen t
@@ -382,6 +385,59 @@
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
 
+;;;============================================================
+;;; Global key bindings
+;;;============================================================
+
+;; Open personal org-file
+(global-set-key [f1] (lambda ()
+                       (interactive)
+                       (find-file "~/slink/slink.org")))
+;; Follow recent tweets
+(global-set-key [f2] (lambda ()
+                       (interactive)
+                       (if (bufferp (get-buffer "*Twit-recent*"))
+                           (pop-to-buffer "*Twit-recent*")
+                         (twit-follow-recent-tweets))))
+;; Load W3M session selector
+(global-set-key [f5] 'w3m-session-select)
+;; Eshell
+(global-set-key [f6] (lambda ()
+                       (interactive)
+                       (eshell)))
+;; Toggle fullscreen mode
+(global-set-key [f11] (lambda ()
+                        (interactive)
+                        (set-frame-parameter nil 'fullscreen
+                                             (if (frame-parameter nil 'fullscreen)
+                                                 nil
+                                               'fullboth))))
+;; EMMS
+(global-set-key (kbd "<XF86AudioPrev>") 'emms-previous)
+(global-set-key (kbd "<XF86AudioNext>") 'emms-next)
+(global-set-key (kbd "<XF86AudioPlay>") (lambda ()
+                                          (interactive)
+                                          (if emms-player-playing-p
+                                              (emms-pause)
+                                            (emms-start))
+                                          (emms-show)))
+;; WebMa
+(global-set-key (kbd "C-c w s") 'webma-instance-session-start)
+(global-set-key (kbd "C-c w c") 'webma-instance-session-close)
+(global-set-key (kbd "C-c w r") 'webma-instance-session-render)
+(global-set-key (kbd "C-c w u") 'webma-instance-session-upload)
+(global-set-key (kbd "C-c w i") 'webma-instance-idb-update)
+
+;; Anything
+(global-set-key (kbd "C-x C-a") 'anything)
+
+;; TAB          yas/expand
+;; Shift-TAB    dynamic expandation
+;; Super-TAB    indentation
+(global-set-key [(super tab)] 'indent-region)
+(global-set-key [(shift tab)] 'dabbrev-expand)
+
+;; Mode-independent bindings
 (global-set-key [(shift next)] (lambda (n)
                                  (interactive "p")
                                  (scroll-up n)))
@@ -394,17 +450,6 @@
                               (insert "–")))
 (global-set-key (kbd "<C-right>") 'forward-sexp)
 (global-set-key (kbd "<C-left>") 'backward-sexp)
-(global-set-key [f1] (lambda ()
-                       (interactive)
-                       (find-file "~/slink/slink.org")))
-(global-set-key [f2] (lambda ()
-                       (interactive)
-                       (if (bufferp (get-buffer "*Twit-recent*"))
-                           (pop-to-buffer "*Twit-recent*")
-                         (twit-follow-recent-tweets))))
-(global-set-key [f5] (lambda ()
-                       (interactive)
-                       (eshell)))
 
 
 (global-set-key [f11] (lambda ()
