@@ -435,7 +435,7 @@
 ;; Shift-TAB    dynamic expandation
 ;; Super-TAB    indentation
 (global-set-key [(super tab)] 'indent-region)
-(global-set-key [(shift tab)] 'dabbrev-expand)
+(global-set-key [backtab] 'dabbrev-expand)
 
 ;; Mode-independent bindings
 (global-set-key [(shift next)] (lambda (n)
