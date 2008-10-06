@@ -1,6 +1,7 @@
 #!/bin/zsh
 
 GIT_REPOS=("/home/gabor/dev/webma/" "/home/gabor/slink/" "/home/gabor/")
+exit;
 
 # GNOME keyring daemon doesn't read SSH config for the proper key path
 if [ `/sbin/pidof gnome-keyring-daemon | wc -c` -gt 1 ] ; then
