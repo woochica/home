@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Mount encrypted filesystem
+if [ ! -f ~/efs/.mounted ] ; then
+    /usr/bin/encfs ~/._raw-efs ~/efs
+fi
+
+# Run location's bootstrap script
+case "$1" in
+    "webma") ~/dev/webma/bin/bootstrap;;
+esac
