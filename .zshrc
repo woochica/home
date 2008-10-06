@@ -42,7 +42,6 @@ alias cp='cp -v'
 alias rm='rm -vi'
 alias top='top -U `id -u`'
 alias muti='identify'
-alias neotek='ssh -C slink@neotek.hu'
 
 HISTSIZE=1000
 SAVEHIST=1000
