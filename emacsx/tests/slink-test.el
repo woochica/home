@@ -11,11 +11,8 @@
   (if (ad-is-advised 'w3m-url-transfer-encode-string)
       ()
     (ad-activate 'w3m-url-transfer-encode-string))
-  (let ((raw-host "gábor.20y.hu")
-        (raw-url "http://gábor.20y.hu/áááá")
-        (idna-host "xn--gbor-5na.20y.hu")
-        (idna-url "http://xn--gbor-5na.20y.hu/%E1%E1%E1%E1"))
-    (assert-equal idna-host (w3m-url-transfer-encode-string raw-host))
-    (assert-equal idna-url (w3m-url-transfer-encode-string raw-url))))
-
-(elunit "slink-suite")
+  (dolist (test-case '(("gábor.20y.hu"
+                        "xn--gbor-5na.20y.hu")
+                       ("http://gábor.20y.hu/áááá"
+                        "http://xn--gbor-5na.20y.hu/%E1%E1%E1%E1")))
+    (assert-equal (cadr test-case) (w3m-url-transfer-encode-string (car test-case)))))
