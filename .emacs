@@ -349,8 +349,8 @@
 
 (require 'color-theme)
 (color-theme-initialize)
-                                        ;(color-theme-arjen)
-(color-theme-bharadwaj)
+(color-theme-charcoal-black)
+;;(color-theme-bharadwaj)
 
 (setq default-frame-alist
       (append
