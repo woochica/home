@@ -280,7 +280,7 @@
 (require 'php-mode)
 (add-to-list 'auto-mode-alist
              '("\\.\\(module\\|install\\|engine\\|theme\\)\\'" . php-mode))
-(load-file "~/emacsx/cedet-1.0pre4/common/cedet.el")
+(load "~/emacsx/cedet-1.0pre4/common/cedet")
 ;;(autoload 'geben "geben" "PHP Debugger on Emacs" t)
 (require 'ecb-autoloads)
 
