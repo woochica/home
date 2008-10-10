@@ -2,7 +2,7 @@
 (defalias 'docstyle 'checkdoc)
 
 (defvar emacs-root "/home/gabor/")
-(defvar emacs-mode-directory (concat emacs-root "emacsx/"))
+(defvar emacs-mode-directory (concat emacs-root "dev/elisp/"))
 
 (add-to-list 'load-path emacs-mode-directory)
 
@@ -280,7 +280,7 @@
 (require 'php-mode)
 (add-to-list 'auto-mode-alist
              '("\\.\\(module\\|install\\|engine\\|theme\\)\\'" . php-mode))
-(load "~/emacsx/cedet-1.0pre4/common/cedet")
+(load (concat emacs-mode-directory "cedet-1.0pre4/common/cedet"))
 ;;(autoload 'geben "geben" "PHP Debugger on Emacs" t)
 (require 'ecb-autoloads)
 
