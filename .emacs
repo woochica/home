@@ -405,6 +405,10 @@
 (global-set-key [f6] (lambda ()
                        (interactive)
                        (eshell)))
+;; ECB
+(global-set-key [f7] (lambda ()
+                       (interactive)
+                       (ecb-minor-mode)))
 ;; Toggle fullscreen mode
 (global-set-key [f11] (lambda ()
                         (interactive)
