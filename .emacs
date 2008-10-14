@@ -349,8 +349,10 @@
 
 (require 'color-theme)
 (color-theme-initialize)
-(color-theme-charcoal-black)
+;;(color-theme-charcoal-black)
 ;;(color-theme-bharadwaj)
+(load "~/dev/elisp/pink-bliss")
+(pink-bliss)
 
 (setq default-frame-alist
       (append
@@ -454,6 +456,7 @@
                               (insert "–")))
 (global-set-key (kbd "<C-right>") 'forward-sexp)
 (global-set-key (kbd "<C-left>") 'backward-sexp)
+(global-set-key (kbd "C-c C-c") 'comment-or-uncomment-region)
 
 (provide '.emacs)
 
