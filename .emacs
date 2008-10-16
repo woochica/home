@@ -1,5 +1,4 @@
 (eval-when-compile (require 'cl))
-(defalias 'docstyle 'checkdoc)
 
 (defvar emacs-root "/home/gabor/")
 (defvar emacs-mode-directory (concat emacs-root "dev/elisp/"))
