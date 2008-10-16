@@ -1,7 +1,7 @@
 #!/bin/bash
 
 stream=mms://www.fixtv.hu/fixdsl
-tmp=/tmp/lxp.avi
+tmp=/home/gabor/tmp/lxp.avi
 video=/home/gabor/Videók/lxp/linuxportal_$TDAY.avi
 
 capture_stream()
@@ -15,4 +15,5 @@ convert_stream()
     /usr/bin/mencoder $tmp -ofps 30 -oac mp3lame -ovc copy -o $video
 }
 
-eval $1
+export -f capture_stream
+export -f convert_stream

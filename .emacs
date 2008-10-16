@@ -2,7 +2,7 @@
 (defalias 'docstyle 'checkdoc)
 
 (defvar emacs-root "/home/gabor/")
-(defvar emacs-mode-directory (concat emacs-root "emacsx/"))
+(defvar emacs-mode-directory (concat emacs-root "dev/elisp/"))
 
 (add-to-list 'load-path emacs-mode-directory)
 
@@ -280,7 +280,7 @@
 (require 'php-mode)
 (add-to-list 'auto-mode-alist
              '("\\.\\(module\\|install\\|engine\\|theme\\)\\'" . php-mode))
-(load-file "~/emacsx/cedet-1.0pre4/common/cedet.el")
+(load (concat emacs-mode-directory "cedet-1.0pre4/common/cedet"))
 ;;(autoload 'geben "geben" "PHP Debugger on Emacs" t)
 (require 'ecb-autoloads)
 
@@ -349,8 +349,10 @@
 
 (require 'color-theme)
 (color-theme-initialize)
-                                        ;(color-theme-arjen)
-(color-theme-bharadwaj)
+;;(color-theme-charcoal-black)
+;;(color-theme-bharadwaj)
+(load "~/dev/elisp/pink-bliss")
+(pink-bliss)
 
 (setq default-frame-alist
       (append
@@ -405,6 +407,10 @@
 (global-set-key [f6] (lambda ()
                        (interactive)
                        (eshell)))
+;; ECB
+(global-set-key [f7] (lambda ()
+                       (interactive)
+                       (ecb-minor-mode)))
 ;; Toggle fullscreen mode
 (global-set-key [f11] (lambda ()
                         (interactive)
@@ -435,7 +441,7 @@
 ;; Shift-TAB    dynamic expandation
 ;; Super-TAB    indentation
 (global-set-key [(super tab)] 'indent-region)
-(global-set-key [(shift tab)] 'dabbrev-expand)
+(global-set-key [backtab] 'dabbrev-expand)
 
 ;; Mode-independent bindings
 (global-set-key [(shift next)] (lambda (n)
@@ -450,6 +456,7 @@
                               (insert "–")))
 (global-set-key (kbd "<C-right>") 'forward-sexp)
 (global-set-key (kbd "<C-left>") 'backward-sexp)
+(global-set-key (kbd "C-c C-c") 'comment-or-uncomment-region)
 
 
 (global-set-key [f11] (lambda ()
