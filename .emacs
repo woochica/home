@@ -349,10 +349,8 @@
 
 (require 'color-theme)
 (color-theme-initialize)
-;;(color-theme-charcoal-black)
+(color-theme-charcoal-black)
 ;;(color-theme-bharadwaj)
-(load "~/dev/elisp/pink-bliss")
-(pink-bliss)
 
 (setq default-frame-alist
       (append
