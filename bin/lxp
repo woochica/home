@@ -4,6 +4,11 @@ stream=mms://www.fixtv.hu/fixdsl
 tmp=/home/gabor/tmp/lxp.avi
 video=/home/gabor/Videók/lxp/linuxportal_$TDAY.avi
 
+play_stream()
+{
+    /usr/bin/mplayer -cache 3000 $stream
+}
+
 capture_stream()
 {
     /usr/bin/mplayer -cache 5000 -dumpfile $tmp -dumpstream $stream
@@ -15,5 +20,6 @@ convert_stream()
     /usr/bin/mencoder $tmp -ofps 30 -oac mp3lame -ovc copy -o $video
 }
 
+export -f play_stream
 export -f capture_stream
 export -f convert_stream
