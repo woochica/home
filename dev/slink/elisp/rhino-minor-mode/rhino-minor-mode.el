@@ -1,3 +1,15 @@
+;;; rhino-minor-mode.el --- Minor mode for evaulating JavaScript expressions in Rhino.
+
+;;; Commentary:
+;; 
+
+;;; Todos:
+;; - echo reply instead of popping up window
+
+;;; History:
+;; 
+
+;;; Code:
 (defgroup rhino nil
   "Customizations for `rhino-minor-mode'."
   :prefix "rhino-"
@@ -18,14 +30,17 @@
 (defvar rhino-process-id "rhino"
   "Rhino process ID.")
 
-(defvar rhino-minor-mode-map 
+(defvar rhino-minor-mode-map
   (let ((map (make-sparse-keymap)))
     (define-key map "\C-x\C-e" 'rhino-eval-region)
     map)
   "Map for Rhino minor mode.")
 
 (defun rhino-eval-region (start end)
-  "Evaluate expressions in region."
+  "Evaluate expressions in region.
+
+Called from a program, there are two arguments:
+START and END (region to sort)."
   (interactive "r")
   (unless (and start end)
     (error "No active region"))
@@ -60,3 +75,7 @@
   (if rhino-minor-mode
       (rhino-start-process)
     (rhino-stop-process)))
+
+(provide 'rhino-minor-mode)
+
+;;; rhino-minor-mode.el ends here
