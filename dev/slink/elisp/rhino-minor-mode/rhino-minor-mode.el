@@ -27,8 +27,14 @@
   :type '(file :must-match t)
   :group 'rhino)
 
+(defconst rhino-shell-prompt "js> "
+  "Rhino Shell prompt.")
+
 (defvar rhino-process-id "rhino"
   "Rhino process ID.")
+
+(defvar rhino-buffer-name "*rhino-shell*"
+  "Buffer name for Rhino shell.")
 
 (defvar rhino-minor-mode-map
   (let ((map (make-sparse-keymap)))
@@ -51,8 +57,7 @@ START and END (region to sort)."
        rhino-process-id
        ;; Expression should contain exactly one trailing newline
        ;; to avoid displaying multiple prompts in the reply
-       (concat (replace-regexp-in-string "\n$" "" (buffer-string)) "\n"))))
-  (pop-to-buffer rhino-process-id))
+       (concat (replace-regexp-in-string "\n$" "" (buffer-string)) "\n")))))
 
 (defun rhino-eval-last-sexp ()
   "Evaluate sexp before point."
@@ -67,7 +72,7 @@ START and END (region to sort)."
   (interactive)
   (if (file-exists-p rhino-rhino-jar-path)
       (start-process
-       rhino-process-id rhino-process-id rhino-java-bin-path "-cp"
+       rhino-process-id rhino-buffer-name rhino-java-bin-path "-cp"
        rhino-rhino-jar-path "org.mozilla.javascript.tools.shell.Main")
     (error "Rhino JAR file not found")))
 
