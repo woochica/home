@@ -361,6 +361,8 @@
          (tool-bar-lines . 0))
        default-frame-alist))
 
+(set-face-foreground 'highlight nil) 
+
 (setq backup-directory-alist (list
                               (cons ".*" (expand-file-name "~/bkp/emacs/")))
       truncate-partial-width-windows nil ;; don't lose word wrapping if split
