@@ -54,6 +54,14 @@ START and END (region to sort)."
        (concat (replace-regexp-in-string "\n$" "" (buffer-string)) "\n"))))
   (pop-to-buffer rhino-process-id))
 
+(defun rhino-eval-last-sexp ()
+  "Evaluate sexp before point."
+  (interactive)
+  (save-excursion
+    (let ((end (point))
+          (start (c-backward-sexp)))
+      (rhino-eval-region start end))))
+
 (defun rhino-start-process ()
   "Start Rhino process."
   (interactive)
