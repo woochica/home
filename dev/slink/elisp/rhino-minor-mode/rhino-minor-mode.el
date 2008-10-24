@@ -22,7 +22,7 @@
   :group 'rhino)
 
 (defcustom rhino-rhino-jar-path
-  "/home/livia/gabor/bin/rhino1_6R7/js.jar"
+  "rhino.jar"
   "Path of Rhino JAR library."
   :type '(file :must-match t)
   :group 'rhino)
@@ -57,9 +57,11 @@ START and END (region to sort)."
 (defun rhino-start-process ()
   "Start Rhino process."
   (interactive)
-  (start-process
-   rhino-process-id rhino-process-id rhino-java-bin-path "-cp"
-   rhino-rhino-jar-path "org.mozilla.javascript.tools.shell.Main"))
+  (if (file-exists-p rhino-rhino-jar-path)
+      (start-process
+       rhino-process-id rhino-process-id rhino-java-bin-path "-cp"
+       rhino-rhino-jar-path "org.mozilla.javascript.tools.shell.Main")
+    (error "Rhino JAR file not found")))
 
 (defun rhino-stop-process ()
   "Stop Rhino process."
