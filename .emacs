@@ -179,6 +179,7 @@
 (require 'git)
 (require 'git-blame)
 (require 'vc-git "/home/gabor/src/emacs/lisp/vc-git.el")
+(require 'psvn)
 
 ;;;============================================================
 ;;; Spell checking
