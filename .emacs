@@ -203,6 +203,7 @@
 (add-to-list 'ido-ignore-buffers "*Help")
 (add-to-list 'ido-ignore-buffers "*vc")
 (add-to-list 'ido-ignore-buffers "*git")
+(add-to-list 'ido-ignore-buffers "*svn")
 (add-to-list 'ido-ignore-buffers "*tramp")
 (add-to-list 'ido-ignore-buffers "*Twit")
 (add-to-list 'ido-ignore-buffers "*mail")
