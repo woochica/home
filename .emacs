@@ -20,6 +20,7 @@
   (add-path "weblogger/"))
 
 (add-to-list 'load-path (concat emacs-root "dev/webma/elisp/"))
+(add-to-list 'load-path (concat emacs-root "dev/slink/elisp/flymake-js/"))
 (add-to-list 'load-path (concat emacs-root "dev/slime/"))
 (add-to-list 'load-path "/usr/share/emacs/site-lisp/")
 
