@@ -25,6 +25,7 @@
  '(kill-whole-line t)
  '(menu-bar-mode t)
  '(mouse-yank-at-point t)
+ '(rhino-rhino-jar-path "/home/gabor/src/yuicompressor-2.2.4/lib/rhino-1.6R7.jar")
  '(scroll-bar-mode nil)
  '(show-paren-mode t nil (paren))
  '(show-paren-style (quote mixed))
