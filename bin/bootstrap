@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Start Emacs
+emacs --daemon
+
 # Mount encrypted filesystem
 if [ ! -f ~/efs/.mounted ] ; then
     /usr/bin/encfs ~/._raw-efs ~/efs
