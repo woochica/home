@@ -212,16 +212,6 @@
 (add-to-list 'ido-ignore-buffers "*anything")
 
 ;;;============================================================
-;;; Server
-;;;============================================================
-
-(unless (string-equal "root" (getenv "USER"))
-  (when (or (not (boundp 'server-process))
-            (not (eq (process-status server-process)
-                     'listen)))
-    (server-start)))
-
-;;;============================================================
 ;;; ERC
 ;;;============================================================
 
