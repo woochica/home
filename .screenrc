@@ -10,4 +10,4 @@ bind o focus
 screen -t neoteklog 1
 monitor
 screen -t megrend
-screen
+screen -t csabez
