@@ -20,6 +20,7 @@
  '(fringe-mode (quote (0)) nil (fringe))
  '(global-font-lock-mode t nil (font-lock))
  '(global-hl-line-mode t)
+ '(global-webma-instance-mode t)
  '(indicate-buffer-boundaries nil)
  '(indicate-empty-lines t)
  '(kill-whole-line t)
