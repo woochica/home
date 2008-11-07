@@ -1,5 +1,8 @@
 #!/bin/env zsh
-# delicious bookmarks save
+
+rsync -a /home/gabor /media/slinkpassport/slink6400                         ~
+
+exit 0;
 
 ###############################################################################
 # CONFIGURATION
