@@ -1,4 +1,4 @@
-. ~/bin/include
+. ~/bin/include > /dev/null
 
 include "slink"
 

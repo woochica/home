@@ -16,9 +16,9 @@ include()
 
     library_dir=~/bin/$1.lib
     if [ -d $library_dir ] ; then
+        echo "Loading library '$1'..."
         for script in $library_dir/* ; do
-            echo $script
-            . $script
+            . $script > /dev/null
         done
     else
         echo $1": No such library found"
