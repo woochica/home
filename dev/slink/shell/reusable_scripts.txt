@@ -16,15 +16,15 @@
   name by ImageMagick, so "include" may be a good choice (C, PHP). And it's
   really get included.
 
-* You may create files with name "libary.lib.sh" that are not real packages,
+* TODO You may create files with name "libary.lib.sh" that are not real packages,
   but a good group of useful functions needed for a specific task. Make command
   "include" to handle these meta packages.
 
-* There may be a bootstrap script file in directory "library.lib". In that
+* TODO There may be a bootstrap script file in directory "library.lib". In that
   situation, first process the bootstrap script which may resolve package
   dependences, set aliases, or anything, then include the proper scripts.
 
-* Support the "include library.pattern" to include only specific
+* Support the "include 'library.pattern'" to include only specific
   scripts matching pattern.
 
     include "library"
@@ -36,6 +36,10 @@
     
 ## Cons
 
-* Since you include the scripts to the running shell environment, you must take care of using the same interpreter for the scripts and the running one. If you import a Bash script into your Zsh shell, sudden things may happen.
+* Since you include the scripts to the running shell environment, you must take
+  care of using the same interpreter for the scripts and the currently running
+  instance. For example, if you import a Bash script into your Zsh shell,
+  sudden things may happen.
 
-* When converting standalone scripts to functions, watch out the "exit" statements, and convert them to "return"s.
+* When converting standalone scripts to functions, watch out the "exit"
+  statements, and convert them to "return"s.
