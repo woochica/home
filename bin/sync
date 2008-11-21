@@ -1,7 +1,0 @@
-#!/bin/bash
-
-sync_slink6400() {
-    rsync -a /home/gabor /media/slinkpassport/slink6400
-}
-
-export -f sync_slink6400

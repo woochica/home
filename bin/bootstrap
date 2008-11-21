@@ -14,4 +14,5 @@ case "$1" in
 esac
 
 # Pull and push
-syncrepos
+sync_git_repos
+
