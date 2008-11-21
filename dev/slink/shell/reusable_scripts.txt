@@ -1,33 +1,41 @@
 # On how to write resuable scripts
 
-* how to bind functions defined in script to local scope, or howto import
+* How to bind functions defined in script to local scope, or how to import
   functions to a shell script, so you can make a function both public and
   private this way.
 
-* put each functionality reached by a command to seperate files
+* Put each functionality (one or more functions) reached by a command to
+  seperate files.  Use the extension .sh.
 
-* make a name.lib that loads them
+* Package functions with same purpose to a directory named "library.lib".
 
-* package functions with same purpose to a directory named name.lib
+* Create a function "import" that searches for a directory "library.lib", and
+  loads scripts in it.
 
-* create a function import that searches a name.lib directory and loads scripts
-  in it
+* I'd like to use command "import" (Java, Python) but that's an already taken
+  name by ImageMagick, so "include" may be a good choice (C, PHP). And it's
+  really get included.
 
-* i'd like to use command "import" (java, python) but that's an already taken
-  name by imagemagick, so "include" may be a good choice (c, php), hence it's
-  really get included
-
-* you may create files with name libary.lib that are not real packages but a
-  good group of useful functions needed for a specific task. make command
+* You may create files with name "libary.lib.sh" that are not real packages,
+  but a good group of useful functions needed for a specific task. Make command
   "include" to handle these meta packages.
 
-* there may be both library.lib as file and directory. In that situation, first
-  process liblary.lib which may resolve package dependences, set aliases, or
-  anything. (**extX alatt ilyen nincs**)
+* There may be a bootstrap script file in directory "library.lib". In that
+  situation, first process the bootstrap script which may resolve package
+  dependences, set aliases, or anything, then include the proper scripts.
 
-* support the "include library.*" to include a whole package or only specific
-  scripts
+* Support the "include library.pattern" to include only specific
+  scripts matching pattern.
 
+    include "library"
+    include "library.*"
+    include "library.my_*"
+    include "library.script"
+
+  Hence avoid using the dot in library's name.
+    
 ## Cons
 
 * Since you include the scripts to the running shell environment, you must take care of using the same interpreter for the scripts and the running one. If you import a Bash script into your Zsh shell, sudden things may happen.
+
+* When converting standalone scripts to functions, watch out the "exit" statements, and convert them to "return"s.

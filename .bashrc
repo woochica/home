@@ -1,1 +1,1 @@
-. ~/bin/reusable_libs > /dev/null
+. ~/bin/reusable_libs.sh > /dev/null
