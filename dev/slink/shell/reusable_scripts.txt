@@ -27,3 +27,7 @@
 
 * support the "include library.*" to include a whole package or only specific
   scripts
+
+## Cons
+
+* Since you include the scripts to the running shell environment, you must take care of using the same interpreter for the scripts and the running one. If you import a Bash script into your Zsh shell, sudden things may happen.
