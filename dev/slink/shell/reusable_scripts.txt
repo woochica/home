@@ -1,0 +1,29 @@
+# On how to write resuable scripts
+
+* how to bind functions defined in script to local scope, or howto import
+  functions to a shell script, so you can make a function both public and
+  private this way.
+
+* put each functionality reached by a command to seperate files
+
+* make a name.lib that loads them
+
+* package functions with same purpose to a directory named name.lib
+
+* create a function import that searches a name.lib directory and loads scripts
+  in it
+
+* i'd like to use command "import" (java, python) but that's an already taken
+  name by imagemagick, so "include" may be a good choice (c, php), hence it's
+  really get included
+
+* you may create files with name libary.lib that are not real packages but a
+  good group of useful functions needed for a specific task. make command
+  "include" to handle these meta packages.
+
+* there may be both library.lib as file and directory. In that situation, first
+  process liblary.lib which may resolve package dependences, set aliases, or
+  anything. (**extX alatt ilyen nincs**)
+
+* support the "include library.*" to include a whole package or only specific
+  scripts
