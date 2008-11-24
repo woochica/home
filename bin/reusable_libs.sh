@@ -1,6 +1,6 @@
 #!/bin/bash
 
-load_script()
+load_library_script()
 {
     script=$1
     echo "Loading script \"$script\"..."
@@ -34,19 +34,19 @@ include()
     # Process scripts in library according to given pattern
     if [ -d $library_dir ] ; then
         # Zsh way
-        if [ $pattern = "*" ] ; then
+        if [ `basename $0` = "zsh" ] ; then
             for script in $library_dir/$~pattern.sh; do
-                load_script $script
+                load_library_script $script
             done
         # Bash way
         else
             for script in $library_dir/$pattern.sh; do
-                load_script $script
+                load_library_script $script
             done
         fi
     # Load meta library
-    elif [ -f $library_dir".sh" ] ; then
-        load_script $library_dir".sh"
+    elif [ -f "${library_dir}.sh" ] ; then
+        load_library_script "${library_dir}.sh"
     else
         echo $library_dir": No such library found"
     fi
