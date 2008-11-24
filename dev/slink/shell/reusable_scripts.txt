@@ -16,7 +16,7 @@
   name by ImageMagick, so "include" may be a good choice (C, PHP). And it's
   really get included.
 
-* TODO You may create files with name "libary.lib.sh" that are not real packages,
+* You may create files with name "libary.lib.sh" that are not real packages,
   but a good group of useful functions needed for a specific task. Make command
   "include" to handle these meta packages.
 
