@@ -34,7 +34,7 @@ include()
     # Process scripts in library according to given pattern
     if [ -d $library_dir ] ; then
         # Zsh way
-        if [ `basename $0` = "zsh" ] ; then
+        if [ `ps | grep `echo $$` | awk '{ print $4 }'` = "zsh" ] ; then
             for script in $library_dir/$~pattern.sh; do
                 load_library_script $script
             done
