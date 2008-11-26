@@ -352,8 +352,7 @@
 
 (setq default-frame-alist
       (append
-       '((alpha 100 100)
-         (font . "Monaco-12")
+       '((font . "Monaco-12")
          (width . 82) (height . 36)
          (cursor-color . "#ffa200")
          (cursor-type . bar)
