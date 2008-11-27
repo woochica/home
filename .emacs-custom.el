@@ -18,6 +18,7 @@
  '(echo-keystrokes 0.2)
  '(fill-column 79)
  '(fringe-mode (quote (0)) nil (fringe))
+ '(git-show-unknown nil)
  '(global-font-lock-mode t nil (font-lock))
  '(global-hl-line-mode t)
  '(global-webma-instance-mode t)
