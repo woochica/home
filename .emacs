@@ -368,7 +368,7 @@
       frame-title-format "Emacs - %b %*"
       delete-auto-save-files t
       inhibit-splash-screen t
-      custom-file "~/.emacs-custom")
+      custom-file "~/.emacs-custom.el")
 (load custom-file 'noerror)
 
 (mouse-avoidance-mode 'cat-and-mouse)
