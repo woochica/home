@@ -2,6 +2,7 @@
 
 sync_slink6400() {
     rsync -a /home/gabor /media/slinkpassport/slink6400
+    sudo rsync -a /var/www/html /media/slinkpassport/slink6400
 }
 
 sync_git_repos() {
