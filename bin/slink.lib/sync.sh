@@ -1,7 +1,11 @@
 #!/bin/bash
 
 sync_slink6400() {
+    # TODO: make 20y sql dump in cronjob on sermel
+    # TODO: mount 20y via sshfs
+    # Sync $HOME
     rsync -a /home/gabor /media/slinkpassport/slink6400
+    # Sync webroot
     sudo rsync -a /var/www/html /media/slinkpassport/slink6400
 }
 
