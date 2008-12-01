@@ -147,9 +147,7 @@
 ;;; HTML
 ;;;============================================================
 
-(add-to-list 'auto-mode-alist '("\\.html?\\'" . nxml-mode))
-(add-hook 'nxml-mode-hook (lambda ()
-                            (rng-validate-mode nil)
+(add-hook 'html-mode-hook (lambda ()
                             (webma-html-mode t)))
 
 ;;;============================================================
