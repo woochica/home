@@ -47,7 +47,7 @@ thumb() {
         flags="-resize $dim"
     fi
 
-    $convert $flags $input $output
+    eval $convert $flags $input $output
 }
 
 export -f thumb
