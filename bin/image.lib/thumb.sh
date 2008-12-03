@@ -42,13 +42,12 @@ thumb() {
     if [ -z "$extension" ] ; then
         extension=$ext
     fi
-    output=$base$suffix.$extension
-    options=""
-    if [ ! -z "$dim" ]; then
-        options="-resize $dim"
+    output=$base$suffix"."$extension
+    if [ ! -z "$dim" ] ; then
+        flags="-resize $dim"
     fi
 
-    $convert $options $input $output
+    $convert $flags $input $output
 }
 
 export -f thumb
