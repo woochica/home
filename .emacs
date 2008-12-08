@@ -394,7 +394,9 @@
 ;; Eshell
 (global-set-key [f6] (lambda ()
                        (interactive)
-                       (eshell)))
+                       (let ((default-directory emacs-root))
+                         (eshell))))
+
 ;; ECB
 (global-set-key [f7] (lambda ()
                        (interactive)
