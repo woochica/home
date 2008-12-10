@@ -119,12 +119,10 @@
 (add-hook 'emacs-lisp-mode-hook
           (lambda ()
             (eldoc-mode t)
-            (linum-mode t)
             (local-set-key (kbd "<backtab>") 'lisp-complete-symbol)))
 
 (add-hook 'lisp-mode-hook
           (lambda ()
-            (linum-mode t)
             (local-set-key (kbd "<backtab>") 'lisp-complete-symbol)))
 
 ;;;============================================================
@@ -275,7 +273,6 @@
 
 (add-hook 'php-mode-hook
           (lambda ()
-            (linum-mode t)
             (setq php-warned-bad-indent t)))
 
 ;;;============================================================
@@ -294,7 +291,6 @@
 (add-to-list 'auto-mode-alist '("\\.js\\(on\\)?$" . js2-mode))
 (add-hook 'js2-mode-hook (lambda ()
                            (local-set-key (kbd "<backtab>") 'hippie-expand)
-                           (linum-mode t)
                            (setq js2-basic-offset 4)))
 
 ;;;============================================================
