@@ -173,4 +173,8 @@ querying the user."
         (today (time-to-number-of-days (current-time))))
     (floor (- today (- start-day 1)))))
 
+(defun slink/highlight-long-lines ()
+  (font-lock-add-keywords
+   nil '(("^[^\n]\\{80\\}\\(.*\\)$" 1 font-lock-warning-face t))))
+
 (provide 'slink)
