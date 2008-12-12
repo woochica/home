@@ -45,8 +45,8 @@
 
 (add-hook 'emacs-lisp-mode-hook
           (lambda ()
-            (slink/highlight-long-lines)
-            (eldoc-mode t)
+            ;(slink/highlight-long-lines)
+            (eldoc-mode 1)
             (local-set-key (kbd "<backtab>") 'lisp-complete-symbol)))
 
 ;;;============================================================
@@ -79,7 +79,7 @@
 ;;; slink
 ;;;============================================================
 
-(require 'slink)
+;(require 'slink)
 
 ;;;============================================================
 ;;; Work
