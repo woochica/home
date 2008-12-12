@@ -48,6 +48,12 @@
 (require 'psvn)
 
 ;;;============================================================
+;;; JavaScript
+;;;============================================================
+
+(require 'js2-mode)
+
+;;;============================================================
 ;;; Work
 ;;;============================================================
 
@@ -103,11 +109,17 @@
                                                  nil
                                                'fullboth))))
 
+;; Original Emacs binding -- Starter Kit rebinds it
+(global-set-key (kbd "C-x h") 'mark-whole-buffer)
+
 ;; TAB          yas/expand
 ;; Shift-TAB    dynamic expandation
 ;; Super-TAB    indentation
 (global-set-key [(super tab)] 'indent-region)
 (global-set-key [backtab] 'dabbrev-expand)
+
+;; Others
+(global-set-key "\r" 'reindent-then-newline-and-indent)
 
 (provide '.emacs)
 
