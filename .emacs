@@ -57,6 +57,10 @@
 (add-to-list 'auto-mode-alist
              '("\\.\\(module\\|install\\|engine\\|theme\\)\\'" . php-mode))
 
+(add-hook 'php-mode-hook
+          (lambda ()
+            (setq php-warned-bad-indent t)))
+
 ;;;============================================================
 ;;; VC, Git
 ;;;============================================================
