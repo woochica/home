@@ -46,7 +46,6 @@
 (add-hook 'emacs-lisp-mode-hook
           (lambda ()
             ;(slink/highlight-long-lines)
-            (eldoc-mode 1)
             (local-set-key (kbd "<backtab>") 'lisp-complete-symbol)))
 
 ;;;============================================================
@@ -85,7 +84,7 @@
 ;;; Work
 ;;;============================================================
 
-(load (concat emacs-root ".emacs-webma"))
+(load (concat emacs-root "dev/webma/elisp/init.el"))
 
 ;;;============================================================
 ;;; Frames, colors, misc.
@@ -102,14 +101,11 @@
          (tool-bar-lines . 0))
        default-frame-alist))
 
+;;@override Emacs Starter Kit
 (setq backup-directory-alist (list
-                              (cons ".*" (expand-file-name "~/bkp/emacs/")))
-      truncate-partial-width-windows nil ;; don't lose word wrapping if split
-      ;; windows
-      frame-title-format "Emacs - %b %*"
-      delete-auto-save-files t
-      inhibit-splash-screen t
-      custom-file "~/.emacs-custom.el")
+                              (cons ".*" (expand-file-name "~/bkp/emacs/"))))
+(setq delete-auto-save-files t)
+(setq custom-file "~/.emacs-custom.el")
 (load custom-file 'noerror)
 
 (mouse-avoidance-mode 'cat-and-mouse)
@@ -137,7 +133,7 @@
                                                  nil
                                                'fullboth))))
 
-;; Original Emacs binding -- Starter Kit rebinds it
+;;@override Emacs Starter Kit
 (global-set-key (kbd "C-x h") 'mark-whole-buffer)
 
 ;; TAB          yas/expand
