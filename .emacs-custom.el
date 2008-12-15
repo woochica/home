@@ -16,6 +16,7 @@
  '(display-time-mode t)
  '(ecb-options-version "2.33beta2")
  '(echo-keystrokes 0.2)
+ '(emms-lastfm-username "nyuhuhuu")
  '(fill-column 79)
  '(fringe-mode (quote (0)) nil (fringe))
  '(git-show-unknown nil)

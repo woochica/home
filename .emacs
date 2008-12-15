@@ -6,6 +6,7 @@
 (add-to-list 'load-path emacs-mode-directory)
 (add-to-list 'load-path (concat emacs-mode-directory "yasnippet/"))
 (add-to-list 'load-path "/usr/share/emacs/site-lisp/") ;; git is here
+(add-to-list 'load-path (concat emacs-mode-directory "emms-tsdh")
 
 ;;;============================================================
 ;;; Emacs Starter Kit
@@ -27,6 +28,22 @@
               (if (or (string= twit-user user) (not user))
                   ()
                 (call-process-shell-command cmd nil t nil args)))))
+
+;;;============================================================
+;;; EMMS/Last.FM
+;;;============================================================
+
+(require 'emms-setup)
+(emms-devel)
+(emms-default-players)
+(emms-lastfm-enable)
+
+(defadvice emms-lastfm-radio (before read-passwd (lastfm-url))
+  (if emms-lastfm-password
+      ()
+    (setq emms-lastfm-password (read-passwd "LastFM password: "))))
+
+(ad-activate 'emms-lastfm-radio)
 
 ;;;============================================================
 ;;; Snippets
