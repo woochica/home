@@ -7,7 +7,5 @@ defscrollback 30000
 escape "^Xx"
 bind b other
 bind o focus
-screen -t neoteklog 1
-monitor
 screen -t megrend
 screen -t csabez
