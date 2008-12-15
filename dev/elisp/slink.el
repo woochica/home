@@ -18,17 +18,7 @@
   (interactive)
   (browse-url (concat php-search-url (current-word t) "#function." (current-word t))))
 
-(defadvice gomoku (around disable-linum-mode (&optional n m))
-  (let ((linum-mode-p linum-mode))
-    (if linum-mode-p
-        (linum-mode nil))
-    ad-do-it
-    (if linum-mode-p
-        (linum-mode t))))
-
-(ad-activate 'gomoku)
-
-(defun slink-uniq-lines (beg end)
+(defun slink/uniq-lines (beg end)
   "Unique lines in region.
 Called from a program, there are two arguments: BEG and END (region to sort)."
   (interactive "r")
@@ -46,39 +36,7 @@ Called from a program, there are two arguments: BEG and END (region to sort)."
             (replace-match "" nil nil))
           (goto-char next-line))))))
 
-(defun slink-w3m-push-button (label)
-  (save-excursion
-    (goto-char (point-min))
-    (and (eq (current-buffer) (w3m-alive-p))
-         (search-forward label nil t)
-         (thing-at-point-url-at-point)
-         (w3m-view-this-url (thing-at-point-url-at-point)))))
-
-(defun slink-gmail-mail-archive ()
-  (interactive)
-  (slink-w3m-push-button "4  Archiv"))
-
-(defun slink-gmail-mail-star ()
-  (interactive)
-  (slink-w3m-push-button "6  Add sta"))
-
-(defun slink-gmail-mail-unstar ()
-  (interactive)
-  (slink-w3m-push-button "6  Remove sta"))
-
-(defun slink-gmail-mail-delete ()
-  (interactive)
-  (slink-w3m-push-button "7  Tras"))
-
-(defun slink-gmail-view-inbox ()
-  (interactive)
-  (slink-w3m-push-button "0  Inbo"))
-
-(defun slink-gmail-view-starred ()
-  (interactive)
-  (slink-w3m-push-button "   Starre"))
-
-(defun slink-sztaki-phrase-lookup ()
+(defun slink/sztaki-phrase-lookup ()
   "Look up the phrase under cursor in SZTAKI and echo translation if any."
   (interactive)
   (let* ((phrase (downcase (thing-at-point 'word)))
@@ -93,9 +51,9 @@ Called from a program, there are two arguments: BEG and END (region to sort)."
         (setq match (match-string 0))))
     (message (concat "SZTAKI: " match))))
 
-(global-set-key (kbd "C-?") 'slink-sztaki-phrase-lookup)
+(global-set-key (kbd "C-?") 'slink/sztaki-phrase-lookup)
 
-(defun slink-delicious-url ()
+(defun slink/delicious-url ()
   "Post either the url under point or the url of the current w3m page to delicious."
   (interactive)
   (let ((w3m-async-exec nil))
@@ -107,7 +65,7 @@ Called from a program, there are two arguments: BEG and END (region to sort)."
              "url="    (w3m-url-encode-string w3m-current-url)
              "&title=" (w3m-url-encode-string w3m-current-title)))))
 
-(defun slink-weblabor-blogmark ()
+(defun slink/weblabor-blogmark ()
   "Blogmark either the url under point or the url of the current w3m page to Weblabor."
   (interactive)
   (let ((w3m-async-exec nil))
@@ -123,29 +81,6 @@ Called from a program, there are two arguments: BEG and END (region to sort)."
              "&comment=" (w3m-url-encode-string
                           (read-string "Comment: "))
              "&publish=0#maincontent"))))
-
-(define-key w3m-mode-map (kbd "C-c b") 'slink-weblabor-blogmark)
-(define-key w3m-mode-map (kbd "C-c a") 'slink-delicious-url)
-(define-key w3m-mode-map (kbd "C-c s") 'slink-gmail-mail-star)
-(define-key w3m-mode-map (kbd "C-c u") 'slink-gmail-mail-unstar)
-(define-key w3m-mode-map (kbd "C-c a") 'slink-gmail-mail-archive)
-(define-key w3m-mode-map (kbd "C-c t") 'slink-gmail-mail-delete)
-(define-key w3m-mode-map (kbd "C-c 0") 'slink-gmail-view-inbox)
-(define-key w3m-mode-map (kbd "C-c 1") 'slink-gmail-view-starred)
-
-
-(defun slink-js-function-show-args ()
-  (interactive)
-  (save-excursion
-    (backward-char 2)
-    (re-search-backward "^\\(.+\\)\\| \\(.+\\)")
-    (let ((func (or (match-string 1)
-                    (match-string 2))))
-      (goto-char (point-min))
-      (when (search-forward (concat "function " func) nil t)
-        (backward-sexp 2)
-        (looking-at "\\(.*\\){")
-        (message (match-string 1))))))
 
 (defun th-find-file-sudo (file)
   "Opens FILE with root privileges."
@@ -165,16 +100,5 @@ querying the user."
            (th-find-file-sudo file)))))
 
 (add-hook 'find-file-hook 'th-find-file-sudo-maybe)
-
-(defun slink-number-of-days ()
-  "Number of days since the secret day."
-  (interactive)
-  (let ((start-day (time-to-number-of-days (date-to-time "2008-08-25T00:00:00+0200")))
-        (today (time-to-number-of-days (current-time))))
-    (floor (- today (- start-day 1)))))
-
-(defun slink/highlight-long-lines ()
-  (font-lock-add-keywords
-   nil '(("^[^\n]\\{80\\}\\(.*\\)$" 1 font-lock-warning-face t))))
 
 (provide 'slink)
