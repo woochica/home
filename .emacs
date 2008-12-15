@@ -6,13 +6,46 @@
 (add-to-list 'load-path emacs-mode-directory)
 (add-to-list 'load-path (concat emacs-mode-directory "yasnippet/"))
 (add-to-list 'load-path "/usr/share/emacs/site-lisp/") ;; git is here
+;; darcs get  http://www.tsdh.de/repos/darcs/emms/ emms-tsdh 
 (add-to-list 'load-path (concat emacs-mode-directory "emms-tsdh")
+(add-to-list 'load-path (concat emacs-mode-directory "emacs-w3m"))
 
 ;;;============================================================
 ;;; Emacs Starter Kit
 ;;;============================================================
 
 (load (concat emacs-mode-directory "emacs-starter-kit/init.el"))
+
+;;;============================================================
+;;; W3M
+;;;============================================================
+
+(require 'w3m-load)
+(require 'w3m-session)
+
+(add-hook 'w3m-mode-hook (lambda ()
+                           (setq w3m-use-cookies t
+                                 w3m-output-coding-system 'utf-8
+                                 w3m-coding-system 'utf-8
+                                 w3m-default-coding-system 'utf-8)
+                           (define-key w3m-mode-map (kbd "M-1")
+                             (lambda ()
+                               (interactive)
+                               (switch-to-buffer "*w3m*")))
+                           (define-key w3m-mode-map (kbd "M-2")
+                             (lambda ()
+                               (interactive)
+                               (switch-to-buffer "*w3m*<2>")))
+                           (define-key w3m-mode-map (kbd "M-3")
+                             (lambda ()
+                               (interactive)
+                               (switch-to-buffer "*w3m*<3>")))))
+
+(add-hook 'w3m-display-hook
+          (lambda (url)
+            (rename-buffer
+             (format "*w3m: %s*" (or w3m-current-title
+                                     w3m-current-url)) t)))
 
 ;;;============================================================
 ;;; Twitter
@@ -41,7 +74,7 @@
 (defadvice emms-lastfm-radio (before read-passwd (lastfm-url))
   (if emms-lastfm-password
       ()
-    (setq emms-lastfm-password (read-passwd "LastFM password: "))))
+    (setq emms-lastfm-password (read-passwd "Password: "))))
 
 (ad-activate 'emms-lastfm-radio)
 
@@ -62,7 +95,6 @@
 
 (add-hook 'emacs-lisp-mode-hook
           (lambda ()
-            ;(slink/highlight-long-lines)
             (local-set-key (kbd "<backtab>") 'lisp-complete-symbol)))
 
 ;;;============================================================
@@ -95,7 +127,7 @@
 ;;; slink
 ;;;============================================================
 
-;(require 'slink)
+(require 'slink)
 
 ;;;============================================================
 ;;; Work
