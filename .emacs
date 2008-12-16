@@ -7,7 +7,7 @@
 (add-to-list 'load-path (concat emacs-mode-directory "yasnippet/"))
 (add-to-list 'load-path "/usr/share/emacs/site-lisp/") ;; git is here
 ;; darcs get  http://www.tsdh.de/repos/darcs/emms/ emms-tsdh 
-(add-to-list 'load-path (concat emacs-mode-directory "emms-tsdh")
+(add-to-list 'load-path (concat emacs-mode-directory "emms-tsdh"))
 (add-to-list 'load-path (concat emacs-mode-directory "emacs-w3m"))
 
 ;;;============================================================
@@ -79,9 +79,8 @@
 (emms-lastfm-enable)
 
 (defadvice emms-lastfm-radio (before read-passwd (lastfm-url))
-  (if emms-lastfm-password
-      ()
-    (setq emms-lastfm-password (read-passwd "Password: "))))
+  (if (string= emms-lastfm-password "")
+      (setq emms-lastfm-password (read-passwd "Password: "))))
 
 (ad-activate 'emms-lastfm-radio)
 
