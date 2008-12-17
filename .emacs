@@ -11,6 +11,7 @@
 (add-to-list 'load-path (concat emacs-mode-directory "emacs-w3m"))
 (add-to-list 'load-path (concat emacs-mode-directory "js2-mode"))
 (add-to-list 'load-path (concat emacs-mode-directory "ejacs"))
+(add-to-list 'load-path "~/dev/slink/elisp/flymake-shell")
 
 ;;;============================================================
 ;;; Emacs Starter Kit
@@ -131,6 +132,13 @@
 
 (require 'js2-mode)
 (autoload 'js-console "js-console" nil t)
+
+;;;============================================================
+;;; Shell
+;;;============================================================
+
+(require 'flymake-shell)
+(add-hook 'sh-mode-hook 'flymake-shell-load)
 
 ;;;============================================================
 ;;; slink
