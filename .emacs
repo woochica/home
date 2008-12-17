@@ -9,6 +9,8 @@
 ;; darcs get  http://www.tsdh.de/repos/darcs/emms/ emms-tsdh 
 (add-to-list 'load-path (concat emacs-mode-directory "emms-tsdh"))
 (add-to-list 'load-path (concat emacs-mode-directory "emacs-w3m"))
+(add-to-list 'load-path (concat emacs-mode-directory "js2-mode"))
+(add-to-list 'load-path (concat emacs-mode-directory "ejacs"))
 
 ;;;============================================================
 ;;; Emacs Starter Kit
@@ -128,6 +130,7 @@
 ;;;============================================================
 
 (require 'js2-mode)
+(autoload 'js-console "js-console" nil t)
 
 ;;;============================================================
 ;;; slink
