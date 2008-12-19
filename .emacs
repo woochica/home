@@ -5,7 +5,7 @@
 
 (add-to-list 'load-path emacs-mode-directory)
 (add-to-list 'load-path (concat emacs-mode-directory "yasnippet/"))
-(add-to-list 'load-path "/usr/share/emacs/site-lisp/") ;; git is here
+(add-to-list 'load-path "/usr/share/emacs/site-lisp/") ; git, psvn
 ;; darcs get  http://www.tsdh.de/repos/darcs/emms/ emms-tsdh 
 (add-to-list 'load-path (concat emacs-mode-directory "emms-tsdh"))
 (add-to-list 'load-path (concat emacs-mode-directory "emacs-w3m"))
@@ -203,6 +203,13 @@
 
 ;; Others
 (global-set-key "\r" 'reindent-then-newline-and-indent)
+
+;; Fix buggy `org-get-outline-path'
+(defadvice org-get-outline-path (around fix-bug (&optional fastp level heading))
+  (let ((level (or level 1)))
+    ad-do-it))
+
+(ad-activate 'org-get-outline-path)
 
 (provide '.emacs)
 
