@@ -11,6 +11,7 @@
 (add-to-list 'load-path (concat emacs-mode-directory "emacs-w3m"))
 (add-to-list 'load-path (concat emacs-mode-directory "js2-mode"))
 (add-to-list 'load-path (concat emacs-mode-directory "ejacs"))
+(add-to-list 'load-path (concat emacs-mode-directory "slime"))
 (add-to-list 'load-path "~/dev/slink/elisp/flymake-shell")
 
 ;;;============================================================
@@ -101,6 +102,8 @@
 ;;;============================================================
 ;;; LISP
 ;;;============================================================
+
+(setq inferior-lisp-program "/usr/bin/sbcl")
 
 (add-hook 'emacs-lisp-mode-hook
           (lambda ()
