@@ -195,6 +195,10 @@
                                                  nil
                                                'fullboth))))
 
+;; Clock in and out
+(global-set-key [f5] 'org-clock-in)
+(global-set-key [f6] 'org-clock-out)
+
 ;;@override Emacs Starter Kit
 (global-set-key (kbd "C-x h") 'mark-whole-buffer)
 
