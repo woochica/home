@@ -13,7 +13,7 @@
  '(default-input-method "rfc1345")
  '(display-time-default-load-average nil)
  '(display-time-format "%y.%m.%d. %H.%M")
- '(display-time-mode t)
+ '(display-time-mode nil)
  '(ecb-options-version "2.33beta2")
  '(echo-keystrokes 0.2)
  '(emms-lastfm-username "nyuhuhuu")
