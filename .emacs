@@ -201,6 +201,7 @@
 
 ;;@override Emacs Starter Kit
 (global-set-key (kbd "C-x h") 'mark-whole-buffer)
+(global-set-key (kbd "C-x <return> c") 'universal-coding-system-argument)
 
 ;; TAB          yas/expand
 ;; Shift-TAB    dynamic expandation
