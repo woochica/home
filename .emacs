@@ -209,6 +209,12 @@
 (global-set-key [(super tab)] 'indent-region)
 (global-set-key [backtab] 'dabbrev-expand)
 
+;; EMMS
+(global-set-key (kbd "<XF86AudioLowerVolume>") 'emms-volume-lower)
+(global-set-key (kbd "<XF86AudioRaiseVolume>") 'emms-volume-raise)
+(global-set-key (kbd "<XF86AudioPrev>") 'emms-previous)
+(global-set-key (kbd "<XF86AudioNext>") 'emms-next)
+
 ;; Others
 (global-set-key "\r" 'reindent-then-newline-and-indent)
 
