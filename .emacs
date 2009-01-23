@@ -221,12 +221,8 @@
 ;; Others
 (global-set-key "\r" 'reindent-then-newline-and-indent)
 
-;; Fix buggy `org-get-outline-path'
-(defadvice org-get-outline-path (around fix-bug (&optional fastp level heading))
-  (let ((level (or level 1)))
-    ad-do-it))
-
-(ad-activate 'org-get-outline-path)
+;; @Override
+(flyspell-mode-off)
 
 (provide '.emacs)
 
