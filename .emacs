@@ -9,10 +9,10 @@
 ;; darcs get  http://www.tsdh.de/repos/darcs/emms/ emms-tsdh 
 (add-to-list 'load-path (concat emacs-mode-directory "emms-tsdh"))
 (add-to-list 'load-path (concat emacs-mode-directory "emacs-w3m"))
-(add-to-list 'load-path (concat emacs-mode-directory "js2-mode"))
 (add-to-list 'load-path (concat emacs-mode-directory "ejacs"))
 (add-to-list 'load-path (concat emacs-mode-directory "slime"))
 (add-to-list 'load-path "~/dev/slink/elisp/flymake-shell")
+(add-to-list 'load-path (concat emacs-mode-directory "auto-complete"))
 
 ;;;============================================================
 ;;; Emacs Starter Kit
@@ -99,6 +99,8 @@
 (yas/load-directory (concat emacs-mode-directory "snippets/"))
                                         ; custom templates
 
+(require 'auto-complete)
+
 ;;;============================================================
 ;;; LISP
 ;;;============================================================
@@ -119,7 +121,8 @@
 
 (add-hook 'php-mode-hook
           (lambda ()
-            (setq php-warned-bad-indent t)))
+            (setq php-warned-bad-indent t
+                  c-basic-offset 4)))
 
 ;;;============================================================
 ;;; VC, Git
@@ -133,7 +136,7 @@
 ;;; JavaScript
 ;;;============================================================
 
-(require 'js2-mode)
+(require 'js2-mode (concat emacs-mode-directory "js2-mode/build/js2"))
 (autoload 'js-console "js-console" nil t)
 
 ;;;============================================================
@@ -163,7 +166,7 @@
 
 (setq default-frame-alist
       (append
-       '((font . "Monaco-10")
+       '((font . "Monaco-11")
          (width . 82) (height . 36)
          (cursor-color . "#ffa200")
          (cursor-type . bar)
@@ -199,7 +202,7 @@
 (global-set-key [f5] 'org-clock-in)
 (global-set-key [f6] 'org-clock-out)
 
-;;@override Emacs Starter Kit
+;;@Override Emacs Starter Kit
 (global-set-key (kbd "C-x h") 'mark-whole-buffer)
 (global-set-key (kbd "C-x <return> c") 'universal-coding-system-argument)
 
