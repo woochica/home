@@ -25,6 +25,7 @@
  '(global-webma-instance-mode t)
  '(indicate-buffer-boundaries nil)
  '(indicate-empty-lines t)
+ '(js2-basic-offset 4)
  '(kill-whole-line t)
  '(menu-bar-mode t)
  '(mouse-yank-at-point t)
