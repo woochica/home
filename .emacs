@@ -223,6 +223,7 @@
 
 ;; @Override
 (flyspell-mode-off)
+(remove-hook 'text-mode-hook 'flyspell-mode)
 
 (provide '.emacs)
 
