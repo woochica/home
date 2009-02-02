@@ -159,6 +159,19 @@
 (load (concat emacs-root "dev/webma/elisp/init.el"))
 
 ;;;============================================================
+;;; Typo
+;;;============================================================
+
+(require 'typopunct)
+(add-to-list 'typopunct-language-alist
+             `(hungarian ,(decode-char 'ucs #x201E)
+                         ,(decode-char 'ucs #x201D)
+                         ,(decode-char 'ucs #xBB)
+                         ,(decode-char 'ucs #xAB)))
+(typopunct-change-language 'hungarian t)
+(typopunct-mode 1)
+
+;;;============================================================
 ;;; Frames, colors, misc.
 ;;;============================================================
 
@@ -223,7 +236,9 @@
 
 ;; @Override
 (flyspell-mode-off)
+(auto-fill-mode -1)
 (remove-hook 'text-mode-hook 'flyspell-mode)
+(remove-hook 'text-mode-hook 'auto-fill-mode)
 
 (provide '.emacs)
 
