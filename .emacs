@@ -128,9 +128,9 @@
 ;;; VC, Git
 ;;;============================================================
 
-;(require 'git)
+(require 'git)
 ;(require 'vc-git "/home/gabor/src/emacs/lisp/vc-git.el")
-;(require 'psvn)
+(require 'psvn)
 
 ;;;============================================================
 ;;; JavaScript
