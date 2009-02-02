@@ -187,11 +187,6 @@
     (delete (assoc 'which-func-mode mode-line-format) mode-line-format)
     (setq header-line-format which-func-header-line-format)))
 
-;; (defun python-which-func ()
-;;   (let ((function-name (python-current-defun python-which-func-length-limit)))
-;;     (set-text-properties 0 (length function-name) nil function-name)
-;;     function-name))
-
 ;;;============================================================
 ;;; Frames, colors, misc.
 ;;;============================================================
