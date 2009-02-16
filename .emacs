@@ -13,7 +13,6 @@
 (add-to-list 'load-path (concat emacs-mode-directory "slime"))
 (add-to-list 'load-path "~/dev/slink/elisp/flymake-shell")
 (add-to-list 'load-path (concat emacs-mode-directory "auto-complete"))
-(add-to-list 'load-path "~/dev/elisp/color-theme")
 
 ;;;============================================================
 ;;; Emacs Starter Kit
@@ -192,8 +191,7 @@
 ;;; Frames, colors, misc.
 ;;;============================================================
 
-(require 'color-theme "~/dev/elisp/color-theme/color-theme.el")
-(color-theme-initialize)
+(require 'color-theme)
 (load-file "~/dev/elisp/color-theme-blue.el")
 (color-theme-blue)
 
