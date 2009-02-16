@@ -13,6 +13,7 @@
 (add-to-list 'load-path (concat emacs-mode-directory "slime"))
 (add-to-list 'load-path "~/dev/slink/elisp/flymake-shell")
 (add-to-list 'load-path (concat emacs-mode-directory "auto-complete"))
+(add-to-list 'load-path "~/dev/elisp/color-theme")
 
 ;;;============================================================
 ;;; Emacs Starter Kit
@@ -175,7 +176,7 @@
 ;;;============================================================
 
 (load "which-func")
-(which-func-mode)
+;(which-func-mode 1)
 
 (delete (assoc 'which-func-mode mode-line-format) mode-line-format)
 (setq which-func-header-line-format
@@ -191,7 +192,10 @@
 ;;; Frames, colors, misc.
 ;;;============================================================
 
-(color-theme-zenburn)
+(require 'color-theme "~/dev/elisp/color-theme/color-theme.el")
+(color-theme-initialize)
+(load-file "~/dev/elisp/color-theme-blue.el")
+(color-theme-blue)
 
 (setq default-frame-alist
       (append
