@@ -5,7 +5,7 @@
 
 (add-to-list 'load-path emacs-mode-directory)
 (add-to-list 'load-path (concat emacs-mode-directory "yasnippet/"))
-(add-to-list 'load-path "/usr/share/emacs/site-lisp/") ; git, psvn
+;;(add-to-list 'load-path "/usr/share/emacs/site-lisp/") ; git, psvn
 ;; darcs get  http://www.tsdh.de/repos/darcs/emms/ emms-tsdh 
 (add-to-list 'load-path (concat emacs-mode-directory "emms-tsdh"))
 (add-to-list 'load-path (concat emacs-mode-directory "emacs-w3m"))
@@ -128,9 +128,9 @@
 ;;; VC, Git
 ;;;============================================================
 
-(require 'git)
-;(require 'vc-git "/home/gabor/src/emacs/lisp/vc-git.el")
-(require 'psvn)
+;;(require 'vc-git "/home/gabor/src/emacs/lisp/vc-git.el")
+;;(require 'git)
+;;(require 'psvn)
 
 ;;;============================================================
 ;;; JavaScript
@@ -180,8 +180,8 @@
 (delete (assoc 'which-func-mode mode-line-format) mode-line-format)
 (setq which-func-header-line-format
               '(which-func-mode
-                ("" which-func-format
-                 )))
+                ("" which-func-format)))
+
 (defadvice which-func-ff-hook (after header-line activate)
   (when which-func-mode
     (delete (assoc 'which-func-mode mode-line-format) mode-line-format)
