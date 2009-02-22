@@ -5,8 +5,6 @@
 
 (add-to-list 'load-path emacs-mode-directory)
 (add-to-list 'load-path (concat emacs-mode-directory "yasnippet/"))
-;;(add-to-list 'load-path "/usr/share/emacs/site-lisp/") ; git, psvn
-;; darcs get  http://www.tsdh.de/repos/darcs/emms/ emms-tsdh 
 (add-to-list 'load-path (concat emacs-mode-directory "emms-tsdh"))
 (add-to-list 'load-path (concat emacs-mode-directory "emacs-w3m"))
 (add-to-list 'load-path (concat emacs-mode-directory "ejacs"))
@@ -128,9 +126,8 @@
 ;;; VC, Git
 ;;;============================================================
 
-;;(require 'vc-git "/home/gabor/src/emacs/lisp/vc-git.el")
-;;(require 'git)
-;;(require 'psvn)
+(require 'git "/usr/share/emacs/site-lisp/git.el")
+(require 'psvn "/usr/share/emacs/site-lisp/psvn.el")
 
 ;;;============================================================
 ;;; JavaScript
@@ -193,7 +190,8 @@
 
 (require 'color-theme)
 (load-file "~/dev/elisp/color-theme-blue.el")
-(color-theme-blue)
+;;(color-theme-blue)
+(color-theme-zenburn)
 
 (setq default-frame-alist
       (append
