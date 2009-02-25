@@ -178,18 +178,18 @@
 (add-to-list 'which-func-modes 'nxhtml-mode)
 (add-to-list 'which-func-modes 'nxhtml-mumamo-mode)
 
-(which-func-mode 1)
-
 ;; Put function name to header-line
-;; (delete (assoc 'which-func-mode mode-line-format) mode-line-format)
-;; (setq which-func-header-line-format
-;;               '(which-func-mode
-;;                 ("" which-func-format)))
+(delete (assoc 'which-func-mode mode-line-format) mode-line-format)
+(setq which-func-header-line-format
+              '(which-func-mode
+                ("" which-func-format)))
 
-;; (defadvice which-func-ff-hook (after header-line activate)
-;;   (when which-func-mode
-;;     (delete (assoc 'which-func-mode mode-line-format) mode-line-format)
-;;     (setq header-line-format which-func-header-line-format)))
+(defadvice which-func-ff-hook (after header-line activate)
+  (when which-func-mode
+    (delete (assoc 'which-func-mode mode-line-format) mode-line-format)
+    (setq header-line-format which-func-header-line-format)))
+
+(which-func-mode 1)
 
 ;;;============================================================
 ;;; Frames, colors, misc.
@@ -257,11 +257,15 @@
 ;; Others
 (global-set-key "\r" 'reindent-then-newline-and-indent)
 
-;; @Override
+;; @Override Emacs Starter Kit
 (flyspell-mode-off)
 (auto-fill-mode -1)
 (remove-hook 'text-mode-hook 'flyspell-mode)
 (remove-hook 'text-mode-hook 'auto-fill-mode)
+;; Use `html-mode' HTM files
+(member '("\\.htm\\'" . nxhtml-mumamo-mode) auto-mode-alist)
+(setq auto-mode-alist (delete '("\\.htm\\'" . nxhtml-mumamo-mode) auto-mode-alist))
+(add-to-list 'auto-mode-alist '("\\.htm\\'" . html-mode))
 
 (provide '.emacs)
 
