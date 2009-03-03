@@ -40,7 +40,7 @@
  '(webma-css-rhino-path "/home/gabor/dev/yuicompressor-2.2.5/build/yuicompressor-2.2.5.jar")
  '(webma-instance-idb-tool "~/mnt/i2/tools/webma_search/tools/makeidb.sh")
  '(webma-instance-mount-base "~/mnt")
- '(webma-instance-server-ip "neotek.hu")
+ '(webma-instance-server-ip "10.172.0.147")
  '(webma-siteanalyze-path "/home/gabor/dev/webma/webmastertools/siteanalyze.py"))
 
 (custom-set-faces
