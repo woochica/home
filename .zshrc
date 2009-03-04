@@ -41,4 +41,8 @@ alias -s doc=oowriter
 alias -s xls=oocalc
 alias -s psd=gimp-remote
 
+if [ "$DESKTOP_SESSION" = "kde" ] ; then
+    alias eog=gwenview
+fi
+
 screen_start_or_open
