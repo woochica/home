@@ -22,7 +22,6 @@
  '(git-show-unknown nil)
  '(global-font-lock-mode t nil (font-lock))
  '(global-hl-line-mode t)
- '(global-webma-instance-mode t)
  '(indicate-buffer-boundaries nil)
  '(indicate-empty-lines t)
  '(js2-basic-offset 4)
@@ -39,8 +38,6 @@
  '(weblogger-config-alist (quote (("20y" ("user" . "admin") ("server-url" . "http://20y.hu/xmlrpc.php") ("weblog" . "1")))))
  '(webma-css-rhino-path "/home/gabor/dev/yuicompressor-2.2.5/build/yuicompressor-2.2.5.jar")
  '(webma-instance-idb-tool "~/mnt/i2/tools/webma_search/tools/makeidb.sh")
- '(webma-instance-mount-base "~/mnt")
- '(webma-instance-server-ip "10.172.0.147")
  '(webma-siteanalyze-path "/home/gabor/dev/webma/webmastertools/siteanalyze.py"))
 
 (custom-set-faces

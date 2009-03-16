@@ -185,30 +185,6 @@
 (typopunct-change-language 'hungarian t)
 
 ;;;============================================================
-;;; Which function
-;;;============================================================
-
-(require 'which-func)
-
-;; enable mode for HTML editing
-(add-to-list 'which-func-modes 'html-mode)
-(add-to-list 'which-func-modes 'nxhtml-mode)
-(add-to-list 'which-func-modes 'nxhtml-mumamo-mode)
-
-;; Put function name to header-line
-(delete (assoc 'which-func-mode mode-line-format) mode-line-format)
-(setq which-func-header-line-format
-              '(which-func-mode
-                ("" which-func-format)))
-
-(defadvice which-func-ff-hook (after header-line activate)
-  (when which-func-mode
-    (delete (assoc 'which-func-mode mode-line-format) mode-line-format)
-    (setq header-line-format which-func-header-line-format)))
-
-(which-func-mode 1)
-
-;;;============================================================
 ;;; Frames, colors, misc.
 ;;;============================================================
 
