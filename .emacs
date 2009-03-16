@@ -144,6 +144,22 @@
 (add-hook 'sh-mode-hook 'flymake-shell-load)
 
 ;;;============================================================
+;;; Spelling
+;;;============================================================
+
+(require 'ispell)
+(setq ispell-local-dictionary-alist
+      '((
+         ;; add US english as local dictionary
+         "en_US" "\[\[:alpha:\]\]" "[^[:alpha:]]" "[']" nil
+         ("-d" "en_US") nil utf-8)
+        ;; add hungarian as local dictionary
+        ("hu_HU" "\[\[:alpha:\]\]" "[^[:alpha:]]" "[']" nil
+         ("-d" "hu_HU") nil utf-8)))
+
+(ispell-change-dictionary "hu_HU" t)
+
+;;;============================================================
 ;;; slink
 ;;;============================================================
 
@@ -238,6 +254,16 @@
 (global-set-key [f5] 'org-clock-in)
 (global-set-key [f6] 'org-clock-out)
 
+;; Change dictionary for spell checking
+(global-set-key [f12] (lambda ()
+                        (interactive)
+                        (let ((flyspell-p flyspell-mode))
+                          (and flyspell-p (flyspell-mode -1))
+                          (if (ispell-change-dictionary "hu_HU" t)
+                              ()
+                            (ispell-change-dictionary "en_US" t))
+                          (and flyspell-p (flyspell-mode 1)))))
+
 ;;@Override Emacs Starter Kit
 (global-set-key (kbd "C-x h") 'mark-whole-buffer)
 (global-set-key (kbd "C-x <return> c") 'universal-coding-system-argument)
@@ -258,10 +284,9 @@
 (global-set-key "\r" 'reindent-then-newline-and-indent)
 
 ;; @Override Emacs Starter Kit
-(flyspell-mode-off)
 (auto-fill-mode -1)
-(remove-hook 'text-mode-hook 'flyspell-mode)
 (remove-hook 'text-mode-hook 'auto-fill-mode)
+
 ;; Use `html-mode' HTM files
 (member '("\\.htm\\'" . nxhtml-mumamo-mode) auto-mode-alist)
 (setq auto-mode-alist (delete '("\\.htm\\'" . nxhtml-mumamo-mode) auto-mode-alist))
