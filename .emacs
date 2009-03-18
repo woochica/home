@@ -129,6 +129,7 @@
 
 (require 'git "/usr/share/emacs/site-lisp/git.el")
 (require 'psvn "/usr/share/emacs/site-lisp/psvn.el")
+(require 'magit)
 
 ;;;============================================================
 ;;; JavaScript
