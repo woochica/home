@@ -170,7 +170,7 @@
 ;;; Work
 ;;;============================================================
 
-(load (concat emacs-root "~/mnt/i2/tools/webma-elisp/init.el"))
+(load (concat emacs-root "~/dev/webma-elisp/init.el"))
 
 ;;;============================================================
 ;;; Typo
