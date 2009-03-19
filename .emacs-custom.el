@@ -37,7 +37,6 @@
  '(twit-user "nyuhuhuu")
  '(weblogger-config-alist (quote (("20y" ("user" . "admin") ("server-url" . "http://20y.hu/xmlrpc.php") ("weblog" . "1")))))
  '(webma-css-rhino-path "/home/gabor/dev/yuicompressor-2.2.5/build/yuicompressor-2.2.5.jar")
- '(webma-instance-idb-tool "~/mnt/i2/tools/webma_search/tools/makeidb.sh")
  '(webma-siteanalyze-path "/home/gabor/dev/webma/webmastertools/siteanalyze.py"))
 
 (custom-set-faces
@@ -50,6 +49,4 @@
  '(font-lock-comment-face ((t (:foreground "IndianRed" :slant normal :weight normal :height 1.0 :family "Andale Mono"))))
  '(show-paren-match ((t (:bold t :background "#eeca00" :foreground "#763b17"))))
  '(twit-title-face ((t (:underline "DeepSkyBlue"))))
- '(twit-zebra-1-face ((t nil)))
- '(twit-zebra-2-face ((t nil)))
  '(which-func ((((class color) (min-colors 88) (background dark)) (:foreground "Pink")))))
