@@ -264,8 +264,10 @@
 (global-set-key "\r" 'reindent-then-newline-and-indent)
 
 ;; @Override Emacs Starter Kit
-(auto-fill-mode -1)
-(remove-hook 'text-mode-hook 'auto-fill-mode)
+(remove-hook 'text-mode-hook '(lambda nil
+                                 (flyspell-mode 1)))
+(remove-hook 'text-mode-hook ' (lambda nil
+                                 (auto-fill-mode 1)))
 
 ;; Use `html-mode' HTM files
 (member '("\\.htm\\'" . nxhtml-mumamo-mode) auto-mode-alist)
