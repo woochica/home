@@ -268,6 +268,7 @@
                                  (flyspell-mode 1)))
 (remove-hook 'text-mode-hook ' (lambda nil
                                  (auto-fill-mode 1)))
+(menu-bar-mode -1)
 
 ;; Use `html-mode' HTM files
 (member '("\\.htm\\'" . nxhtml-mumamo-mode) auto-mode-alist)
