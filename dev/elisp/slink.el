@@ -16,7 +16,7 @@
 (defun php-search-documentation ()
   "Search PHP documentation for the word at the point."
   (interactive)
-  (browse-url (concat php-search-url (current-word t) "#function." (current-word t))))
+  (browse-url (concat php-search-url (current-word t) "#function." (replace-regexp-in-string "_" "-" (current-word t)))))
 
 (defun slink/uniq-lines (beg end)
   "Unique lines in region.
