@@ -263,6 +263,9 @@
 ;; Others
 (global-set-key "\r" 'reindent-then-newline-and-indent)
 
+(setq skeleton-pair t)
+(global-set-key "(" 'skeleton-pair-insert-maybe)
+
 ;; @Override Emacs Starter Kit
 (remove-hook 'text-mode-hook '(lambda nil
                                  (flyspell-mode 1)))
