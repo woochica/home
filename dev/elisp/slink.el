@@ -101,4 +101,11 @@ querying the user."
 
 (add-hook 'find-file-hook 'th-find-file-sudo-maybe)
 
+(defun insert-time ()
+  "Insert a time-stamp according to locale's date and time format."
+  (interactive)
+  (insert (format-time-string "%Y%m%d" (current-time))))
+
+(global-set-key (kbd "C-c i")  'insert-time)
+
 (provide 'slink)
