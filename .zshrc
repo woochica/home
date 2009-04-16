@@ -43,6 +43,7 @@ alias -s psd=gimp-remote
 
 if [ "$DESKTOP_SESSION" = "kde" ] ; then
     alias eog=gwenview
+    alias nautilus=dolphin
 fi
 
 screen_start_or_open
