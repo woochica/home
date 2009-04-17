@@ -231,7 +231,6 @@
 (global-set-key [f5] 'org-clock-in)
 (global-set-key [f6] 'org-clock-out)
 (add-hook 'org-mode-hook (lambda ()
-                           (interactive)
                            (local-set-key (kbd "C-c a") 'org-agenda)))
 
 ;; Change dictionary for spell checking
