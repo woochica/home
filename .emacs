@@ -107,6 +107,7 @@
 
 (add-hook 'emacs-lisp-mode-hook
           (lambda ()
+            (paredit-mode 1)
             (local-set-key (kbd "<backtab>") 'lisp-complete-symbol)))
 
 ;;;============================================================
@@ -261,9 +262,6 @@
 
 ;; Others
 (global-set-key "\r" 'reindent-then-newline-and-indent)
-
-(setq skeleton-pair t)
-(global-set-key "(" 'skeleton-pair-insert-maybe)
 
 ;; @Override Emacs Starter Kit
 (remove-hook 'text-mode-hook '(lambda nil
