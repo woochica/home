@@ -64,13 +64,6 @@
                   ()
                 (call-process-shell-command cmd nil t nil args)))))
 
-(defadvice twit-follow-recent-tweets (around get-buffer ())
-  (if (bufferp (get-buffer "*Twit-recent*"))
-      (pop-to-buffer "*Twit-recent*")
-    ad-do-it))
-
-(ad-activate 'twit-follow-recent-tweets)
-
 ;;;============================================================
 ;;; EMMS/Last.FM
 ;;;============================================================
