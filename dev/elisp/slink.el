@@ -36,23 +36,6 @@ Called from a program, there are two arguments: BEG and END (region to sort)."
             (replace-match "" nil nil))
           (goto-char next-line))))))
 
-(defun slink/sztaki-phrase-lookup ()
-  "Look up the phrase under cursor in SZTAKI and echo translation if any."
-  (interactive)
-  (let* ((phrase (downcase (thing-at-point 'word)))
-         (url (concat "http://szotar.sztaki.hu/dict_search.php"
-                      "?O=HUN&E=1&L=ENG%3AHUN%3AEngHunDict&in_emacs=1&W="
-                      (w3m-url-encode-string phrase)))
-         (match (format "phrase '%s' not found" phrase)))
-    (with-temp-buffer
-      (w3m-process-with-wait-handler
-        (w3m-retrieve-and-render url nil nil nil nil handler))
-      (when (re-search-forward (concat phrase ":.*") nil t)
-        (setq match (match-string 0))))
-    (message (concat "SZTAKI: " match))))
-
-(global-set-key (kbd "C-?") 'slink/sztaki-phrase-lookup)
-
 (defun slink/delicious-url ()
   "Post either the url under point or the url of the current w3m page to delicious."
   (interactive)
