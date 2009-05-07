@@ -7,6 +7,7 @@
 (add-to-list 'load-path (concat emacs-mode-directory "yasnippet/"))
 (add-to-list 'load-path (concat emacs-mode-directory "emms-tsdh"))
 (add-to-list 'load-path (concat emacs-mode-directory "emacs-w3m"))
+(add-to-list 'load-path (concat emacs-mode-directory "emacs-sztaki"))
 (add-to-list 'load-path (concat emacs-mode-directory "ejacs"))
 (add-to-list 'load-path (concat emacs-mode-directory "slime"))
 (add-to-list 'load-path "~/dev/slink/elisp/flymake-shell")
@@ -173,6 +174,13 @@
 ;;;============================================================
 
 (load (concat emacs-root "~/dev/webma-elisp/init.el"))
+
+;;;============================================================
+;;; SZTAKI
+;;;============================================================
+
+(require 'sztaki)
+(global-set-key (kbd "C-?") 'sztaki-lookup-phrase)
 
 ;;;============================================================
 ;;; Typo
