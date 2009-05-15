@@ -11,6 +11,7 @@
  '(column-number-mode t)
  '(current-language-environment "UTF-8")
  '(default-input-method "rfc1345")
+ '(diary-file "~/slink/diary")
  '(display-time-default-load-average nil)
  '(display-time-format "%y.%m.%d. %H.%M")
  '(display-time-mode nil)
