@@ -10,6 +10,8 @@
 (add-to-list 'load-path (concat emacs-mode-directory "emacs-sztaki"))
 (add-to-list 'load-path (concat emacs-mode-directory "ejacs"))
 (add-to-list 'load-path (concat emacs-mode-directory "slime"))
+;;(add-to-list 'load-path (concat emacs-mode-directory "ecb"))
+;;(add-to-list 'load-path (concat emacs-mode-directory "cedet-1.0pre6/common"))
 (add-to-list 'load-path "~/dev/slink/elisp/flymake-shell")
 (add-to-list 'load-path (concat emacs-mode-directory "auto-complete"))
 
@@ -92,6 +94,14 @@
                                         ; custom templates
 
 (require 'auto-complete)
+
+;;;============================================================
+;;; Programming
+;;;============================================================
+
+;;(setq semantic-load-turn-useful-things-on t)
+;;(require 'cedet)
+;;(require 'ecb-autoloads)
 
 ;;;============================================================
 ;;; LISP
