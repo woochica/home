@@ -219,8 +219,11 @@
          (width . 82) (height . 36)
          (cursor-color . "#ffa200")
          (cursor-type . bar)
-         (tool-bar-lines . 0))
+         (tool-bar-lines . 0)
+         (icon-type . "/home/gabor/Képek/Noia_64_apps_emacs.png"))
        default-frame-alist))
+
+(setq frame-title-format "GNU Emacs — %b")
 
 ;;@override Emacs Starter Kit
 (setq backup-directory-alist (list
