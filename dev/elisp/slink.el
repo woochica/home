@@ -18,6 +18,25 @@
   (interactive)
   (browse-url (concat php-search-url (current-word t) "#function." (replace-regexp-in-string "_" "-" (current-word t)))))
 
+(defun html-to-bbcode ()
+  "Convert HTML to BBCode markup in current buffer.
+
+Unrecognized elements are ignored."
+  (interactive)
+  (let ((pattern-list
+         '(("<a href=\"\\(.*?\\)\">\\(.*?\\)</a>" . "[url=\\1]\\2[/url]")
+           ("<em>\\(.*?\\)</em>" . "[i]\\1[/i]")
+           ("<var>\\(.*?\\)</var>" . "[code]\\1][/code]")
+           ("<code>\\(.*?\\)</code>" . "[code]\\1][/code]")
+           ("<blockquote>\\(\\(.\\|\n\\)*?\\)</blockquote>" . "[quote]\\1[/quote]")
+           ("<pre class=\"\\(.*?\\)\">\\(\\(.\\|\n\\)*?\\)</pre>" . "[colorer=\\1]\\2[/colorer]")
+           ("<p>\\(.*?\\)</p>" . "\\1"))))
+    (mapcar (lambda (pair)
+              (goto-char (point-min))
+              (while (re-search-forward (car pair) nil t)
+                (replace-match (cdr pair))))
+            pattern-list)))
+
 (defun slink/uniq-lines (beg end)
   "Unique lines in region.
 Called from a program, there are two arguments: BEG and END (region to sort)."
