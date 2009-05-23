@@ -26,8 +26,8 @@ Unrecognized elements are ignored."
   (let ((pattern-list
          '(("<a href=\"\\(.*?\\)\">\\(.*?\\)</a>" . "[url=\\1]\\2[/url]")
            ("<em>\\(.*?\\)</em>" . "[i]\\1[/i]")
-           ("<var>\\(.*?\\)</var>" . "[code]\\1][/code]")
-           ("<code>\\(.*?\\)</code>" . "[code]\\1][/code]")
+           ("<var>\\(.*?\\)</var>" . "[code]\\1[/code]")
+           ("<code>\\(.*?\\)</code>" . "[code]\\1[/code]")
            ("<blockquote>\\(\\(.\\|\n\\)*?\\)</blockquote>" . "[quote]\\1[/quote]")
            ("<pre class=\"\\(.*?\\)\">\\(\\(.\\|\n\\)*?\\)</pre>" . "[colorer=\\1]\\2[/colorer]")
            ("<p>\\(.*?\\)</p>" . "\\1"))))
