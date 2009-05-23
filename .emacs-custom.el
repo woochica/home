@@ -5,7 +5,8 @@
   ;; If there is more than one, they won't work right.
  '(auto-compression-mode t nil (jka-compr))
  '(auto-fill-mode t)
- '(browse-url-browser-function (quote w3m-browse-url))
+ '(browse-url-browser-function (quote browse-url-generic))
+ '(browse-url-generic-program "/usr/bin/firefox")
  '(calendar-week-start-day 1)
  '(case-fold-search t)
  '(column-number-mode t)
