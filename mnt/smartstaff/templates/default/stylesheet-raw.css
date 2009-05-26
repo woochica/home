@@ -1,0 +1,587 @@
+/** sprite: vert; sprite-image: url(images1/webma-vert.png); sprite-layout: vertical; */
+/** sprite: horiz; sprite-image: url(images1/webma-horiz.png); sprite-layout: horizontal; */
+
+/**
+ *  Alapértelmezett távolságok és tipográfia.
+ */
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset,
+input, textarea, p, blockquote, th, td, caption {
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+fieldset, img {
+    border: 0;
+}
+
+iframe {
+    border: none;
+}
+
+q:before, q: after {
+    content: '';
+}
+
+body {
+    font-family: Arial, Helvetica, Liberation Sans, FreeSans, sans-serif;
+    line-height: 1.5em;
+}
+
+p, li, td, th, dd, dl {
+    line-height: 1.5em;
+}
+
+sup {
+    line-height: 1em;
+}
+
+p {
+    text-indent: 2em;
+    text-align: justify;
+}
+
+li p {
+    text-indent: 0;
+}
+
+h1, h2, h3, p, table, ul, ol, dl, caption, fieldset, iframe, object, embed,
+blockquote, hr {
+    margin-bottom: 1em;
+}
+
+ul, ol {
+    padding-left: 1em;
+}
+
+dd {
+    padding-left: 3em;
+}
+
+textarea, input, select, button {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+textarea, input, select {
+    background: #fff;
+    color: #000;
+}
+
+h1 {
+    font-size: 1.4em;
+}
+
+h2 {
+    font-size: 1.3em;
+    text-align: center;
+}
+
+hr {
+    clear: both;
+}
+
+a {
+    color: #000066;
+}
+
+a img {
+    border: none;
+}
+
+img { 
+    -ms-interpolation-mode: bicubic; /* IE7 képtömörítés fix */
+}
+
+/**
+ * Oldaltérkép számozása és stílusa.
+ */
+
+.sitemaplevel1 {
+    counter-reset: m1;
+}
+.sitemaplevel1 li:before {
+    content: counter(m1) '. ';
+    counter-increment: m1;
+}
+.sitemaplevel2 {
+    counter-reset: m2;
+}
+.sitemaplevel2 li:before {
+    content: counter(m1) "." counter(m2) ". ";
+    counter-increment: m2;
+}
+.sitemaplevel3 {
+    counter-reset: m3;
+}
+.sitemaplevel3 li:before {
+    content: counter(m1) "." counter(m2) "." counter(m3) ". ";
+    counter-increment: m3;
+}
+
+
+/**
+ * Általános kapcsolat felvételi űrlap stílus.
+ */
+
+fieldset {
+    border: 1px solid #ccc;
+    margin: .5em;
+    padding: .5em;
+}
+legend {
+    font-weight: bold;
+    color: #02377b;
+}
+label span {
+    width: 150px;
+    float: left;
+    text-align: left;
+}
+#content form p,
+#content form p.valid {
+    background-color: #f4f4f4;
+    border: none;
+    margin: .5em 0;
+    padding: .5em;
+}
+input.text,textarea {
+    border: 1px solid #aaa;
+}
+input.radio {
+    float: left;
+    height: 1em;
+    margin-right: .5em;
+}
+sup {
+    font-weight: bold;
+}
+#content .error {
+    background-color: #f8cc9b;
+    border: 1px solid #dd5003;
+}
+
+#smartstaff-hu {
+    font-size: 70%;
+    margin: 0 auto;
+    overflow: auto;
+    background-color: #fff;
+    color: #fff;
+}
+
+/**
+ * Az egész weboldal konténer eleme. Itt lehetséges a teljes weboldal
+ * szélességének beállítása, és középre rendezése.
+ */
+#container {
+    margin: 0 auto;
+    width: 941px;
+}
+
+/**
+ * Felső menüsor, általában az első szintű.
+ */
+
+#topmenu {
+    position: relative;
+    width: 941px;
+    float: left;
+    clear: both;
+    background-color: #1f4292;
+    background-repeat: no-repeat;
+    background-position: 0 -81px;
+    background-image: url(images1/header.png);
+}
+
+#topmenu ul {
+    padding: 0;
+    margin: 0 0 0 99px;
+    float: left;
+}
+
+#topmenu li {
+    list-style: none;
+    float: left;
+}
+
+#topmenu li a {
+    text-decoration: none;
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    background-repeat: no-repeat;
+    background-image: url(images1/topmenu.png);
+    background-color: #1f4292;
+    color: #fff;
+    font-weight: bold;
+    padding: 0 6px 0 10px;
+    letter-spacing: 1px;
+    font-size: .9em;
+}
+
+#topmenu li a:hover,
+#topmenu li.sdoc a,
+#topmenu li.docz a {
+    background-color: #006bb2;
+    background-image: url(images1/topmenu_active.png);
+}
+
+/** 
+ * Elrejtett első szintű menüpontok
+ */
+#topmenu #regisztracio a,
+#topmenu #belepes a {
+    position: absolute;
+    background-color: transparent;
+    background-image: none;
+    color: #fbb93b;
+    text-decoration: underline;
+    font-weight: normal;
+    letter-spacing: 0;
+    font-size: 1em;
+}
+
+#topmenu #regisztracio a {
+    right: 80px;
+}
+
+#topmenu #belepes a {
+    right: 25px;
+}
+
+#topmenu #segitseg,
+#topmenu #gyik,
+#topmenu #adatvedelem,
+#topmenu #smartstaff {
+    display: none;
+}
+
+/**
+ * Második szintű menü
+ */
+#submenu {
+    padding: 0;
+    margin: 0;
+    background-color: #fbb93b;
+    background-repeat: none;
+    background-position: bottom left;
+    background-image: url(images1/header.png);
+    width: 941px;
+    height: 31px;
+    clear: both;
+    float: left;
+}
+
+#submenu ul {
+    margin-left: 15px;
+}
+
+#submenu li {
+    float: left;
+    list-style: none;
+}
+
+#submenu li a {
+    line-height: 31px;
+    display: block;
+    text-decoration: none;
+    color: #4d4d4d;
+    font-weight: bold;
+    padding: 0 6px 0 10px;
+    letter-spacing: 1px;
+    text-transform: lowercase;
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-image: url(images1/submenu.png);
+}
+
+#submenu li a:hover,
+#submenu li.sdoc a,
+#submenu li.docz a {
+    background-color: #fb9b3b;
+    background-image: url(images1/submenu_active.png);
+}
+
+/**
+ * Fejléc elemek konténere: logó, kiemelt linkek, kereső stb.
+ */
+#header {
+    width: 941px;
+    height: 81px;
+    background-repeat: no-repeat;
+    background-image: url(images1/header.png);
+}
+
+#home {
+    float: left;
+    position: relative;
+    width: 99px;
+    height: 81px;
+}
+
+#home span {
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 99px;
+    height: 111px;
+    background-repeat: no-repeat;
+    background-image: url(images1/header.png);
+}
+
+#site {
+    width: 941px;
+    float: left;
+    background-repeat: no-repeat;
+    background-image: url(images1/site.png);
+    padding-top: 15px;
+}
+
+/**
+ * Breadcrumb menü.
+ */
+#locator {
+    text-align: left;
+}
+
+
+#article {
+    float: right;
+    display: inline;
+    overflow: hidden;
+    background-color: #fafafa;
+    background-repeat: repeat-y;
+    background-image: url(images1/article.png);
+    color: #000;
+    width: 461px; /* 491 - padding */
+    padding: 15px;
+}
+
+/**
+ * Harmadik szintű menüpontok.
+ */
+#sidemenu {
+    display: inline;
+    float: left;
+    overflow: hidden;
+    width: 195px;
+    float: right;
+    background-color: #fafafa;
+    padding-bottom: 1px;
+}
+
+#sidemenu ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+#sidemenu li {
+    list-style-type: disc;
+    margin-bottom: 5px;
+}
+
+#sidemenu li a {
+    text-decoration: none;
+    color: #000066;
+    font-weight: bold;
+}
+
+/**
+ * 
+ */
+#sidebar {
+    float: left;
+    background-color: #fafafa;
+}
+
+#footer {
+    margin-top: 7px;
+    width: 941px;
+    height: 30px;
+    float: left;
+    background-color: #1f4292;
+    background-repeat: no-repeat;
+    background-image: url(images1/footer.png);
+    margin-bottom: 2px;
+}
+
+#footer a {
+    color: #e6e6e6;
+    text-decoration: none;
+    line-height: 30px;
+    display: block;
+    padding: 0 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+#footer li a {
+    background-image: url(images1/footer_a.png);
+    background-repeat: no-repeat;
+}
+
+#footer ul {
+    float: left;
+    margin: 0 20px 0 41px;
+    padding: 0;
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-image: url(images1/footer_a.png);
+}
+
+#footer li {
+    float: left;
+    list-style: none;
+}
+
+/**
+ * Általános stílusosztályok.
+ */
+.centre {
+    text-align: center;
+}
+span.centre {
+    display: block;
+}
+img.float-right, img.right {
+    float: right;
+    margin: 0 0 20px 20px;
+    border: 1px solid #eaeaea;
+}
+
+img.float-left, img.left {
+    float: left;
+    margin: 0 20px 20px 0;
+    border: 1px solid #eaeaea;
+}
+
+.break-it, .clear {
+    clear: both;
+}
+
+/**
+ * Az alábbi CSS osztályokkal lehet a tartalmat táblázatos (grid) megjelenésre
+ * hozni. Például egy szövegrészt az alábbi módon lehet két egyenlő széles és
+ * egyenlő magas oszlopra formázni:
+ *
+ * <div class="row">
+ *   <div class="col-2 first">
+ *   Első oszlop tartalma.
+ *   </div>
+ *   <div class="col-2">
+ *   Második oszlop tartalma.
+ *   </div>
+ * </div>
+ */
+
+/**
+ * Sor. Ez garantálja az oszlopok egyforma magasságát.
+ */
+.row {
+    overflow: hidden;
+    margin-bottom:1em;
+}
+.row:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+/**
+ * Két egyenlő széles oszlophoz
+ */
+.col2 {
+    float: left;
+    width: 49%;
+    margin-left:1%;
+}
+.col2.first, /* IE6 fix */
+.row .col2:first-child {
+    margin-left: 0;
+    margin-right: 1%;
+}
+/**
+ * Három egyenlő széles oszlophoz
+ */
+.col3 {
+    float: left;
+    width: 32%;
+    margin-left: 2%;
+}
+.col3.first, /* IE6 fix */
+.row .col3:first-child {
+    margin-left: 0;
+}
+
+/**
+ * Főoldali dobozok
+ */   
+.front {
+}
+
+.front #site {
+    background-image: none;
+}
+
+.front #article {
+    float: none;
+    display: block;
+    width: 657px;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    background-repeat: no-repeat;
+    background-image: url(images1/front.jpg);
+    padding-top: 280px;
+}
+
+.front h1 {
+    text-align: center;
+}
+
+.front p {
+    text-align: left;
+    text-indent: 0;
+}
+
+.front .block {
+    padding: 0 15px;
+}
+
+/**
+ * Beágyazott modulokhoz használt oldalterv
+ */
+.wide #site {
+    background-image: none;
+}
+
+.wide #article {
+    padding: 0;
+    width: 941px;
+    background-image: none;
+}
+
+.wide iframe {
+    margin-bottom: 0;
+    display: block;
+}
+
+/**
+ * Hírek oldal stílusa
+ */
+.news h2 {
+    text-align: left;
+}
+
+.news .category {
+    font-size: .9em;
+    font-style: italic;
+    text-indent: 0;
+}
