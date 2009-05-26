@@ -139,8 +139,9 @@
 ;;; CSS
 ;;;============================================================
 
-(autoload 'css-color-mode "css-color" "" t)
-(add-hook 'css-mode-hook 'css-color-mode-turn-on)
+(require 'css-color)
+(add-hook 'css-mode-hook (lambda ()
+                           (css-color-mode 1)))
 
 ;;;============================================================
 ;;; JavaScript
