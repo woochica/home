@@ -46,4 +46,12 @@ if [ "$DESKTOP_SESSION" = "kde" ] ; then
     alias nautilus=dolphin
 fi
 
+# Exchange names of two files
+exchange-filenames() {
+    tmp=$2.`date +%s` # unique suffix
+    mv $2 $tmp
+    mv $1 $2
+    mv $tmp $1
+}
+
 screen_start_or_open
