@@ -128,4 +128,16 @@ querying the user."
      (list (line-beginning-position)
            (line-beginning-position 2)))))
 
+;; Org-mode customizations
+(defun org-clock-in-when-started ()
+  (when (string= state "STARTED")
+    (org-clock-in)))
+
+(defun org-clock-out-when-waiting ()
+  (when (string= state "WAITING")
+    (org-clock-out)))
+
+(add-hook 'org-after-todo-state-change-hook 'org-clock-in-when-started)
+(add-hook 'org-after-todo-state-change-hook 'org-clock-out-when-waiting)
+
 (provide 'slink)
