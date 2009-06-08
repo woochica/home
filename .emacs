@@ -124,6 +124,7 @@
 
 (add-hook 'php-mode-hook
           (lambda ()
+            (flymake-mode 1)
             (setq php-warned-bad-indent t
                   c-basic-offset 4)))
 
