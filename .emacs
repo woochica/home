@@ -56,31 +56,31 @@
 ;;; Twitter
 ;;;============================================================
 
-(require 'twit)
-(add-hook 'twit-new-tweet-hook
-          (lambda ()
-            (let* ((user (cadr twit-last-tweet))
-                   (msg (caddr twit-last-tweet))
-                   (cmd "/usr/bin/notify-send")
-                   (args (format "-i twitter \"%s:\" \"%s\"" user msg)))
-              (if (or (string= twit-user user) (not user))
-                  ()
-                (call-process-shell-command cmd nil t nil args)))))
+;; (require 'twit)
+;; (add-hook 'twit-new-tweet-hook
+;;           (lambda ()
+;;             (let* ((user (cadr twit-last-tweet))
+;;                    (msg (caddr twit-last-tweet))
+;;                    (cmd "/usr/bin/notify-send")
+;;                    (args (format "-i twitter \"%s:\" \"%s\"" user msg)))
+;;               (if (or (string= twit-user user) (not user))
+;;                   ()
+;;                 (call-process-shell-command cmd nil t nil args)))))
 
 ;;;============================================================
 ;;; EMMS/Last.FM
 ;;;============================================================
 
-(require 'emms-setup)
-(emms-devel)
-(emms-default-players)
-(emms-lastfm-enable)
+;; (require 'emms-setup)
+;; (emms-devel)
+;; (emms-default-players)
+;; (emms-lastfm-enable)
 
-(defadvice emms-lastfm-radio (before read-passwd (lastfm-url))
-  (if (string= emms-lastfm-password "")
-      (setq emms-lastfm-password (read-passwd "Password: "))))
+;; (defadvice emms-lastfm-radio (before read-passwd (lastfm-url))
+;;   (if (string= emms-lastfm-password "")
+;;       (setq emms-lastfm-password (read-passwd "Password: "))))
 
-(ad-activate 'emms-lastfm-radio)
+;; (ad-activate 'emms-lastfm-radio)
 
 ;;;============================================================
 ;;; Snippets
@@ -216,7 +216,7 @@
 
 (setq default-frame-alist
       (append
-       '((font . "Monaco-11")
+       '((font . "Consolas-11")
          (width . 82) (height . 36)
          (cursor-color . "#ffa200")
          (cursor-type . bar)
