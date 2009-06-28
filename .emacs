@@ -127,10 +127,11 @@
 (add-hook 'php-mode-hook
           (lambda ()
             (flymake-mode 1)
-            (c-set-offset 'arglist-intro '+)
-            (c-set-offset 'arglist-close 0)
-            (setq php-warned-bad-indent t
-                  c-basic-offset 4)))
+            (setq php-warned-bad-indent t)
+            (when (string= major-mode "php-mode")
+                (c-set-offset 'arglist-intro '+)
+                (c-set-offset 'arglist-close 0)
+                (setq c-basic-offset 4))))
 
 ;;;============================================================
 ;;; VC, Git
