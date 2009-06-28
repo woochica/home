@@ -119,12 +119,16 @@
 ;;;============================================================
 
 (require 'php-mode)
+(require 'drupal-mode)
+
 (add-to-list 'auto-mode-alist
              '("\\.\\(module\\|install\\|engine\\|theme\\)\\'" . php-mode))
 
 (add-hook 'php-mode-hook
           (lambda ()
             (flymake-mode 1)
+            (c-set-offset 'arglist-intro '+)
+            (c-set-offset 'arglist-close 0)
             (setq php-warned-bad-indent t
                   c-basic-offset 4)))
 
@@ -288,7 +292,7 @@
 
 ;; @Override Emacs Starter Kit
 (remove-hook 'text-mode-hook '(lambda nil
-                                 (flyspell-mode 1)))
+                                (flyspell-mode 1)))
 (remove-hook 'text-mode-hook ' (lambda nil
                                  (auto-fill-mode 1)))
 (menu-bar-mode -1)
