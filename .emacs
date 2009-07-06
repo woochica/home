@@ -122,7 +122,7 @@
 (require 'drupal-mode)
 
 (add-to-list 'auto-mode-alist
-             '("\\.\\(module\\|install\\|engine\\|theme\\)\\'" . php-mode))
+             '("\\.\\(module\\|install\\|engine\\|theme\\)\\'" . drupal-mode))
 
 (add-hook 'php-mode-hook
           (lambda ()
