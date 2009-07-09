@@ -146,6 +146,8 @@
 ;;;============================================================
 
 (require 'css-color)
+(require 'auto-complete-css)
+(ac-css-init)
 (add-hook 'css-mode-hook (lambda ()
                            (css-color-mode 1)))
 
