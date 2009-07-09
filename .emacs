@@ -149,7 +149,9 @@
 (require 'auto-complete-css)
 (ac-css-init)
 (add-hook 'css-mode-hook (lambda ()
-                           (css-color-mode 1)))
+                           (auto-complete-mode 1)
+                           (css-color-mode 1))
+          t)
 
 ;;;============================================================
 ;;; JavaScript
