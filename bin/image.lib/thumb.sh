@@ -60,7 +60,7 @@ thumb() {
         fi
     else
         # check width
-        original_dim=`cut -d "x" -f 1 $original_dim`
+        original_dim=`echo $original_dim | cut -d "x" -f 1`
         if [ $original_dim -lt $dim ] ; then
             flags=""
         fi
