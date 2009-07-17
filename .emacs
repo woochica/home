@@ -128,7 +128,7 @@
           (lambda ()
             (flymake-mode 1)
             (setq php-warned-bad-indent t)
-            (local-set-key "C-c C-c" 'comment-or-uncomment-region)
+            (local-set-key (kbd "C-c C-c") 'comment-or-uncomment-region)
             (when (string= major-mode "php-mode")
                 (c-set-offset 'arglist-intro '+)
                 (c-set-offset 'arglist-close 0)
