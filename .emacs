@@ -4,7 +4,7 @@
 (defvar emacs-mode-directory (concat emacs-root "dev/elisp/"))
 
 (add-to-list 'load-path emacs-mode-directory)
-(add-to-list 'load-path (concat emacs-mode-directory "yasnippet/"))
+;; (add-to-list 'load-path (concat emacs-mode-directory "yasnippet/"))
 (add-to-list 'load-path (concat emacs-mode-directory "emms-tsdh"))
 (add-to-list 'load-path (concat emacs-mode-directory "emacs-w3m"))
 (add-to-list 'load-path (concat emacs-mode-directory "emacs-sztaki"))
@@ -86,12 +86,12 @@
 ;;; Snippets
 ;;;============================================================
 
-(require 'yasnippet)
-(yas/initialize)
-(yas/load-directory (concat emacs-mode-directory "yasnippet/snippets/"))
-                                        ; factory defaults
-(yas/load-directory (concat emacs-mode-directory "snippets/"))
-                                        ; custom templates
+;; (require 'yasnippet)
+;; (yas/initialize)
+;; (yas/load-directory (concat emacs-mode-directory "yasnippet/snippets/"))
+;;                                         ; factory defaults
+;; (yas/load-directory (concat emacs-mode-directory "snippets/"))
+;;                                         ; custom templates
 
 (require 'auto-complete)
 
