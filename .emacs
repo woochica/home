@@ -127,6 +127,7 @@
 (add-hook 'php-mode-hook
           (lambda ()
             (flymake-mode 1)
+            (linum-mode 1)
             (setq php-warned-bad-indent t)
             (local-set-key (kbd "C-c C-c") 'comment-or-uncomment-region)
             (when (string= major-mode "php-mode")
