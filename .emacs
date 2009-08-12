@@ -162,9 +162,6 @@
 (require 'js2-mode (concat emacs-mode-directory "js2-mode/build/js2"))
 (autoload 'js-console "js-console" nil t)
 
-(add-to-list 'auto-mode-alist '("\\.js\\'" . espresso-mode))
-(autoload 'espresso-mode "espresso" nil t)
-
 ;;;============================================================
 ;;; Shell
 ;;;============================================================
