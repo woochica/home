@@ -222,8 +222,8 @@
 
 (require 'color-theme)
 (load-file "~/dev/elisp/color-theme-blue.el")
-;;(color-theme-blue)
-(color-theme-zenburn)
+(color-theme-blue)
+;;(color-theme-zenburn)
 
 (setq default-frame-alist
       (append
