@@ -221,9 +221,10 @@
 ;;;============================================================
 
 (require 'color-theme)
-(load-file "~/dev/elisp/color-theme-blue.el")
+(load-file "~/dev/elisp/color-theme-tango.el")
 ;; (color-theme-blue)
-(color-theme-zenburn)
+(color-theme-tango)
+;; (color-theme-zenburn)
 
 (setq default-frame-alist
       (append
