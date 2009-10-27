@@ -217,14 +217,28 @@
 (typopunct-change-language 'hungarian t)
 
 ;;;============================================================
+;;; Mail
+;;;============================================================
+
+(setq send-mail-function 'smtpmail-send-it
+      message-send-mail-function 'smtpmail-send-it
+      smtpmail-starttls-credentials '(("smtp.gmail.com" 587 nil nil))
+      smtpmail-starttls-credentials '(("smtp.gmail.com" 587 "gabor@20y.hu" nil))
+      ;smtpmail-auth-credentials (expand-file-name "~/.authinfo")
+      smtpmail-default-smtp-server "smtp.gmail.com"
+      smtpmail-smtp-server "smtp.gmail.com"
+      smtpmail-smtp-service 587
+      smtpmail-debug-info t)
+
+(require 'smtpmail)
+
+;;;============================================================
 ;;; Frames, colors, misc.
 ;;;============================================================
 
 (require 'color-theme)
 (load-file "~/dev/elisp/color-theme-tango.el")
-;; (color-theme-blue)
 (color-theme-tango)
-;; (color-theme-zenburn)
 
 (setq default-frame-alist
       (append
