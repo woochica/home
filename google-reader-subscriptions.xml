@@ -4,6 +4,13 @@
         <title>slink subscriptions in Google Reader</title>
     </head>
     <body>
+        <outline title="shared" text="shared">
+            <outline
+                text="TurulMeme.com Friss megosztások Keresés: beteg sr&amp;#225;c"
+                title="TurulMeme.com Friss megosztások Keresés: beteg sr&amp;#225;c"
+                type="rss"
+                xmlUrl="http://turulmeme.com/rss.ashx?m=friss&amp;q=beteg+sr%C3%A1c" htmlUrl="http://turulmeme.com"/>
+        </outline>
         <outline title="geek" text="geek">
             <outline text="A List Apart" title="A List Apart" type="rss"
                 xmlUrl="http://www.alistapart.com/site/rss" htmlUrl="http://www.alistapart.com/articles/"/>
@@ -30,7 +37,7 @@
             <outline text="deadlime.project" title="deadlime.project"
                 type="rss" xmlUrl="http://deadlime.hu/feed/" htmlUrl="http://deadlime.hu"/>
             <outline text="Derick Rethans" title="Derick Rethans"
-                type="rss" xmlUrl="http://derickrethans.nl/rss.xml" htmlUrl="http://www.derickrethans.nl/"/>
+                type="rss" xmlUrl="http://derickrethans.nl/rss.xml" htmlUrl="http://derickrethans.nl/archive.html"/>
             <outline text="DojoCampus" title="DojoCampus" type="rss"
                 xmlUrl="http://dojocampus.org/content/feed/" htmlUrl="http://dojocampus.org/content"/>
             <outline text="DOM Hackers" title="DOM Hackers" type="rss"
@@ -64,10 +71,6 @@
                 xmlUrl="http://feeds.feedburner.com/GoogleOpenSourceBlog" htmlUrl="http://google-opensource.blogspot.com/"/>
             <outline text="Gábor Hojtsy -" title="Gábor Hojtsy -"
                 type="rss" xmlUrl="http://hojtsy.hu/rss.xml" htmlUrl="http://hojtsy.hu"/>
-            <outline text="Higepon Mona OS develop blog from Japan"
-                title="Higepon Mona OS develop blog from Japan"
-                type="rss"
-                xmlUrl="http://higepon.blogspot.com/feeds/posts/default" htmlUrl="http://higepon.blogspot.com/"/>
             <outline text="HTML5 Doctor" title="HTML5 Doctor" type="rss"
                 xmlUrl="http://feeds2.feedburner.com/html5doctor" htmlUrl="http://html5doctor.com"/>
             <outline text="Hungarian Unix Portal"
@@ -119,8 +122,6 @@
             <outline text="Peter's Blog - Home"
                 title="Peter's Blog - Home" type="rss"
                 xmlUrl="http://peter.michaux.ca/feed/atom.xml" htmlUrl="http://peter.michaux.ca/"/>
-            <outline text="PHP Blog magyarul" title="PHP Blog magyarul"
-                type="rss" xmlUrl="http://www.php-blog.hu/feed/atom" htmlUrl="http://www.php-blog.hu"/>
             <outline text="Planet Emacsen" title="Planet Emacsen"
                 type="rss" xmlUrl="http://planet.emacsen.org/atom.xml" htmlUrl="http://planet.emacsen.org/"/>
             <outline text="Planet Lisp" title="Planet Lisp" type="rss"
@@ -205,8 +206,6 @@
             <outline text="SEO blog - Longhand"
                 title="SEO blog - Longhand" type="rss"
                 xmlUrl="http://feeds.feedburner.com/Optimalizalas-Longhand" htmlUrl="http://longhand.hu"/>
-            <outline text="SitePoint" title="SitePoint" type="rss"
-                xmlUrl="http://feeds.pheedo.com/sitepoint_blogs_feed" htmlUrl="http://www.sitepoint.com/blogs"/>
             <outline text="Spejz béta" title="Spejz béta" type="rss"
                 xmlUrl="http://www.spejz.hu/feed" htmlUrl="http://www.spejz.hu"/>
         </outline>
@@ -334,9 +333,6 @@
             <outline text="Miner: linuxportál"
                 title="Miner: linuxportál" type="rss"
                 xmlUrl="http://miner.hu/searchrss?q=linuxport%C3%A1l" htmlUrl="http://miner.hu?q=linuxport%C3%A1l"/>
-            <outline text="Technorati Search for: 20y.hu"
-                title="Technorati Search for: 20y.hu" type="rss"
-                xmlUrl="http://feeds.technorati.com/search/20y.hu" htmlUrl="http://technorati.com/search/20y.hu"/>
         </outline>
         <outline title="SO" text="SO">
             <outline text="elisp Questions - Stack Overflow"
@@ -366,6 +362,10 @@
                 xmlUrl="http://gozner.egologo.transindex.ro/?feed=atom" htmlUrl="http://gozner.egologo.transindex.ro"/>
             <outline text="lymmz blogja" title="lymmz blogja" type="rss"
                 xmlUrl="http://lymmz.com/feed/" htmlUrl="http://lymmz.com"/>
+            <outline
+                text="Pixelgirl Presents - Only the Coolest Desktops, Icons &amp; iPhone Wallpapers! - Customize your style."
+                title="Pixelgirl Presents - Only the Coolest Desktops, Icons &amp; iPhone Wallpapers! - Customize your style."
+                type="rss" xmlUrl="http://pixelgirlpresents.com/rss.xml" htmlUrl="http://pixelgirlpresents.com"/>
         </outline>
         <outline title="world" text="world">
             <outline text="BMXmag.hu" title="BMXmag.hu" type="rss"
