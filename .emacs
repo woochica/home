@@ -326,3 +326,5 @@
 (provide '.emacs)
 
 ;;; .emacs ends here
+
+(put 'narrow-to-page 'disabled nil)
